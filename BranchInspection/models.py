@@ -62,7 +62,7 @@ class BranchInspectionSubmission(models.Model):
 
     def is_submission_allowed(self):
         today = timezone.now().date()
-        deadline = self.month.replace(day=30)
+        deadline = self.month.replace(day=10)
         return today <= deadline or (self.extended_until and today <= self.extended_until)
 
     def get_status_display(self):
