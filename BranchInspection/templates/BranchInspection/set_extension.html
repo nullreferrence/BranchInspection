@@ -1,0 +1,37 @@
+{% load custom_filters %}
+{% load static %}
+{% block content %}
+  <div class="container mt-4">
+    <h3>Grant Extension for Branch: {{ submission.branch.name }}</h3>
+    <p><strong>Inspection Month:</strong> {{ submission.month|date:"F Y" }}</p>
+
+    <p>
+      {% if submission.extended_until %}
+        <span class="text-success">
+          Extension already granted until: <strong>{{ submission.extended_until }}</strong>
+        </span>
+      {% else %}
+        <span class="text-warning">
+          No extension has been granted yet.
+        </span>
+      {% endif %}
+    </p>
+
+    <p class="mt-3">
+      By default, the submission is allowed until the 10th of the month. You can extend this by 1–7 additional days from **today** ({{ today|default:now|date:"Y-m-d" }}).
+    </p>
+
+    <form method="post" class="mt-4">
+      {% csrf_token %}
+      <label for="extra_days"><strong>Extend by (days):</strong></label>
+      <select name="extra_days" id="extra_days" class="form-control w-25" required>
+        {% for day in 1|to:7 %}
+          <option value="{{ day }}">{{ day }} day{{ day|pluralize }}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <button type="submit" class="btn btn-primary">Grant Extension</button>
+      <a href="{% url 'BranchInspection:regional_manager_submission_list' %}" class="btn btn-secondary ml-2">Cancel</a>
+    </form>
+  </div>
+{% endblock %}

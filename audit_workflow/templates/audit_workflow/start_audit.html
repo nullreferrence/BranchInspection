@@ -1,0 +1,81 @@
+{% extends "audit_workflow/base.html" %}
+{% load static %}
+{% block content %}
+<h2>Start a New Audit</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.start_date.label_tag }}
+    {{ form.start_date }}
+    {{ form.end_date.label_tag }}
+    {{ form.end_date }}
+    {{ form.year_range.label_tag }}
+    {{ form.year_range }}
+
+    <div class="form-group">
+        <label for="audit_type">Audit Type:</label>
+        {{ form.audit_type }}
+        {% if form.audit_type.errors %}
+        <ul class="errorlist">
+            {% for error in form.audit_type.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="branch">Branch:</label>
+        <input type="text" id="branch_search" class="form-control" placeholder="Search branches">
+        <select name="branch" id="branch" class="form-control">
+            <option value="">Select Branch</option>
+            {% for branch in all_branches %}
+                <option value="{{ branch.id }}">{{ branch.name }} ({{ branch.region }}, {{ branch.division }}, {{ branch.branch_code }})</option>
+            {% endfor %}
+        </select>
+        {% if form.branch.errors %}
+        <ul class="errorlist">
+            {% for error in form.branch.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Start Audit</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(document).ready(function() {
+    $('#branch_search').on('input', function() {
+        var searchTerm = $(this).val().toLowerCase();
+        var $branchSelect = $('#branch');
+
+        $branchSelect.find('option').each(function() {
+            var optionText = $(this).text().toLowerCase();
+            var optionValue = $(this).val();
+
+            if (searchTerm === '' || optionText.includes(searchTerm)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+
+        if (searchTerm === '') {
+            $branchSelect.find('option[value=""]').show();
+        } else {
+            var visibleOptions = $branchSelect.find('option:visible');
+            if (visibleOptions.length === 1 && visibleOptions.val() === '') {
+                $branchSelect.find('option[value=""]').show();
+            } else {
+                $branchSelect.find('option[value=""]').hide();
+            }
+        }
+    });
+});
+</script>
+
+{% endblock %}

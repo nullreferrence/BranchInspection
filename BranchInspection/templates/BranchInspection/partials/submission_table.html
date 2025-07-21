@@ -1,0 +1,118 @@
+{% regroup dashboard_data by branch.region as region_groups %}
+
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Branch</th>
+      <th>Region</th>
+      <th>Division</th>
+      <th>Status</th>
+
+      <th>Extended Till</th>
+      <th>Actions</th>
+      <th>Return Comment</th>
+      {% if user_role == 'dgmmonitoring' %}
+        <th>Reply Status</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for group in region_groups %}
+      <tr class="table-info">
+        <td colspan="8"><strong>📍 Region: {{ group.grouper }}</strong></td>
+      </tr>
+
+      {% for entry in group.list|dictsort:"branch.division" %}
+        {% with submission=entry.submission %}
+        <tr class="{% if not submission %}table-warning
+                    {% elif submission.is_returned %}table-secondary
+                    {% elif submission.is_forwarded %}table-success
+                    {% elif submission.finalized %}table-dark
+                    {% else %}table-danger
+                    {% endif %}">
+          <td>{{ entry.branch.name }}</td>
+          <td>{{ entry.branch.region }}</td>
+          <td>{{ entry.branch.division }}</td>
+
+          <td>
+            {% if submission %}
+              {% if submission.is_returned %}🔁 Returned
+              {% elif submission.is_forwarded %}✅ Forwarded
+              {% elif submission.finalized %}📝 Finalized
+              {% else %}⏳ Pending
+              {% endif %}
+            {% else %}
+              ❌ Not Submitted
+            {% endif %}
+          </td>
+
+
+
+
+          <td>
+            {% if entry.extension_deadline %}
+              {{ entry.extension_deadline|date:"M d" }}
+            {% else %}-{% endif %}
+          </td>
+
+          <td>
+            {% if user_role == 'branch' and entry.branch == user.branch %}
+              {% if submission %}
+                <a href="{% url 'BranchInspection:inspection_dashboard' submission.id %}" class="btn btn-sm btn-outline-primary">📄 View</a>
+              {% else %}
+                <a href="{% url 'BranchInspection:offsite_commenting' %}" class="btn btn-sm btn-success">Start Submission</a>
+              {% endif %}
+
+            {% elif user_role == 'crm' and entry.branch.region == user.region %}
+              {% if submission %}
+                <a href="{% url 'BranchInspection:inspection_dashboard' submission.id %}" class="btn btn-sm btn-outline-primary">📄 View</a>
+                {% if not submission.is_forwarded %}
+                  <button class="btn btn-sm btn-warning return-btn" data-submission-id="{{ submission.id }}" data-bs-toggle="modal" data-bs-target="#returnModal">Return</button>
+                  <button class="btn btn-sm btn-success forward-btn" data-submission-id="{{ submission.id }}">Forward</button>
+                {% endif %}
+              {% else %}
+                <select class="grant-extension form-control form-control-sm d-inline w-auto" data-branch-id="{{ entry.branch.id }}">
+                  <option value="">Grant Extension</option>
+                  {% for i in "1234567" %}
+                    <option value="{{ i }}">{{ i }} day{{ i|pluralize }}</option>
+                  {% endfor %}
+                </select>
+              {% endif %}
+
+            {% elif user_role == 'dgmmonitoring' %}
+              {% if submission %}
+                <a href="{% url 'BranchInspection:inspection_dashboard' submission.id %}" class="btn btn-sm btn-outline-primary">📄 View</a>
+              {% else %}
+                <span class="text-muted">No submission</span>
+              {% endif %}
+            {% endif %}
+          </td>
+
+          <td>
+            {% if submission and submission.is_returned and submission.return_comment %}
+              <span class="text-danger">{{ submission.return_comment|truncatechars:80 }}</span>
+            {% else %}
+              <span class="text-muted">—</span>
+            {% endif %}
+          </td>
+          {% if user_role == 'dgmmonitoring' %}
+  <td>
+    {% if submission %}
+      {% if not submission.monitoring_reply %}
+        ❌ No Reply
+      {% elif submission.is_reply_finalized %}
+        ✅ Finalized
+      {% else %}
+        📝 Replied (not finalized)
+      {% endif %}
+    {% else %}
+      <span class="text-muted">—</span>
+    {% endif %}
+  </td>
+{% endif %}
+        </tr>
+        {% endwith %}
+      {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>

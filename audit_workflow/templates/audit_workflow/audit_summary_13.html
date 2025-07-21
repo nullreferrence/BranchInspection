@@ -1,0 +1,117 @@
+{% load custom_filters %}  {# Load your custom filters #}
+
+
+<html>
+<head>
+    <title>Audit Summary</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* ... (Your styles) */
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Audit Summary - {{ audit.branch.name }}</h1>
+
+        <div class="row">
+            <div class="col-md-3 item-list">
+                <h2>অনুচ্ছেদ সমূহ</h2>
+                <ul class="list-unstyled">
+                    {% for item in items %}
+                        <li>
+                            <span class="item-status">
+                                {% if item_statuses|get_item:item.id %}✅{% else %}❌{% endif %}
+                            </span>
+                            <a href="#" class="item-link" data-item-id="{{ item.id }}">{{ item.itemName }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col-md-6 objection-form">
+                <h2>Submit Objection</h2>
+                <div id="objection-form-container">
+                    <p>Select an item to submit an objection.</p>  {# Initial message #}
+                </div>
+            </div>
+
+            <div class="col-md-3 completed-objections">
+                <h2>Completed Objections</h2>
+                {% for objection in audit.auditobjection_set.all %}
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <p><strong>Item:</strong> {{ objection.items.itemName }}</p>
+                            <p><strong>Description:</strong> {{ objection.description }}</p>
+                            <p><strong>Amount:</strong> {{ objection.amount }}</p>
+                            <p><strong>Category:</strong> {{ objection.category }}</p>
+                            <p><strong>Related Persons:</strong>
+                                {% for person in objection.related_persons.all %}{{ person.name }}, {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <a href="{% url 'audit_workflow:finalize_audit' audit.id %}" class="btn btn-success">Finalize Audit</a>
+        <a href="{% url 'audit_workflow:start_audit' %}" class="btn btn-primary">Back to Start Audit</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.item-list a').click(function(event) {
+                event.preventDefault();
+                var itemId = $(this).data('item-id');
+                var auditId = {{ audit.id }};
+
+                $.ajax({
+                    url: "{% url 'audit_workflow:audit_summary' audit.id %}",
+                    type: 'GET',
+                    data: { 'item_id': itemId },
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    success: function(data) {
+                        $('#objection-form-container').html(data);
+
+                        // Form Submission Handling (Inside AJAX success)
+                        $('#objection-form').submit(function(event) {
+                            event.preventDefault();
+                            var form = $(this);
+                            $.ajax({
+                                url: form.attr('action'),
+                                type: 'POST',
+                                data: form.serialize(),
+                                dataType: 'json',
+                                success: function(response) {
+                                    if (response.message) {
+                                        alert(response.message);
+                                        location.reload();
+                                    } else if (response.errors) {
+                                        for (var field in response.errors) {
+                                            response.errors[field].forEach(function(error) {
+                                                alert(field + ": " + error);
+                                            });
+                                        }
+                                    }
+                                },
+                                error: function(error) {
+                                    console.error("Error submitting objection:", error);
+                                    alert("An error occurred during submission.");
+                                }
+                            });
+                        });
+                    },
+                    error: function(error) {
+                        console.error('Error loading form:', error);
+                        $('#objection-form-container').html('<p>Error loading form.</p>');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

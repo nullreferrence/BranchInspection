@@ -1,0 +1,234 @@
+{% extends "BranchInspection/internal_base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-3">📊 Branch Inspection Submission Overview</h2>
+
+  {% if late_submission_alert %}
+    <div class="alert alert-warning">
+      ⚠️ <strong>Notice:</strong> You have not submitted this month’s inspection and today is past the 10th. Please request CRM for permission.
+    </div>
+  {% endif %}
+
+  {% if user_role == 'dgmmonitoring' %}
+    <!-- Cascading Filters -->
+    <div class="row row-cols-lg-auto g-3 align-items-center mb-3">
+      <div class="col">
+        <label class="form-label" for="division">Division:</label>
+        <select name="division" id="division" class="form-select form-select-sm">
+          <option value="">All</option>
+          {% for division in all_divisions %}
+            <option value="{{ division }}" {% if division == selected_division %}selected{% endif %}>{{ division }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col">
+        <label class="form-label" for="region">Region:</label>
+        <select name="region" id="region" class="form-select form-select-sm">
+          <option value="">All</option>
+          {% for region in all_regions %}
+            <option value="{{ region }}" {% if region == selected_region %}selected{% endif %}>{{ region }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col">
+        <label class="form-label" for="branch">Branch:</label>
+        <select name="branch" id="branch" class="form-select form-select-sm">
+          <option value="">All</option>
+          {% for branch in all_branches %}
+            <option value="{{ branch.id }}" {% if branch.id|stringformat:"s" == selected_branch %}selected{% endif %}>{{ branch.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col">
+        <label class="form-label d-block">&nbsp;</label>
+        <button type="button" id="resetFilters" class="btn btn-outline-secondary btn-sm">Reset</button>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Loading Spinner -->
+  <div id="spinner" class="text-center my-3" style="display: none;">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Submission Table -->
+  <div id="submission-table-container">
+    {% include "BranchInspection/partials/submission_table.html" %}
+  </div>
+
+  <!-- Monitoring Report Link -->
+  <a id="view-report-link" class="btn btn-info mt-3 d-none" target="_blank">📊 View Region-wise Monitoring Report</a>
+</div>
+
+<!-- CSRF Token -->
+<form style="display:none;">{% csrf_token %}</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function getCSRFToken() {
+  return document.querySelector('[name=csrfmiddlewaretoken]').value;
+}
+
+function fetchFilteredData() {
+  const division = $('#division').val();
+  const region = $('#region').val();
+  const branch = $('#branch').val();
+
+  $('#spinner').show();
+
+  $.ajax({
+    url: "{% url 'BranchInspection:submission_overview' %}",
+    data: {
+      division: division,
+      region: region,
+      branch: branch
+    },
+    success: function (data) {
+      const html = $(data).find('#submission-table-container').html();
+      $('#submission-table-container').html(html);
+    },
+    error: function () {
+      alert("Failed to fetch filtered submissions.");
+    },
+    complete: function () {
+      $('#spinner').hide();
+      updateReportLink();
+    }
+  });
+}
+
+function updateReportLink() {
+  const region = $('#region').val();
+  const division = $('#division').val();
+  if (region) {
+    const reportUrl = `/BranchInspection/report/monitoring-replies/?region=${region}&division=${division}`;
+    $('#view-report-link').attr('href', reportUrl).removeClass('d-none');
+  } else {
+    $('#view-report-link').addClass('d-none');
+  }
+}
+
+function updateRegionDropdown() {
+  const division = $('#division').val();
+  $.get("{% url 'BranchInspection:get_region_branch_options' %}", { division: division }, function (data) {
+    $('#region').empty().append('<option value="">All</option>');
+    data.regions.forEach(region => {
+      $('#region').append(`<option value="${region}">${region}</option>`);
+    });
+    $('#branch').empty().append('<option value="">All</option>');
+  });
+}
+
+function updateBranchDropdown() {
+  const division = $('#division').val();
+  const region = $('#region').val();
+  $.get("{% url 'BranchInspection:get_region_branch_options' %}", { division: division, region: region }, function (data) {
+    $('#branch').empty().append('<option value="">All</option>');
+    data.branches.forEach(branch => {
+      $('#branch').append(`<option value="${branch.id}">${branch.name}</option>`);
+    });
+  });
+}
+
+$(document).ready(function () {
+  $('#division').on('change', function () {
+    updateRegionDropdown();
+    fetchFilteredData();
+  });
+
+  $('#region').on('change', function () {
+    updateBranchDropdown();
+    fetchFilteredData();
+  });
+
+  $('#branch').on('change', fetchFilteredData);
+
+  $('#resetFilters').on('click', function () {
+    $('#division').val('');
+    $('#region').empty().append('<option value="">All</option>');
+    $('#branch').empty().append('<option value="">All</option>');
+    fetchFilteredData();
+  });
+
+  updateReportLink();
+});
+
+// Return submission
+$(document).on('click', '.return-btn', function () {
+  const submissionId = $(this).data('submission-id');
+  const csrfToken = getCSRFToken();
+
+  const comment = prompt("Please enter a comment for returning to branch:");
+
+  if (!comment || comment.trim() === "") {
+    alert("❌ Return comment is required.");
+    return;
+  }
+
+  $.ajax({
+    url: `/BranchInspection/submission/${submissionId}/return/`,
+    type: "POST",
+    headers: { "X-CSRFToken": csrfToken },
+    data: { return_comment: comment },
+    success: function (response) {
+      alert(response.message);
+      fetchFilteredData();
+    },
+    error: function (xhr) {
+      const msg = xhr.responseJSON?.error || "An error occurred.";
+      alert("❌ " + msg);
+    }
+  });
+});
+
+// Forward submission
+$(document).on('click', '.forward-btn', function () {
+  const submissionId = $(this).data('submission-id');
+  const csrfToken = getCSRFToken();
+
+  if (!confirm("Are you sure you want to forward this submission to DGM Monitoring?")) return;
+
+  $.ajax({
+    url: `/BranchInspection/manager/submission/${submissionId}/forward/`,
+    type: "POST",
+    headers: { "X-CSRFToken": csrfToken },
+    success: function (response) {
+      alert(response.message);
+      fetchFilteredData();
+    },
+    error: function (xhr) {
+      const msg = xhr.responseJSON?.error || "An error occurred.";
+      alert("❌ " + msg);
+    }
+  });
+});
+
+// Grant Extension
+$(document).on('change', '.grant-extension', function () {
+  const branchId = $(this).data('branch-id');
+  const days = $(this).val();
+  if (!days || !branchId) return;
+
+  $.post(`/BranchInspection/manager/submission/${branchId}/set-extension/`, {
+    extra_days: days,
+    csrfmiddlewaretoken: getCSRFToken()
+  })
+  .done(response => {
+    alert(`✅ ${response.message}`);
+    location.reload();
+  })
+  .fail(xhr => {
+    const msg = xhr.responseJSON?.error || "❌ Extension failed.";
+    alert(msg);
+  });
+});
+</script>
+{% endblock %}

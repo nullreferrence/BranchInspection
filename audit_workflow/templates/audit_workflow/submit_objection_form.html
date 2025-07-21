@@ -1,0 +1,209 @@
+{% block content %}
+<style>
+    .upload-form, .person-form {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .upload-form:hover, .person-form:hover {
+        background-color: #f9f9f9;
+    }
+    .upload-form input[type="file"],
+    .person-form input[type="text"],
+    .person-form input[type="date"],
+    .upload-form input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    label {
+        color: #104191;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-control {
+        margin-bottom: 10px;
+    }
+</style>
+
+<form method="post" id="objection-form" enctype="multipart/form-data" action="{% url 'audit_workflow:submit_objection' audit.id item.id %}">
+    {% csrf_token %}
+    {{ objection_form.as_p }}
+
+    <h2>Upload Files (Optional)</h2>
+    {{ upload_formset.management_form }}
+
+<div id="upload-form-list">
+    {% for form in upload_formset %}
+        <div class="upload-form bg-light">
+           <div class="form-group">
+    {{ form.file_description.label_tag }}
+    {{ form.file_description }}
+</div>
+<div class="form-group">
+    {{ form.document.label_tag }}
+    {{ form.document }}
+</div>
+            {% if form.DELETE %}
+                <div class="form-check">
+                    {{ form.DELETE }} {{ form.DELETE.label_tag }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+
+    <button type="button" id="add-upload-form" class="btn btn-secondary mb-4">+ Add File</button>
+
+    <h3>Is a Person Involved?</h3>
+    {{ decision_form.as_p }}
+
+    <div id="person_formset" {% if decision_form.instance.isEmployee_involve != True %}style="display:none;"{% endif %}>
+        <h3>Convicted Personnel Details</h3>
+        {{ person_formset.management_form }}
+        <div id="person-form-list">
+            {% for form in person_formset %}
+                <div class="person-form bg-light">
+                    {{ form.as_p }}
+                    {% if form.DELETE %}
+                        <div class="form-check">
+                            {{ form.DELETE }} {{ form.DELETE.label_tag }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" id="add-person-form" class="btn btn-outline-primary mb-3">+ Add Person</button>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Objection</button>
+</form>
+
+<div id="upload-form-template" style="display: none;">
+    <div class="upload-form bg-light">
+    {{ upload_formset.empty_form.as_p|safe }}
+</div>
+</div>
+
+
+
+<div id="person-form-template" style="display: none;">
+    <div class="person-form bg-light">
+        {% for field in person_formset.empty_form %}
+            <div class="form-group">
+                {{ field.label_tag }} {{ field }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Loading Spinner -->
+<div id="loading-spinner" style="display: none;">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<!-- Success Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+  <div id="success-toast" class="toast align-items-center text-bg-success border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">
+        Objection submitted successfully!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+jQuery(document).ready(function ($) {
+    // Initialize CKEditor
+    if ($('#id_description').length) {
+        ClassicEditor.create(document.querySelector('#id_description')).catch(console.error);
+    }
+
+    // Show/hide person formset based on isEmployee_involve
+    function togglePersonFormset() {
+        const selected = $("input[name='isEmployee_involve']:checked").val();
+        $("#person_formset").toggle(selected === "True" || selected === "true");
+    }
+    togglePersonFormset();
+    $("input[name='isEmployee_involve']").on("change", togglePersonFormset);
+
+    // Add upload form
+    $('#add-upload-form').click(function () {
+        const totalForms = $('#id_upload_set-TOTAL_FORMS');
+        const formIdx = parseInt(totalForms.val(), 10);
+        console.log("Total Forms before add:", totalForms.val());
+        console.log("Form Index to use:", formIdx);
+        const newFormHtml = $('#upload-form-template').html().replace(/__prefix__/g, formIdx);
+        $('#upload-form-list').append(newFormHtml);
+        totalForms.val(formIdx + 1);
+        console.log("Total Forms after add:", totalForms.val());
+    });
+
+
+    // Add person form
+    $('#add-person-form').click(function () {
+        const totalForms = $('#id_person_set-TOTAL_FORMS');
+        const formIdx = parseInt(totalForms.val(), 10);
+        const newFormHtml = $('#person-form-template').html().replace(/__prefix__/g, formIdx);
+        $('#person-form-list').append(newFormHtml);
+        totalForms.val(formIdx + 1);
+    });
+    $('#submit-objection-form').on('submit', function (e) {
+    e.preventDefault();
+
+    const $form = $(this);
+
+    // Prevent double submissions
+    if ($form.data('submitted') === true) {
+      return;
+    }
+
+    $form.data('submitted', true); // Lock form
+
+    // Show loading spinner
+    $('#loading-spinner').show();
+
+    let formData = new FormData(this);
+
+    $.ajax({
+      type: 'POST',
+      url: $form.attr('action'),
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        $('#loading-spinner').hide();
+        $form.data('submitted', false); // Unlock form
+
+        // Show success toast
+        const toastEl = document.getElementById('success-toast');
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
+
+        // Update the middle section (if needed)
+        $('#middle-section').html(response.html);
+        updateItemStatus(); // Your logic to color items green/red
+      },
+      error: function (xhr) {
+        $('#loading-spinner').hide();
+        $form.data('submitted', false); // Unlock form
+        alert('Something went wrong. Please try again.');
+      }
+    });
+  });
+});
+</script>
+{% endblock %}
+
+

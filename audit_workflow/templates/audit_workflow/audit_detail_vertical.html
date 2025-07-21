@@ -1,0 +1,59 @@
+
+{% block content %}
+<title>Audit Details</title>
+    {% load static %}  </head>
+    <link rel="stylesheet" href="{% static 'audit_workflow/css/word_style.css' %}"> </head>
+
+<div class="page-container">
+    <div class="page">
+        <div class="header">
+            <h1>নিরীক্ষণ বিবরণী</h1>
+            <p><strong>নিরীক্ষণ আইডি:</strong> {{ audit.id }}</p>
+            <p><strong>শাখা:</strong> {{ audit.branch.name }}</p>
+            <p><strong>নিরীক্ষক:</strong> {{ audit.auditor }}</p>
+            <p><strong>শুরুর তারিখ:</strong> {{ audit.start_date|date:"SHORT_DATE_FORMAT" }}</p>
+            <p><strong>শেষের তারিখ:</strong> {{ audit.end_date|date:"SHORT_DATE_FORMAT" }}</p>
+            <p><strong>জমার তারিখ:</strong>
+                {% if audit.submission_date %}
+                    {{ audit.submission_date|date:"SHORT_DATE_FORMAT" }}
+                {% else %}
+                    জমা হয়নি
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="content">
+            {% if audit_objections.exists %}
+                <h2>আপত্তি সমূহ:</h2>
+{% for objection in audit_objections %}
+    <div class="objection">
+        <h3>অনুচ্ছেদ নামঃ {{ objection.items.itemName }}</h3>
+        <p><strong>বর্ণনা:</strong> {{ objection.description }}</p>
+        <p><strong>টাকার পরিমান:</strong> {{ objection.amount }}</p>
+        <p><strong>অভিযোগের ধরণ:</strong> {{ objection.category }}</p>
+        <p><strong>জড়িত ব্যক্তি:</strong>
+            {% if objection.related_persons.all %}
+                <ul class="related-persons">
+                    {% for person in objection.related_persons.all %}
+                        <li>{{ person.name }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                কেউ নয়
+            {% endif %}
+        </p>
+        <a href="{% url 'audit_workflow:edit_objection' objection.id %}">Edit</a>  </head>  {# Add edit link #}
+    </div>
+    <hr>
+{% endfor %}
+            {% else %}
+                <p>এই নিরীক্ষণের জন্য কোন আপত্তি পাওয়া যায়নি।</p>
+            {% endif %}
+        </div>
+
+        <div class="footer">
+            <p>Page 1 of 1</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

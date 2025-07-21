@@ -1,0 +1,138 @@
+{% load static %}
+{% block content %}
+<h2>OffSite Inspection Commenting</h2>
+
+<!-- Inspection Status Banner -->
+<div style="margin-bottom: 20px;">
+<strong>Status:</strong> {{ status }}
+
+  {% if submission.is_returned %}
+    <span style="color: red;">(Returned by CRM)</span>
+  {% elif submission.is_forwarded %}
+    <span style="color: green;">(Forwarded to Monitoring)</span>
+  {% endif %}
+</div>
+
+<div style="display: flex;">
+  <!-- Left Column: Categories and Items -->
+  <div style="width: 30%; border-right: 1px solid #ccc; padding-right: 10px;">
+    {% for key, cat in categorized_items.items %}
+      <div style="margin-bottom: 20px;">
+        <h4>{{ cat.display_name }} ({{ cat.progress.completed }}/{{ cat.progress.total }})</h4>
+        <progress value="{{ cat.progress.completed }}" max="{{ cat.progress.total }}"></progress>
+        <ul class="category-list">
+          {% for item in cat.items %}
+            <li data-item-id="{{ item.id }}" data-item-no="{{ item.item_no }}" class="item-btn {% if item.id in comment_map %}commented{% endif %}">
+              {{ item.item_no }}. {{ item.name }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+
+{% if can_comment and not submission.finalized %}
+  <form method="post" action="{% url 'BranchInspection:finalize_submission' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success mt-3">
+      Finalize Submission
+    </button>
+  </form>
+{% elif submission.finalized %}
+  <div class="alert alert-info mt-3">
+    Submission has been finalized. You can no longer make changes.
+  </div>
+{% endif %}
+    </div>
+  <!-- Right Column: Comment Form and Monitoring Reply -->
+  <div style="width: 70%; padding-left: 20px;">
+    <h3 id="item-title">Select an item to comment</h3>
+
+    {% if can_comment %}
+      <form id="comment-form" style="display: none;">
+        <input type="hidden" name="item_id" id="item-id">
+        <textarea name="comment" id="comment-box" rows="6" style="width: 100%;"></textarea><br>
+        <button type="submit">Next</button>
+      </form>
+    {% else %}
+      <div class="alert alert-warning">
+        Commenting is disabled. This inspection has been {{ status }}.
+      </div>
+    {% endif %}
+
+    {% if user_can_see_monitoring_reply and submission.monitoring_reply %}
+      <hr>
+      <h4>Monitoring Comment:</h4>
+      <div style="background-color: #f8f8f8; padding: 10px; border-left: 4px solid #007bff;">
+        {{ submission.monitoring_reply }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  const commentMap = {{ comment_map|safe }};
+  let currentItem = null;
+
+  {% if can_comment %}
+    document.querySelectorAll('.item-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const itemId = this.dataset.itemId;
+        const itemName = this.textContent;
+
+        document.getElementById('item-title').textContent = "Comment on: " + itemName;
+        document.getElementById('item-id').value = itemId;
+        document.getElementById('comment-box').value = commentMap[itemId] || "";
+        document.getElementById('comment-form').style.display = 'block';
+
+        currentItem = this;
+      });
+    });
+
+    document.getElementById('comment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      fetch("{% url 'BranchInspection:submit_offsite_comment' %}", {
+        method: "POST",
+        headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+        body: formData
+      }).then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            const itemId = formData.get("item_id");
+            commentMap[itemId] = formData.get("comment");
+
+            const itemBtn = document.querySelector(`[data-item-id="${itemId}"]`);
+            if (itemBtn) {
+              itemBtn.classList.add('commented');
+            }
+
+            if (data.next_item_id) {
+              const next = document.querySelector(`[data-item-id="${data.next_item_id}"]`);
+              if (next) next.click();
+            } else {
+              alert("All items commented.");
+            }
+          } else {
+            alert("Error saving comment.");
+          }
+        });
+    });
+  {% endif %}
+</script>
+
+<style>
+  .item-btn {
+    padding: 5px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .item-btn:hover {
+    background-color: #eef;
+  }
+  .item-btn.commented {
+    background-color: #d2f9d2;
+  }
+</style>
+{% endblock %}

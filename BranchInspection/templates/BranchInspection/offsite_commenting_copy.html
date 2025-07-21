@@ -1,0 +1,75 @@
+
+{% block content %}
+<div style="display: flex;">
+  <div style="width: 30%; border-right: 1px solid #ccc;">
+    <h3>OffSite Items</h3>
+    <ul id="item-list">
+      {% for item in items %}
+        <li data-item-id="{{ item.id }}" data-item-no="{{ item.item_no }}" class="item-btn {% if item.id in comment_map %}commented{% endif %}">
+          {{ item.item_no }}. {{ item.name }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div style="width: 70%; padding-left: 20px;">
+    <h3 id="item-title">Select an item to comment</h3>
+    <form id="comment-form" style="display: none;">
+      <input type="hidden" name="item_id" id="item-id">
+      <textarea name="comment" id="comment-box" rows="6" style="width: 100%;"></textarea><br>
+      <button type="submit">Submit Comment</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.item-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const itemId = this.dataset.itemId;
+    const itemNo = this.dataset.itemNo;
+    const itemName = this.textContent;
+
+    document.getElementById('item-title').textContent = itemName;
+    document.getElementById('item-id').value = itemId;
+    document.getElementById('comment-box').value = "";
+    document.getElementById('comment-form').style.display = 'block';
+  });
+});
+
+document.getElementById('comment-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("{% url 'BranchInspection:submit_offsite_comment' %}", {
+    method: "POST",
+    headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+    body: formData
+  }).then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        const itemId = formData.get("item_id");
+        document.querySelector(`[data-item-id="${itemId}"]`).classList.add('commented');
+
+        if (data.next_item_id) {
+          document.querySelector(`[data-item-id="${data.next_item_id}"]`).click();
+        } else {
+          alert("All comments submitted!");
+        }
+      } else {
+        alert("Error: " + data.error);
+      }
+    });
+});
+</script>
+
+<style>
+  .item-btn {
+    padding: 5px;
+    cursor: pointer;
+  }
+  .item-btn.commented {
+    background-color: #c4f7c4;
+  }
+</style>
+{% endblock %}

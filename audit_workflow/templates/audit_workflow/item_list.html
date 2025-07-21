@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item List</title>
+</head>
+<body>
+    <h2>Item List</h2>
+
+    <a href="{% url 'audit_workflow:add_item' %}">Add New Item</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Item No</th>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.itemNo }}</td>
+                    <td>{{ item.itemName }}</td>
+                    <td>{{ item.category }}</td>
+                    <td>
+                        <a href="{% url 'audit_workflow:update_item' item.id %}">Edit</a>
+
+                        <a href="{% url 'audit_workflow:delete_item' item.id %}" onclick="return confirm('Are you sure?');">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No items found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

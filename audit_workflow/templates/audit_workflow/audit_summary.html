@@ -1,0 +1,244 @@
+{% extends "audit_workflow/base.html" %}
+{% load custom_filters %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+    <title>Audit Summary</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'audit_workflow/css/styles.css' %}">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Audit Summary - {{ audit.branch.name }}</h1>
+
+        <div class="row">
+            <div class="col-md-3 item-list">
+                <h2>Audit Items</h2>
+                <ul class="list-unstyled">
+                    {% for item in items %}
+                        <li>
+                            <span class="item-status">
+                                {% if item_statuses|get_item:item.id %}✅{% else %}❌{% endif %}
+                            </span>
+                            <a href="#" class="item-link" data-item-id="{{ item.id }}">{{ item.itemName }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if items.has_previous %}
+                    <a href="?page=1" class="pagination-link">&laquo; first</a>
+                    <a href="?page={{ items.previous_page_number }}" class="pagination-link">previous</a>
+
+                        {% endif %}
+
+                        <span class="current">
+                            Page {{ items.number }} of {{ items.paginator.num_pages }}.
+                        </span>
+
+                        {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}" class="pagination-link">next</a>
+            <a href="?page={{ items.paginator.num_pages }}" class="pagination-link">last &raquo;</a>
+
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-6 objection-form">
+                <h2>Submit Objection</h2>
+                <div id="objection-form-container">
+                    <p>Select an item to submit an objection.</p>
+                    {{ form_html|safe }}
+                </div>
+            </div>
+
+            <div class="col-md-3 completed-objections">
+                <h2>Completed Objections</h2>
+                {% if completed_objections %}
+                {% for objection in completed_objections %}
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <p><strong>Item:</strong> {{ objection.items.itemName }}</p>
+                            <p><strong>Description:</strong> {{ objection.description|safe }}</p>
+                            <p><strong>Amount:</strong> {{ objection.amount }}</p>
+                            <p><strong>Category:</strong> {{ objection.category }}</p>
+
+                            {% with convicted_persons_by_item|get_item:objection.items.id as convicted_persons %}
+                                {% if convicted_persons %}
+                                    <p><strong>Convicted Persons:</strong></p>
+                                    <ul>
+                                        {% for person in convicted_persons %}
+                                            <li>{{ person.name }} - {{ person.current_post }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p>No convicted persons</p>
+                                {% endif %}
+                            {% endwith %}
+
+                            <p><strong>Uploaded Files:</strong></p>
+                            {% for file in objection.uploads.all %}
+                                <p>
+                                    {% if file.document %}
+                                        <a href="{{ file.document.url }}" target="_blank">{{ file.file_description }}</a>
+                                    {% else %}
+                                        No file available
+                                    {% endif %}
+                                </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                {% else %}
+  <p>No completed objections for this page.</p>
+{% endif %}
+            </div>
+        </div>
+
+        <a href="{% url 'audit_workflow:finalize_audit' audit.id %}" class="btn btn-success">Finalize Audit</a>
+        <a href="{% url 'audit_workflow:start_audit' %}" class="btn btn-primary">Back to Start Audit</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'django_ckeditor_5/js/ckeditor.js' %}"></script>
+<script>
+$(document).ready(function () {
+    function handleItemClick() {
+        $('.item-list a.item-link').off('click').on('click', function (event) {
+            event.preventDefault();
+            const itemId = $(this).data('item-id');
+
+            $('#objection-form-container').html(`
+                <div class="text-center my-3">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>`);
+
+            $.ajax({
+                url: "{% url 'audit_workflow:audit_summary' audit.id %}",
+                type: 'GET',
+                data: { 'item_id': itemId },
+                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                success: function (data) {
+                    $('#objection-form-container').html(data);
+                },
+                error: function () {
+                    $('#objection-form-container').html('<p class="text-danger">Error loading form.</p>');
+                }
+            });
+        });
+    }
+
+    function handleFormSubmission() {
+        $(document).on('submit', '#objection-form', function (e) {
+            e.preventDefault();
+            const form = $(this);
+            const actionUrl = form.attr('action');
+            const formData = new FormData(this);
+
+            $('#objection-form-container').html(`
+                <div class="text-center my-3">
+                    <div class="spinner-border text-success" role="status">
+                        <span class="sr-only">Submitting...</span>
+                    </div>
+                </div>`);
+
+            $.ajax({
+                url: actionUrl,
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function () {
+                    // Reload page via AJAX to refresh item list + completed list
+                    $.get(window.location.href, function (html) {
+                        const updatedList = $(html).find('.item-list').html();
+                        const updatedCompleted = $(html).find('.completed-objections').html();
+                        const updatedPagination = $(html).find('.pagination').html();
+
+                        $('.item-list').html(updatedList);
+                        $('.completed-objections').html(updatedCompleted);
+                        $('.pagination').html(updatedPagination);
+
+                        handleItemClick(); // Rebind click
+
+                        // Auto-select next ❌
+                        let nextFound = false;
+                        $('.item-list a.item-link').each(function () {
+                            if ($(this).prev('span').text().includes("❌")) {
+                                $(this).trigger('click');
+                                nextFound = true;
+                                return false;
+                            }
+                        });
+
+                        if (!nextFound) {
+                            const nextPageLink = $('.pagination a:contains("next")').attr('href');
+                            if (nextPageLink) {
+                                $.get(nextPageLink, function (pageHtml) {
+                                    const newList = $(pageHtml).find('.item-list').html();
+                                    const newPagination = $(pageHtml).find('.pagination').html();
+                                    const newCompleted = $(pageHtml).find('.completed-objections').html();
+
+                                    $('.item-list').html(newList);
+                                    $('.pagination').html(newPagination);
+                                    $('.completed-objections').html(newCompleted);
+
+                                    handleItemClick();
+
+                                    $('.item-list a.item-link').each(function () {
+                                        if ($(this).prev('span').text().includes("❌")) {
+                                            $(this).trigger('click');
+                                            return false;
+                                        }
+                                    });
+                                });
+                            } else {
+                                $('#objection-form-container').html('<p class="text-success">✅ All items completed. You may now finalize the audit.</p>');
+                            }
+                        }
+                    });
+                },
+                error: function (xhr) {
+                    $('#objection-form-container').html('<div class="text-danger">❌ Submission failed. Please check the form.</div>');
+                    console.error("Submission error:", xhr);
+                }
+            });
+        });
+    }
+
+    function handlePagination() {
+        $(document).on('click', '.pagination-link', function (e) {
+            e.preventDefault();
+            const pageUrl = $(this).attr('href');
+
+            $.get(pageUrl, function (data) {
+                const newList = $(data).find('.item-list').html();
+                const newCompleted = $(data).find('.completed-objections').html();
+                const newPagination = $(data).find('.pagination').html();
+
+                $('.item-list').html(newList);
+                $('.completed-objections').html(newCompleted);
+                $('.pagination').html(newPagination);
+
+                handleItemClick();
+            });
+        });
+    }
+
+    // Initialize all handlers
+    handleItemClick();
+    handleFormSubmission();
+    handlePagination();
+});
+</script>
+
+
+</body>
+</html>
+{% endblock %}

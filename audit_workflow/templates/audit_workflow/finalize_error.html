@@ -1,0 +1,6 @@
+
+{% block content %}
+<h2>Cannot Finalize Audit</h2>
+<p>Some items are incomplete. Please complete them before finalizing.</p>
+<a href="{% url 'audit_workflow:audit_summary' audit_id=audit.id %}">Go Back</a>
+{% endblock %}

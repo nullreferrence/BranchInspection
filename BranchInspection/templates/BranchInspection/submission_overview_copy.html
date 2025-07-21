@@ -1,0 +1,200 @@
+{% extends "BranchInspection/internal_base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-3">📊 Branch Inspection Submission Overview</h2>
+
+  {% if late_submission_alert %}
+    <div class="alert alert-warning">
+      ⚠️ <strong>Notice:</strong> You have not submitted this month’s inspection and today is past the 10th. Please request CRM for permission.
+    </div>
+  {% endif %}
+
+  {% if user_role == 'dgmmonitoring' %}
+    <!-- Region/Division Selectors for DGM -->
+    <div class="row row-cols-lg-auto g-3 align-items-center mb-3">
+      <div class="col">
+        <label class="form-label" for="region">Region:</label>
+        <select name="region" id="region" class="form-select form-select-sm">
+          <option value="">All</option>
+          {% for region in all_regions %}
+            <option value="{{ region }}" {% if region == selected_region %}selected{% endif %}>{{ region }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col">
+        <label class="form-label" for="division">Division:</label>
+        <select name="division" id="division" class="form-select form-select-sm">
+          <option value="">All</option>
+          {% for division in all_divisions %}
+            <option value="{{ division }}" {% if division == selected_division %}selected{% endif %}>{{ division }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col">
+        <label class="form-label d-block">&nbsp;</label>
+        <button type="button" id="resetFilters" class="btn btn-outline-secondary btn-sm">Reset</button>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Hidden for CRM: prefilled with assigned region/division -->
+  {% if user_role == 'crm' %}
+    <input type="hidden" id="hidden-region" value="{{ selected_region }}">
+    <input type="hidden" id="hidden-division" value="{{ selected_division }}">
+  {% endif %}
+
+  <!-- Loading spinner -->
+  <div id="spinner" class="text-center my-3" style="display: none;">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Submission table container -->
+  <div id="submission-table-container">
+    {% include "BranchInspection/partials/submission_table.html" %}
+  </div>
+
+  <!-- Region report link -->
+  <a id="view-report-link" class="btn btn-info mt-3 d-none" target="_blank">📊 View Region-wise Monitoring Report</a>
+
+</div>
+
+<!-- CSRF token -->
+<form style="display:none;">{% csrf_token %}</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function getCSRFToken() {
+  return document.querySelector('[name=csrfmiddlewaretoken]').value;
+}
+
+function updateReportLink() {
+  const userRole = "{{ user_role }}";
+  let region = "", division = "";
+
+  if (userRole === "dgmmonitoring") {
+    region = $('#region').val();
+    division = $('#division').val();
+  } else if (userRole === "crm") {
+    region = $('#hidden-region').val();
+    division = $('#hidden-division').val();
+  }
+
+  if (region) {
+    const reportUrl = `/BranchInspection/report/monitoring-replies/?region=${encodeURIComponent(region)}&division=${encodeURIComponent(division)}`;
+    $('#view-report-link').attr('href', reportUrl).removeClass('d-none');
+  } else {
+    $('#view-report-link').addClass('d-none');
+  }
+}
+
+function fetchFilteredData() {
+  const userRole = "{{ user_role }}";
+  let region = "", division = "";
+
+  if (userRole === "dgmmonitoring") {
+    region = $('#region').val();
+    division = $('#division').val();
+  } else if (userRole === "crm") {
+    region = $('#hidden-region').val();
+    division = $('#hidden-division').val();
+  }
+
+  $('#spinner').show();
+
+  $.ajax({
+    url: "{% url 'BranchInspection:submission_overview' %}",
+    data: {
+      region: region,
+      division: division
+    },
+    success: function (data) {
+      const html = $(data).find('#submission-table-container').html();
+      $('#submission-table-container').html(html);
+    },
+    error: function () {
+      alert("Failed to fetch filtered submissions.");
+    },
+    complete: function () {
+      $('#spinner').hide();
+      updateReportLink();
+    }
+  });
+}
+
+$(document).ready(function () {
+  const userRole = "{{ user_role }}";
+
+  if (userRole === "dgmmonitoring") {
+    $('#region, #division').on('change', fetchFilteredData);
+
+    $('#resetFilters').on('click', function () {
+      $('#region').val('');
+      $('#division').val('');
+      fetchFilteredData();
+    });
+  }
+
+  // For CRM, load based on assigned region/division
+  if (userRole === "crm") {
+    fetchFilteredData();
+  }
+
+  updateReportLink();
+});
+
+  $(document).on('click', '.forward-btn', function () {
+  const submissionId = $(this).data('submission-id');
+  const csrfToken = getCSRFToken();
+
+  if (!confirm("Are you sure you want to forward this submission to DGM Monitoring?")) return;
+
+  $.ajax({
+    url: `/BranchInspection/manager/submission/${submissionId}/forward/`,  // ✅ your view URL
+    type: "POST",
+    headers: { "X-CSRFToken": csrfToken },
+    success: function (response) {
+      alert(response.message);
+      fetchFilteredData();  // reload the updated table
+    },
+    error: function (xhr) {
+      const msg = xhr.responseJSON?.error || "An error occurred.";
+      alert("❌ " + msg);
+    }
+  });
+});
+$(document).on('click', '.return-btn', function () {
+  const submissionId = $(this).data('submission-id');
+  const csrfToken = getCSRFToken();
+
+  const comment = prompt("Please enter a comment for returning to branch:");
+
+  if (!comment || comment.trim() === "") {
+    alert("❌ Return comment is required.");
+    return;
+  }
+
+  $.ajax({
+    url: `/BranchInspection/submission/${submissionId}/return/`,
+    type: "POST",
+    headers: { "X-CSRFToken": csrfToken },
+    data: { return_comment: comment },
+    success: function (response) {
+      alert(response.message);
+      fetchFilteredData();  // reload table
+    },
+    error: function (xhr) {
+      const msg = xhr.responseJSON?.error || "An error occurred.";
+      alert("❌ " + msg);
+    }
+  });
+});
+
+</script>
+{% endblock %}

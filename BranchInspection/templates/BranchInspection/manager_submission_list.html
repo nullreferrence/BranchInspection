@@ -1,0 +1,60 @@
+
+{% block content %}
+<h2>Branch Inspection Submissions - Your Region</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Branch</th>
+      <th>Month</th>
+      <th>Submitted By</th>
+      <th>Finalized?</th>
+      <th>Forwarded?</th>
+      <th>Extension</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for submission in submissions %}
+      <tr>
+        <td>{{ submission.branch.name }}</td>
+        <td>{{ submission.month|date:"F Y" }}</td>
+        <td>{{ submission.submitted_by }}</td>
+        <td>
+          {% if submission.finalized %}
+            ✅
+          {% else %}
+            ❌
+          {% endif %}
+        </td>
+        <td>
+          {% if submission.forwarded_to_monitoring %}
+            ✅
+          {% else %}
+            ❌
+          {% endif %}
+        </td>
+        <td>
+          {% if submission.extended_until %}
+            Until {{ submission.extended_until }}
+          {% else %}
+            None
+          {% endif %}
+        </td>
+        <td>
+          <a href="{% url 'BranchInspection:view_submission_detail' submission.id %}" class="btn btn-sm btn-primary">View</a>
+          {% if not submission.forward_to_monitoring %}
+<form method="post" action="{% url 'BranchInspection:forward_to_monitoring' submission.id %}" style="display:inline;">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-sm btn-success">Forward</button>
+</form>
+            <a href="{% url 'BranchInspection:set_extension' submission.id %}" class="btn btn-sm btn-warning">Extend</a>
+          {% endif %}
+        </td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="7">No submissions found.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

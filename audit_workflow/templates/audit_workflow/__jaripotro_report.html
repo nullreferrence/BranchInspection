@@ -1,0 +1,27 @@
+{% extends 'audit_workflow/base.html' %}
+
+{% block content %}
+<h2>Jaripotro Report - {{ submission.branch.name }} </h2>
+<h2> ({{ submission.audit_type }})</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>অনুচ্ছেদ নম্বর</th>
+            <th>অনুচ্ছেদওয়ারী মন্তব্য/প্রস্তাবনা</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in report_rows %}
+        <tr>
+            <td>{{ row.item_nos }}</td>
+            <td>{{ row.comment_text }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">No manager comments found for this audit.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

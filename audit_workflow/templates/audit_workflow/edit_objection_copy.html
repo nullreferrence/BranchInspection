@@ -1,0 +1,189 @@
+{% extends "audit_workflow/base.html" %}
+
+{% block content %}
+
+<h2>Edit Objection for {{ objection.items.itemName }}</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <h3>Objection Details</h3>
+    {{ objection_form.as_p }}
+
+    <input type="hidden" name="upload_set-TOTAL_FORMS" value="{{ upload_formset.management_form.TOTAL_FORMS.value }}" id="id_upload_set-TOTAL_FORMS">
+    <input type="hidden" name="person_set-TOTAL_FORMS" value="{{ person_formset.management_form.TOTAL_FORMS.value }}" id="id_person_set-TOTAL_FORMS">
+
+    <h3>Uploaded Files</h3>
+    {{ upload_formset.management_form }}
+    <div id="upload-form-list">
+        {% for upload_form in upload_formset %}
+            <div class="upload-form">
+                {{ upload_form.as_p }}
+                {% if upload_form.instance.document %}
+                    <p>
+                        <a href="{{ upload_form.instance.document.url }}" target="_blank">
+                            {{ upload_form.instance.file_description }}
+                        </a>
+                        <button type="button" class="btn btn-danger btn-sm delete-file" data-form-id="{{ forloop.counter0 }}">
+                            Delete
+                        </button>
+                    </p>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <div id="upload-form-template" style="display: none;">
+            <div class="upload-form">
+                {{ upload_formset.empty_form.as_p }}
+            </div>
+        </div>
+    </div>
+    <button type="button" id="add-file-form" class="btn btn-secondary">Add File</button>
+
+    <h3>Personnel Decision</h3>
+    <div>
+        <label>Do you want to fill out the employee form?</label><br>
+        <input type="radio" name="show_person_form" value="yes" id="show_person_yes"> Yes
+        <input type="radio" name="show_person_form" value="no" id="show_person_no" checked> No
+    </div>
+
+    <div id="person-form-container" style="display: none;">
+        {{ person_formset.management_form }}
+        <div id="person-form-list">
+            {% for person_form in person_formset %}
+                <div class="person-form">
+                    {{ person_form.as_p }}
+                    <button type="button" class="btn btn-danger btn-sm delete-person" data-form-id="{{ forloop.counter0 }}">
+                        Remove
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div id="person-form-template" style="display: none;">
+            <div class="person-form">
+                {{ person_formset.empty_form.as_p }}
+            </div>
+        </div>
+        <button type="button" id="add-person-form" class="btn btn-secondary">Add Person</button>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="{% url 'audit_workflow:audit_summary' objection.submission.id %}" class="btn btn-secondary">Cancel</a>
+</form>
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        console.log("✅ jQuery is fully loaded and ready!");
+
+        // Initialize CKEditor for the description field
+        if ($('#id_description').length) {
+            ClassicEditor
+                .create(document.querySelector('#id_description'))
+                .then(editor => {
+                    $(".ck-label").remove();
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+
+        // Debugging: Check if the button exists
+        console.log("Checking if #add-file-form exists:", $('#add-file-form').length);
+        console.log("Checking if #add-person-form exists:", $('#add-person-form').length);
+
+        // Show personnel form if 'yes' is selected initially
+        if ($('input[name="show_person_form"]:checked').val() === "yes") {
+            $('#person-form-container').show();
+        }
+
+        // Toggle Personnel Form visibility
+        $('input[name="show_person_form"]').change(function() {
+            if ($(this).val() === "yes") {
+                $('#person-form-container').show();
+            } else {
+                $('#person-form-container').hide();
+            }
+        });
+
+        // Add new upload form dynamically
+        $('#add-file-form').click(function() {
+            console.log("Add File button clicked!");
+
+            var totalForms = $('#id_upload_set-TOTAL_FORMS');
+            var formIdx = parseInt(totalForms.val(), 10);
+
+            console.log("Current form index for files:", formIdx);
+
+            // Clone the template row
+            var newForm = $('#upload-form-template .upload-form').clone(true);
+
+            newForm.find(':input').each(function() {
+                var name = $(this).attr('name').replace(/__prefix__-/g, formIdx + '-');
+                var id = 'id_' + name;
+                $(this).attr({'name': 'upload_set-' + name, 'id': id}).attr('value', ''); // Clear value, add upload_set- prefix
+                if ($(this).attr('type') === 'checkbox') {
+                    $(this).prop('checked', false); // Uncheck checkboxes
+                }
+                console.log("Updated input:", 'upload_set-' + name, id);
+            });
+
+            newForm.find('input[type="checkbox"]').prop('checked', false);
+            newForm.appendTo('#upload-form-list');
+            totalForms.val(formIdx + 1);
+
+            // Update the hidden TOTAL_FORMS input
+            $('input[name="upload_set-TOTAL_FORMS"]').val(formIdx + 1);
+        });
+
+        // Add new person form dynamically
+        $('#add-person-form').click(function() {
+            console.log("Add Person button clicked!");
+
+            var totalForms = $('#id_person_set-TOTAL_FORMS');
+            var formIdx = parseInt(totalForms.val(), 10);
+
+            console.log("Current form index for people:", formIdx);
+
+            // Clone the template row
+            var newForm = $('#person-form-template .person-form').clone(true);
+
+            newForm.find(':input').each(function() {
+                var name = $(this).attr('name').replace(/__prefix__-/g, formIdx + '-');
+                var id = 'id_' + name;
+                $(this).attr({'name': 'person_set-' + name, 'id': id}).attr('value', ''); // Clear value, add person_set- prefix
+                if ($(this).attr('type') === 'checkbox') {
+                    $(this).prop('checked', false);
+                }
+                console.log("Updated input:", 'person_set-' + name, id);
+            });
+
+            newForm.find('.delete-person').attr('data-form-id', formIdx);
+            newForm.appendTo('#person-form-list');
+
+            totalForms.val(formIdx + 1);
+
+            // Update the hidden TOTAL_FORMS input
+            $('input[name="person_set-TOTAL_FORMS"]').val(formIdx + 1);
+        });
+
+        // Handle file deletion
+        $(document).on('click', '.delete-file', function() {
+            console.log("Delete File button clicked!");
+
+            $(this).closest('.upload-form').find('input[type="checkbox"]').prop('checked', true);
+            $(this).closest('.upload-form').hide();
+        });
+
+        // Handle person deletion
+        $(document).on('click', '.delete-person', function() {
+            console.log("Delete Person button clicked!");
+
+            $(this).closest('.person-form').find('input[type="checkbox"]').prop('checked', true);
+            $(this).closest('.person-form').hide();
+        });
+    });
+</script>
+
+{% endblock %}

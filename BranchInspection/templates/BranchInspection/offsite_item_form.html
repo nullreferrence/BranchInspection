@@ -1,0 +1,66 @@
+{% extends "BranchInspection/internal_base.html" %}
+{% load custom_filters %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">{{ title }}</h4>
+    </div>
+    <div class="card-body">
+      <form method="post" novalidate>
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="id_item_no">Item Number</label>
+          {{ form.item_no|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="id_name">Item Name</label>
+          {{ form.name|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="id_item_type">Item Type</label>
+          {{ form.item_type|add_class:"form-select" }}
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="id_predefined_replies">Predefined Replies</label>
+          {{ form.predefined_replies|add_class:"form-control" }}
+        </div>
+
+        <div class="mt-4">
+          <button type="submit" class="btn btn-success">💾 Save</button>
+          <a href="{% url 'BranchInspection:manage_offsite_items' %}" class="btn btn-secondary">🔙 Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ CKEditor Script -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.getElementById('id_name')) {
+      ClassicEditor
+        .create(document.querySelector('#id_name'))
+        .catch(error => {
+          console.error(error);
+        });
+    }
+
+    if (document.getElementById('id_predefined_replies')) {
+      ClassicEditor
+        .create(document.querySelector('#id_predefined_replies'))
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  });
+</script>
+
+{% endblock %}

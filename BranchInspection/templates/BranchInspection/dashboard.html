@@ -1,0 +1,177 @@
+{% extends "BranchInspection/internal_base.html" %}
+{% load custom_filters %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<a href="{% url 'BranchInspection:submission_overview' %}" class="btn btn-secondary mb-3">
+  <i class="bi bi-arrow-left"></i> Back to Submission Overview
+</a>
+
+<h2 class="mb-4 text-center">
+  Branch: {{ submission.branch.name }}<br>
+  Month: {{ submission.month|date:"F Y" }}
+</h2>
+
+{% if submission.is_reply_finalized %}
+  <div class="alert alert-success text-center">
+    ✅ Final replies have been finalized by DGM Monitoring.
+  </div>
+{% elif is_monitoring_user %}
+  <div class="alert alert-info text-center">
+    ✅ You have replied to {{ replied_items }} of {{ total_items }} items.
+  </div>
+{% endif %}
+
+{% for cat_key, cat_data in categorized_items.items %}
+  <h4 class="mt-5">{{ cat_data.display_name }}</h4>
+
+  <table class="table table-striped table-bordered table-hover table-sm bg-light">
+    <thead class="table-primary">
+      <tr>
+        <th>Item No</th>
+        <th>Item Name</th>
+        <th>Branch Comments</th>
+        {% if is_crm_user %}
+          <th>Monitoring Comment</th>
+        {% elif is_monitoring_user %}
+          <th>Reply</th>
+          <th>Seen</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cat_data.items %}
+        {% with mon_reply=monitoring_reply_map|get_item:item.id %}
+        <tr {% if is_monitoring_user and not mon_reply %} style="background-color:#ffe6e6;" {% endif %}>
+          <td>{{ item.item_no }}</td>
+          <td>{{ item.name }}</td>
+          <td>
+            {% with comment_list=comment_map|get_item:item.id %}
+              {% if comment_list %}
+                <ul class="pl-3 mb-0 list-unstyled">
+                  {% for comment in comment_list %}
+                    <li>{{ comment.comment|safe }}</li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <span class="text-danger">No comment</span>
+              {% endif %}
+            {% endwith %}
+          </td>
+
+          {% if is_crm_user %}
+            <td>
+              {% if mon_reply %}
+                {{ mon_reply.reply|safe }}
+                <br><small class="text-muted">on {{ mon_reply.replied_at|date:"M d, Y H:i" }}</small>
+              {% else %}
+                <span class="text-muted">—</span>
+              {% endif %}
+            </td>
+
+          {% elif is_monitoring_user %}
+            <td>
+              {% if submission.is_reply_finalized %}
+                <div class="border p-2 bg-light">
+                  {{ mon_reply.reply|default:"—"|safe }}
+                </div>
+              {% else %}
+                <form method="POST" action="{% url 'BranchInspection:monitoring_reply_item' submission.id item.id %}" class="reply-form">
+                  {% csrf_token %}
+                  <div class="reply-block">
+                    <label><strong>Predefined Replies for "{{ item.name }}"</strong></label><br>
+                    <select onchange="setPredefinedReply('{{ item.id }}', this.value);">
+                      <option value="">-- Select a predefined reply --</option>
+                      {% for reply in item.predefined_replies|default_if_none:''|split:"|" %}
+                        <option value="{{ reply|trim }}">{{ reply|trim }}</option>
+                      {% endfor %}
+                    </select>
+
+                    <br><br>
+                    <textarea id="reply-text-{{ item.id }}" name="reply" rows="3" style="width:100%;" class="rich-text">{{ mon_reply.reply|default_if_none:"" }}</textarea>
+
+                    <div>
+                      <label>
+                        <input type="checkbox" name="seen_only"> Mark as Seen (no reply)
+                      </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-2">Save Reply</button>
+                  </div>
+                </form>
+              {% endif %}
+            </td>
+
+            <td class="text-center">
+              {% if mon_reply and mon_reply.seen %}
+                <i class="bi bi-check-circle-fill text-success fs-5"></i>
+              {% else %}
+                <i class="bi bi-x-circle text-danger fs-5"></i>
+              {% endif %}
+            </td>
+          {% endif %}
+        </tr>
+        {% endwith %}
+      {% endfor %}
+    </tbody>
+  </table>
+{% endfor %}
+
+{% if can_finalize_reply %}
+  <div class="text-center my-4">
+    <form method="post" action="{% url 'BranchInspection:finalize_branch_monitoring' submission.id %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-success btn-lg">
+        ✅ Finalize Reply
+      </button>
+    </form>
+  </div>
+{% endif %}
+
+{% if submission.is_reply_finalized and user.email == "dgmmonitoring@krishibank.org.bd" %}
+  <div class="text-center my-4">
+    <form method="post" action="{% url 'BranchInspection:undo_finalize_reply' submission.id %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">
+        🔁 Undo Finalize
+      </button>
+    </form>
+  </div>
+{% endif %}
+
+{% if is_monitoring_user and not submission.is_reply_finalized %}
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+  <script>
+    const ckeditors = {};
+
+    document.querySelectorAll('.rich-text').forEach(textarea => {
+      ClassicEditor.create(textarea)
+        .then(editor => {
+          ckeditors[textarea.id] = editor;
+        })
+        .catch(error => console.error(error));
+    });
+
+    function setPredefinedReply(itemId, text) {
+      const editor = ckeditors[`reply-text-${itemId}`];
+      if (editor) {
+        editor.setData(text);
+      } else {
+        document.getElementById(`reply-text-${itemId}`).value = text;
+      }
+    }
+
+    // Auto-scroll to next reply block after form submission
+    document.querySelectorAll('.reply-form').forEach((form, idx, forms) => {
+      form.addEventListener('submit', function () {
+        setTimeout(() => {
+          if (forms[idx + 1]) {
+            forms[idx + 1].scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 500);
+      });
+    });
+  </script>
+{% endif %}
+{% endblock %}

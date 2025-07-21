@@ -1,0 +1,135 @@
+{% extends "audit_workflow/base.html" %}
+{% load custom_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-5">
+            <h4>Item: {{ item.itemName }}</h4>
+            <p><strong>Description:</strong> {{ objection.description|default:"No Description"|safe }}</p>
+            <p><strong>Related Amount:</strong> {{ objection.amount|default:"N/A" }}</p>
+
+            {% if is_manager and objection %}
+                <div class="my-3">
+                    <a href="{% url 'audit_workflow:admin_objection_decision' objection.id %}" class="btn btn-outline-primary">
+                        ⚙️ Manage Objection
+                    </a>
+                    {% if is_closed %}
+                        <span class="text-danger ml-2">[Commenting Closed]</span>
+                    {% else %}
+                        <span class="text-success ml-2">[Commenting Open]</span>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-7">
+            <h3>Commenting on: {{ item.itemName }}</h3>
+
+            {% if is_closed %}
+                <div class="alert alert-danger">🔒 This objection is settled. Commenting is disabled.</div>
+            {% endif %}
+
+            {% if can_comment %}
+                <h4>Leave your comment:</h4>
+                <form method="post" enctype="multipart/form-data" id="commentForm">
+                    {% csrf_token %}
+                    {{ comment_form.media }}
+                    {{ comment_form|crispy }}
+                    <button type="submit" class="btn btn-primary mt-2" name="comment_form">Submit Comment</button>
+                </form>
+            {% elif has_top_level_comment %}
+                <div class="alert alert-info">You have already submitted a comment. You may reply if it’s your turn.</div>
+            {% elif is_admin and not has_top_level_comment %}
+                <div class="alert alert-warning">Only regular users can initiate a comment on this item.</div>
+            {% endif %}
+
+            <hr>
+            <h4>All Comments</h4>
+
+            {% for comment in comments %}
+                {% if not comment.parent %}
+                    <div class="card my-3 p-3">
+                        <strong>Comment {{ forloop.counter }} by {{ comment.commented_by }}</strong><br>
+                        {{ comment.comment|safe }}
+                        {% if comment.file %}
+                            <p><a href="{{ comment.file.url }}" download>📎 Download Attachment</a></p>
+                        {% endif %}
+                        <small class="text-muted">{{ comment.comment_date }}</small>
+
+                        {% for reply in comment.replies.all %}
+                            <div class="card my-2 ms-4 p-2 bg-light">
+                                <strong>Reply {{ forloop.parentloop.counter }}.{{ forloop.counter }} by {{ reply.commented_by }}</strong><br>
+                                {{ reply.comment|safe }}
+                                {% if reply.file %}
+                                    <p><a href="{{ reply.file.url }}" download>📎 Download Attachment</a></p>
+                                {% endif %}
+                                <small class="text-muted">{{ reply.comment_date }}</small>
+                            </div>
+                        {% endfor %}
+
+                        {% if not is_closed and can_reply_dict|get_item:comment.id %}
+                            {% with reply_form=reply_forms|get_item:comment.id %}
+                                <form method="post" enctype="multipart/form-data" class="mt-2 ms-4" id="replyForm_{{ comment.id }}">
+                                    {% csrf_token %}
+                                    {{ reply_form.media }}
+
+{% if is_manager %}
+    <div class="mb-2">
+        <label for="{{ reply_form.prefix }}-predefined_reply" class="form-label">📌 Choose a predefined comment:</label>
+        <select name="{{ reply_form.prefix }}-predefined_reply" class="form-control">
+            <option value="">-- Select a predefined reply --</option>
+            {% for text in predefined_reply %}
+                <option value="{{ text }}" {% if text == reply_form.predefined_reply %} selected {% endif %}>{{ text }}</option>
+            {% endfor %}
+        </select>
+    </div>
+{% endif %}
+
+
+                                    {{ reply_form|crispy }}
+                                    <input type="hidden" name="parent_id" value="{{ comment.id }}">
+<button type="submit" class="btn btn-sm btn-success mt-1" name="reply_submit" value="{{ comment.id }}">Reply</button>
+                                </form>
+                            {% endwith %}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% empty %}
+                <p>No comments yet. Be the first to comment if you are a regular user.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script>
+    const editors = {};
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize CKEditor and store instances
+        document.querySelectorAll('textarea').forEach(function (textarea) {
+            ClassicEditor.create(textarea)
+                .then(editor => {
+                    editors[textarea.name] = editor;
+                })
+                .catch(error => console.error(error));
+        });
+
+        // Manager predefined reply auto-fill
+        document.querySelectorAll("select[name$='predefined_reply']").forEach(function (dropdown) {
+            dropdown.addEventListener("change", function () {
+                const selected = this.value;
+                const prefix = this.name.split('-')[0];
+                const textareaName = `${prefix}-comment`;
+
+                if (editors[textareaName] && selected) {
+                    editors[textareaName].setData(selected);  // ✅ Update via CKEditor API
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

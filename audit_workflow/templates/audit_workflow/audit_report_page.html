@@ -1,0 +1,75 @@
+{% extends "audit_workflow/base.html" %}
+
+{% block content %}
+<div class="container mt-4 p-4 shadow-lg bg-white rounded">
+    <div class="text-center">
+        <h1 class="text-primary">Audit Report - {{ audit.id }}</h1>
+        <p><strong>Branch:</strong> {{ audit.branch.name }}</p>
+        <p><strong>Audit Period:</strong> {{ audit.start_date }} to {{ audit.end_date }}</p>
+        <p><strong>Final Submission Date:</strong> {{ audit.submission_date }}</p>
+        <a href="{% url 'audit_workflow:generate_audit_report' audit.id %}" class="btn btn-success my-3">
+            📄 Download as Word
+        </a>
+    </div>
+
+    <hr>
+
+    <h2 class="text-secondary">Audit Items</h2>
+
+    {% if audit_data %}
+        {% for data in audit_data %}
+        <div class="mb-4">
+            <h3 class="bg-dark text-white p-2 rounded">{{ forloop.counter }}. {{ data.item.itemName }}</h3>
+
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if data.objections %}
+                        {% for objection in data.objections %}
+                        <tr>
+                            <td>{{ objection.description|safe }}</td>
+                            <td>৳{{ objection.amount }}</td>
+                            <td>
+                                {% with data.comments|dictsort:"comment_date" as sorted_comments %}
+                                    {% if sorted_comments %}
+                                        <ul class="list-unstyled">
+                                            {% for comment in sorted_comments %}
+                                            <li>
+                                                <strong>{{ comment.commented_by.username }}</strong>: {{ comment.comment|safe }}
+                                                <br>
+                                                <small class="text-muted">{{ comment.comment_date|date:"Y-m-d H:i" }}</small>
+                                                {% if comment.file %}
+                                                    <br>
+                                                    <a href="{{ comment.file.url }}" class="btn btn-sm btn-primary" target="_blank">📂 View Attachment</a>
+                                                {% endif %}
+                                            </li>
+                                            <hr>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <p class="text-muted">No comments available</p>
+                                    {% endif %}
+                                {% endwith %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="3" class="text-center text-danger">No objections found for this item.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="alert alert-danger">⚠️ No audit items found for this audit.</p>
+    {% endif %}
+</div>
+{% endblock %}

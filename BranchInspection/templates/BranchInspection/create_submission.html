@@ -1,0 +1,9 @@
+{% block content %}
+  <h2>Create Monthly Submission</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="month">Select Month:</label>
+    <input type="month" id="month" name="month" required>
+    <button type="submit">Create Submission</button>
+  </form>
+{% endblock %}

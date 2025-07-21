@@ -1,0 +1,13 @@
+<div class="comment">
+    <p><strong>{{ comment.commented_by }}:</strong> {{ comment.comment }}</p>
+    <p><small>{{ comment.comment_date }}</small></p>
+    {% if comment.replies.all %}
+        <div class="replies">
+            {% for reply in comment.replies.all %}
+                {% include 'audit_workflow/comment.html' with comment=reply audit=audit %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    <a href="{% url 'audit_workflow:audit_detail' audit.id %}?item_id={{ comment.item.id }}&parent_comment={{ comment.id }}" class="btn btn-sm btn-link reply-link" data-parent-id="{{ comment.id }}">Reply</a>  </head>  {# Add data-parent-id #}
+</div>
+<hr>

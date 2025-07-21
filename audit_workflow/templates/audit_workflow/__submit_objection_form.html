@@ -1,0 +1,121 @@
+
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" id="objection-form">
+    {% csrf_token %}
+    {{ objection_form.as_p }}
+
+    <h2>Upload Files (Optional)</h2>
+    {{ upload_formset.management_form }}
+    <div id="upload-form-list">
+        {% for form in upload_formset %}
+            {{ form.id }}
+            <div class="upload-form bg-light position-relative">
+                <div class="form-group">
+                    {{ form.file_description.label_tag }}
+                    {{ form.file_description }}
+                </div>
+                <div class="form-group">
+                    {{ form.document.label_tag }}
+                    {{ form.document }}
+                    {% if form.instance.document %}
+                        <p>📎 <a href="{{ form.instance.document.url }}" target="_blank">{{ form.instance.document.name }}</a></p>
+                    {% endif %}
+                </div>
+                {% if form.DELETE %}
+                    <div class="form-check">
+                        {{ form.DELETE }} {{ form.DELETE.label_tag }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <button type="button" id="add-file-form" class="btn btn-secondary mb-4">+ Add File</button>
+
+    <h3>Is a Person Involved?</h3>
+    {{ decision_form.as_p }}
+
+    <div id="person_formset" {% if decision_form.initial.isEmployee_involve != "yes" and decision_form.initial.isEmployee_involve != True %}style="display:none;"{% endif %}>
+        <h3>Convicted Personnel Details</h3>
+        {{ person_formset.management_form }}
+        <div id="person-form-list">
+            {% for form in person_formset %}
+                <div class="person-form bg-light">
+                    {{ form.as_p }}
+                    {% if form.DELETE %}
+                        <div class="form-check">
+                            {{ form.DELETE }} {{ form.DELETE.label_tag }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" id="add-person-form" class="btn btn-outline-primary mb-3">+ Add Person</button>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Objection</button>
+</form>
+
+<!-- Templates for dynamic formsets -->
+<div id="upload-form-template" style="display: none;">
+    <div class="upload-form bg-light">
+        <div class="form-group">
+            <label>File description:</label>
+            <input type="text" name="upload_set-__prefix__-file_description" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Document:</label>
+            <input type="file" name="upload_set-__prefix__-document" class="form-control">
+        </div>
+    </div>
+</div>
+
+<div id="person-form-template" style="display: none;">
+    <div class="person-form bg-light">
+        {% for field in person_formset.empty_form %}
+            <div class="form-group">
+                {{ field.label_tag }} {{ field }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+jQuery(document).ready(function ($) {
+    // CKEditor
+    if ($('#id_description').length) {
+        ClassicEditor.create(document.querySelector('#id_description')).catch(console.error);
+    }
+
+    // Toggle personnel section
+    function togglePersonFormset() {
+        const selected = $("input[name='isEmployee_involve']:checked").val();
+        $("#person_formset").toggle(selected === "True" || selected === "yes");
+    }
+    togglePersonFormset();
+    $("input[name='isEmployee_involve']").on("change", togglePersonFormset);
+
+    // Add upload
+    $('#add-file-form').click(function () {
+        const totalForms = $('#id_upload_set-TOTAL_FORMS');
+        const formIdx = parseInt(totalForms.val(), 10);
+        const newForm = $('#upload-form-template').html().replace(/__prefix__/g, formIdx);
+        $('#upload-form-list').append(newForm);
+        totalForms.val(formIdx + 1);
+    });
+
+    // Add person
+    $('#add-person-form').click(function () {
+        const totalForms = $('#id_person_set-TOTAL_FORMS');
+        const formIdx = parseInt(totalForms.val(), 10);
+        const newFormHtml = $('#person-form-template').html().replace(/__prefix__/g, formIdx);
+        $('#person-form-list').append(newFormHtml);
+        totalForms.val(formIdx + 1);
+    });
+});
+</script>
+{% endblock %}

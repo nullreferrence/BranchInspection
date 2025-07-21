@@ -1,0 +1,199 @@
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="container mt-4">
+
+  <h2 class="mb-3">📊 Branch Inspection Submission Overview</h2>
+
+  {# 🔔 Late Submission Warning (Branch User) #}
+  {% if late_submission_alert %}
+    <div class="alert alert-warning">
+      ⚠️ <strong>Notice:</strong> You have not submitted this month’s inspection and today is past the 10th. Please request CRM for permission.
+    </div>
+  {% endif %}
+
+  {# 🔍 Region/Division Filter for DGM Monitoring #}
+  {% if user_role == 'dgmmonitoring' %}
+    <form method="get" class="form-inline mb-3">
+      <label for="region">Region:</label>
+      <select name="region" class="form-control mx-2">
+        <option value="">All</option>
+        {% for region in all_regions %}
+          <option value="{{ region }}" {% if region == request.GET.region %}selected{% endif %}>{{ region }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="division">Division:</label>
+      <select name="division" class="form-control mx-2">
+        <option value="">All</option>
+        {% for division in all_divisions %}
+          <option value="{{ division }}" {% if division == request.GET.division %}selected{% endif %}>{{ division }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit" class="btn btn-sm btn-primary">Filter</button>
+    </form>
+  {% endif %}
+
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Branch</th>
+        <th>Region</th>
+        <th>Division</th>
+        <th>Status</th>
+        <th>Extended Till</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in dashboard_data %}
+        {% with submission=entry.submission %}
+        <tr class="
+          {% if submission and submission.forwarded_to_dgm %} table-success
+          {% elif submission and submission.returned_by_crm %} table-warning
+          {% elif submission and submission.submitted %} table-info
+          {% else %} table-danger
+          {% endif %}
+        ">
+          <td>{{ entry.branch.name }}</td>
+          <td>{{ entry.branch.region }}</td>
+          <td>{{ entry.branch.division }}</td>
+          <td>
+            {% if submission %}
+              {% if submission.forwarded_to_dgm %}
+                ✅ Forwarded
+              {% elif submission.returned_by_crm %}
+                🔁 Returned
+              {% elif submission.submitted %}
+                ⏳ Submitted
+              {% else %}
+                ❌ Not Submitted
+              {% endif %}
+            {% else %}
+              ❌ Not Submitted
+            {% endif %}
+          </td>
+
+          <td>
+            {% if entry.extension_deadline %}
+              {{ entry.extension_deadline|date:"M d" }}
+            {% else %}
+              -
+            {% endif %}
+          </td>
+
+          <td>
+            {# Branch User View #}
+            {% if user_role == 'branch' and entry.branch.id == user.branch_id %}
+              {% if submission %}
+                <a href="{% url 'inspection_dashboard' submission.id %}" class="btn btn-sm btn-outline-primary">📄 View</a>
+              {% elif entry.can_submit %}
+                <a href="{% url 'start_inspection' %}" class="btn btn-sm btn-success">Start Submission</a>
+              {% else %}
+                <span class="text-muted">Waiting for permission</span>
+              {% endif %}
+
+            {# CRM View #}
+            {% elif user_role == 'crm' and entry.branch.region == user.region %}
+              {% if submission %}
+                <a href="{% url 'inspection_dashboard' submission.id %}" class="btn btn-sm btn-outline-primary">📄 View</a>
+                {% if not submission.forwarded_to_dgm %}
+                  <button class="btn btn-sm btn-warning return-btn" data-id="{{ submission.id }}">Return</button>
+                  <button class="btn btn-sm btn-success forward-btn" data-id="{{ submission.id }}">Forward</button>
+                {% endif %}
+              {% elif not submission %}
+                <select class="grant-extension form-control form-control-sm d-inline w-auto" data-branch-id="{{ entry.branch.id }}">
+                  <option value="">Grant Extension</option>
+                  {% for i in "1234567" %}
+                    <option value="{{ i }}">{{ i }} day{{ i|pluralize }}</option>
+                  {% endfor %}
+                </select>
+              {% endif %}
+
+            {# DGM Monitoring View #}
+            {% elif user_role == 'dgmmonitoring' %}
+              {% if submission %}
+                <a href="{% url 'inspection_dashboard' submission.id %}" class="btn btn-sm btn-outline-primary">📄 View</a>
+              {% else %}
+                <span class="text-muted">No submission</span>
+              {% endif %}
+            {% else %}
+              <span class="text-muted">No actions available</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endwith %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{# ✅ CSRF Token for JavaScript use #}
+<form style="display:none;">{% csrf_token %}</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// 🔒 CSRF setup
+function getCSRFToken() {
+    return document.querySelector('[name=csrfmiddlewaretoken]').value;
+}
+
+// ✅ Grant Extension AJAX
+$(document).on('change', '.grant-extension', function () {
+    const branchId = $(this).data('branch-id');
+    const days = $(this).val();
+    if (!days) return;
+
+    $.post(`/branch-inspection/set-extension/${branchId}/`, {
+        extra_days: days,
+        csrfmiddlewaretoken: getCSRFToken()
+    })
+    .done(() => {
+        alert(`Extension granted for ${days} day(s).`);
+        location.reload();
+    })
+    .fail(() => {
+        alert('Failed to grant extension.');
+    });
+});
+
+// ✅ Forward Submission AJAX
+$(document).on('click', '.forward-btn', function () {
+    const id = $(this).data('id');
+    if (!confirm('Forward this submission to DGM Monitoring?')) return;
+
+    $.post(`/branch-inspection/forward-to-monitoring/${id}/`, {
+        csrfmiddlewaretoken: getCSRFToken()
+    })
+    .done(() => {
+        alert('Submission forwarded.');
+        location.reload();
+    })
+    .fail(() => {
+        alert('Failed to forward submission.');
+    });
+});
+
+// ✅ Grant Extension AJAX
+$(document).on('change', '.grant-extension', function () {
+    const branchId = $(this).data('branch-id');
+    const days = $(this).val();
+    if (!days || !branchId) return;
+
+    $.post(`/BranchInspection/manager/submission/${branchId}/set-extension/`, {
+        extra_days: days,
+        csrfmiddlewaretoken: getCSRFToken()
+    })
+    .done(() => {
+        alert(`✅ Extension granted for ${days} day(s).`);
+        location.reload();
+    })
+    .fail(() => {
+        alert('❌ Failed to grant extension.');
+    });
+});
+
+</script>
+{% endblock %}

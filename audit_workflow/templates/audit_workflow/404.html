@@ -1,0 +1,7 @@
+{% extends 'audit_workflow/base.html' %}  </head>  {# Or your base template #}
+
+{% block content %}
+    <h1>Page Not Found</h1>
+    <p>The page you were looking for could not be found.</p>
+    <a href="{% url 'audit_workflow:dashboard' %}">Go back to Dashboard</a>
+{% endblock %}

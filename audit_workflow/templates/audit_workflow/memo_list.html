@@ -1,0 +1,7 @@
+<h1>Memo List</h1>
+
+<ul>
+    {% for memo in memos %}
+        <li>{{ memo.memo_text }}</li>  {# Or whatever attributes you want to display #}
+    {% endfor %}
+</ul>

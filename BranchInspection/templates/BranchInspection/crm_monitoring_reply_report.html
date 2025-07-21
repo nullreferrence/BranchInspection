@@ -1,0 +1,59 @@
+{% extends "BranchInspection/internal_base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h3 class="mb-4">🗂 মনিটরিং বিভাগের মন্তব্য অনুযায়ী শাখা প্রতিবেদন</h3>
+
+  {% if type_wise_reports %}
+    {% for report in type_wise_reports %}
+      <h5 class="mt-5"> {{ report.item_type }}</h5>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark text-center">
+          <tr>
+            <th>ক্রঃ নং</th>
+            <th>অনিয়ম সংশ্লিষ্ট শাখাসমূহ</th>
+            <th>পরিদর্শন প্রতিবেদনে অনিয়ম</th>
+            <th>মনিটরিং বিভাগের মন্তব্য/পরামর্শ</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in report.rows %}
+            <tr>
+              <td class="text-center">{{ row.serial }}</td>
+              <td>{{ row.branches|join:" এবং " }}।</td>
+              <td>
+                {% for item in row.items %}
+                  {{ item }}<br>
+                {% endfor %}
+              </td>
+              <td>{{ row.reply|linebreaks }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endfor %}
+  {% else %}
+    <div class="alert alert-info">এই অঞ্চলের জন্য কোনো মনিটরিং মন্তব্য পাওয়া যায়নি।</div>
+  {% endif %}
+
+{% if can_finalize %}
+  <form method="post" action="{% url 'BranchInspection:finalize_dgm_region' %}" style="display:inline;">
+    {% csrf_token %}
+    <input type="hidden" name="region" value="{{ region }}">
+    <input type="hidden" name="division" value="{{ division }}">
+    <button type="submit" class="btn btn-success">
+      ✅ Finalize Entire Region
+    </button>
+  </form>
+{% else %}
+  <button class="btn btn-secondary" disabled title="Not all submissions are finalized by Monitoring">
+    🚫 Finalize Entire Region (Incomplete)
+  </button>
+{% endif %}
+{% if partial_warning %}
+  <div class="alert alert-warning">
+    ⚠️ Not all branches have finalized their replies. This report may be incomplete.
+  </div>
+{% endif %}
+
+</div>
+{% endblock %}

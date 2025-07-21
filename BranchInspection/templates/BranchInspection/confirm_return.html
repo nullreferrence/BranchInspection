@@ -1,0 +1,11 @@
+
+{% block content %}
+<h3>Return Submission to Branch</h3>
+<p>Are you sure you want to return the submission for {{ submission.branch.name }} ({{ submission.month|date:"F Y" }}) back to the branch for revision?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-warning">Return to Branch</button>
+  <a href="{% url 'BranchInspection:regional_manager_submission_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

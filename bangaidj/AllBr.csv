@@ -1,0 +1,1040 @@
+id,password,last_login,email,active,staff,admin,timestamp,branch,branch_code,region,division
+1,12345678,,mgrbadhalbazar@krishibank.org.bd,1,1,0,50:20.2,BADHAL BAZAR,1408,BAGERHAT,Khulna
+2,12345678,,mgrbagerhat@krishibank.org.bd,1,1,0,50:20.2,BAGERHAT,1401,BAGERHAT,Khulna
+3,12345678,,mgrcnbbazar@krishibank.org.bd,1,1,0,50:20.2,C&B BAZAR,1421,BAGERHAT,Khulna
+4,12345678,,mgrchaksreebazar@krishibank.org.bd ,1,1,0,50:20.2,CHAKSREE BAZAR,1411,BAGERHAT,Khulna
+5,12345678,,mgrchitalmaribazar@krishibank.org.bd,1,1,0,50:20.2,CHITALMARI BAZAR,1409,BAGERHAT,Khulna
+6,12345678,,mgrdaibanchahati@krishibank.org.bd,1,1,0,50:20.2,DAIBAGYA HATI,1419,BAGERHAT,Khulna
+7,12345678,,mgrdargah@krishibank.org.bd,1,1,0,50:20.2,DARGAH,1402,BAGERHAT,Khulna
+8,12345678,,mgrfakirhat@krishibank.org.bd,1,1,0,50:20.2,FAKIR HAT,1403,BAGERHAT,Khulna
+9,12345678,,mgrfaltitabazar@krishibank.org.bd,1,1,0,50:20.2,FALTITA BAZAR,1420,BAGERHAT,Khulna
+10,12345678,,mgrfulhatabazar@krishibank.org.bd,1,1,0,50:20.2,FULHATA BAZAR,1414,BAGERHAT,Khulna
+11,12345678,,mgrgajaliabazar@krishibank.org.bd,1,1,0,50:20.2,GAZALIA BAZAR,1407,BAGERHAT,Khulna
+12,12345678,,mgrkachua@krishibank.org.bd,1,1,0,50:20.2,KACHUA,1406,BAGERHAT,Khulna
+13,12345678,,mgrkalatalabazar@krishibank.org.bd,1,1,0,50:20.2,KALATOLA,1405,BAGERHAT,Khulna
+14,12345678,,mgrmollahat@krishibank.org.bd,1,1,0,50:20.2,MOLLA HAT,1404,BAGERHAT,Khulna
+15,12345678,,mgrmonglaport@krishibank.org.bd ,1,1,0,50:20.2,MONGLAPORT,1416,BAGERHAT,Khulna
+16,12345678,,mgrmorelgonj@krishibank.org.bd,1,1,0,50:20.2,MORRELGANJ,1412,BAGERHAT,Khulna
+17,12345678,,mgrmukkhayit@krishibank.org.bd ,1,1,0,50:20.2,MUKHAIT (TALESHWAR),1418,BAGERHAT,Khulna
+18,12345678,,mgrrampal@krishibank.org.bd,1,1,0,50:20.2,RAMPAL,1410,BAGERHAT,Khulna
+19,12345678,,mgrraiyendabazar@krishibank.org.bd,1,1,0,50:20.2,RAYENDA BAZAR,1415,BAGERHAT,Khulna
+20,12345678,,mgrsannashibazar@krishibank.org.bd,1,1,0,50:20.2,SONNASHI BAZAR,1413,BAGERHAT,Khulna
+21,12345678,,mgrtownnoapara@krishibank.org.bd,1,1,0,50:20.2,TOWN NOAPARA,1417,BAGERHAT,Khulna
+22,12345678,,mgralikadam@krishibank.org.bd,1,1,0,50:20.2,ALIKADAM,3119,BANDARBAN,Chattogram
+23,12345678,,mgraziznagar@krishibank.org.bd,1,1,0,50:20.2,AZIZ NAGAR,3118,BANDARBAN,Chattogram
+24,12345678,,mgrbbaishari@krishibank.org.bd,1,1,0,50:20.2,BAICHARI,3121,BANDARBAN,Chattogram
+25,12345678,,mgrbandarban@krishibank.org.bd,1,1,0,50:20.2,BANDARBAN,3201,BANDARBAN,Chattogram
+26,12345678,,mgrlama@krishibank.org.bd,1,1,0,50:20.2,LAMA,3117,BANDARBAN,Chattogram
+27,12345678,,mgrnaikhangchari@krishibank.org.bd,1,1,0,50:20.2,NAKHYONGCHARI,3120,BANDARBAN,Chattogram
+28,12345678,,mgrrowangchari@krishibank.org.bd,1,1,0,50:20.2,ROANG CHARI,3202,BANDARBAN,Chattogram
+29,12345678,,mgrruma@krishibank.org.bd,1,1,0,50:20.2,RUMA,3204,BANDARBAN,Chattogram
+30,12345678,,mgrthanchi@krishibank.org.bd,1,1,0,50:20.2,THANCHI,3203,BANDARBAN,Chattogram
+31,,,mgramtali@krishibank.org.bd,1,1,0,50:20.2,AMTALI,606,BARGUNA,Barishal
+32,,,mgraylabazar@krishibank.org.bd,1,1,0,50:20.2,AYLA BAZAR,612,BARGUNA,Barishal
+33,,,mgrbamna@krishibank.org.bd,1,1,0,50:20.2,BAMNA,609,BARGUNA,Barishal
+34,,,mgrbarguna@krishibank.org.bd,1,1,0,50:20.2,BARGUNA,601,BARGUNA,Barishal
+35,,,mgrbetagi@krishibank.org.bd,1,1,0,50:20.2,BETAGI,603,BARGUNA,Barishal
+36,,,mgrchandkhalibarguna@krishibank.org.bd,1,1,0,50:20.2,CHANDOKHALI,604,BARGUNA,Barishal
+37,,,mgrcharduanibazar@krishibank.org.bd,1,1,0,50:20.2,CHARDUANI BAZAR,611,BARGUNA,Barishal
+38,,,mgrdowatala@krishibank.org.bd,1,1,0,50:20.2,DAUATALA,615,BARGUNA,Barishal
+39,,,mgrfuljhuribazar@krishibank.org.bd,1,1,0,50:20.2,FULJURI BAZAR,610,BARGUNA,Barishal
+40,,,mgrgourichanna@krishibank.org.bd,1,1,0,50:20.2,GOURICHANNA,616,BARGUNA,Barishal
+41,,,mgrhosnabad@krishibank.org.bd,1,1,0,50:20.2,HASHNABAD,613,BARGUNA,Barishal
+42,,,mgrkakua@krishibank.org.bd,1,1,0,50:20.2,KUKUA,608,BARGUNA,Barishal
+43,,,mgrlemua@krishibank.org.bd,1,1,0,50:20.2,LEMUA BAZAR,614,BARGUNA,Barishal
+44,,,mgrmokamia@krishibank.org.bd,1,1,0,50:20.2,MOKAMIA,605,BARGUNA,Barishal
+45,,,mgrpatharghata@krishibank.org.bd,1,1,0,50:20.2,PATHARGHATA,602,BARGUNA,Barishal
+46,,,mgrtaltalibarg@krishibank.org.bd,1,1,0,50:20.2,TALTALI,607,BARGUNA,Barishal
+47,,,mgragailjhara@krishibank.org.bd,1,1,0,50:20.2,AGOILJHARA,209,BARISHAL,Barishal
+48,,,mgrbabugonj@krishibank.org.bd,1,1,0,50:20.2,BABUGANJ,205,BARISHAL,Barishal
+49,,,"mgrbaishari@krishibank.org.bd,",1,1,0,50:20.2,BAISARI,223,BARISHAL,Barishal
+50,,,mgrbakergonj@krishibank.org.bd,1,1,0,50:20.2,BAKERGANJ,202,BARISHAL,Barishal
+51,,,mgrbanaripara@krishibank.org.bd,1,1,0,50:20.2,BANARIPARA,222,BARISHAL,Barishal
+52,,,mgrbarisal@krishibank.org.bd,1,1,0,50:20.2,BARISHAL,201,BARISHAL,Barishal
+53,,,mgrbhashanchar@krishibank.org.bd,1,1,0,50:20.2,BHASHANCHAR,212,BARISHAL,Barishal
+54,,,mgrchoygrambazar@krishibank.org.bd,1,1,0,50:20.2,CHOYGRAM BAZAR,228,BARISHAL,Barishal
+55,,,mgrgouranadi@krishibank.org.bd,1,1,0,50:20.2,GOURNADI,208,BARISHAL,Barishal
+56,,,mgrhabibpurbazar@krishibank.org.bd,1,1,0,50:20.2,HABIBPUR BAZAR,224,BARISHAL,Barishal
+57,,,hartabandor@krishibank.org.bd,1,1,0,50:20.2,HARTA BANDOR,229,BARISHAL,Barishal
+58,,,mgrhijla@krishibank.org.bd,1,1,0,50:20.2,HIZLA (K.BANDAR),216,BARISHAL,Barishal
+59,,,mgrkarfabazar@krishibank.org.bd,1,1,0,50:20.2,KARFA BAZAR,225,BARISHAL,Barishal
+60,,,mgrkazirhat@krishibank.org.bd,1,1,0,50:20.2,KAZIR HAT,219,BARISHAL,Barishal
+61,,,mgrkhasherhat@krishibank.org.bd,1,1,0,50:20.2,KHASHER HAT,215,BARISHAL,Barishal
+62,,,mgrlangutiabazar@krishibank.org.bd,1,1,0,50:20.2,LANGUTIA BAZAR,230,BARISHAL,Barishal
+63,,,mgrmoheshpurbazar@krishibank.org.bd,1,1,0,50:20.2,MOHESHPUR BAZAR,203,BARISHAL,Barishal
+64,,,mgrmahilara@krishibank.org.bd,1,1,0,50:20.2,MOHILARA,227,BARISHAL,Barishal
+65,,,Mokimabad@krishibank.org.bd,1,1,0,50:20.2,MOKIMABAD BAZAR,231,BARISHAL,Barishal
+66,,,mgrmoulvirhat@krishibank.org.bd,1,1,0,50:20.2,MOULAVIR HAT,220,BARISHAL,Barishal
+67,,,mgrmuladi@krishibank.org.bd,1,1,0,50:20.2,MULADI,214,BARISHAL,Barishal
+68,,,mgrpatarhat@krishibank.org.bd,1,1,0,50:20.2,PATARHAT,210,BARISHAL,Barishal
+69,,,mgrraipasha@krishibank.org.bd,1,1,0,50:20.2,RAIPASHA,218,BARISHAL,Barishal
+70,,,mgrratanpur@krishibank.org.bd,1,1,0,50:20.2,RATANPUR,213,BARISHAL,Barishal
+71,,,mgrsenerhat@krishibank.org.bd,1,1,0,50:20.2,SENERHAT,204,BARISHAL,Barishal
+72,,,mgrshilondia@krishibank.org.bd,1,1,0,50:20.2,SHILONDIA BAZAR,232,BARISHAL,Barishal
+73,,,mgrsholak@krishibank.org.bd,1,1,0,50:20.2,SHOLAK,207,BARISHAL,Barishal
+74,,,mgrsukhinilgonj@krishibank.org.bd,1,1,0,50:20.2,SUKHI NILGANJ,221,BARISHAL,Barishal
+75,,,mgrtaltalibari@krishibank.org.bd,1,1,0,50:20.2,TALTALI,217,BARISHAL,Barishal
+76,,,mgrulaniabazar@krishibank.org.bd,1,1,0,50:20.2,ULANIA BAZAR,211,BARISHAL,Barishal
+77,,,mgruzirpur@krishibank.org.bd,1,1,0,50:20.2,UZIRPUR,206,BARISHAL,Barishal
+78,,,mgrbhola@krishibank.org.bd,1,1,0,50:20.2,BHOLA,301,BHOLA,Barishal
+79,,,mgrborhangonjbazar@krishibank.org.bd,1,1,0,50:20.2,BORHANGONJ BAZAR,315,BHOLA,Barishal
+80,,,mgrborhanuddin@krishibank.org.bd,1,1,0,50:20.2,BORHANUDDIN,305,BHOLA,Barishal
+81,,,mgrcharfashion@krishibank.org.bd,1,1,0,50:20.2,CHARFESSION,308,BHOLA,Barishal
+82,,,mgrdakkhinaichabazar@krishibank.org.bd,1,1,0,50:20.2,DAKHIN AICHA BAZAR,316,BHOLA,Barishal
+83,,,mgrdaulatkhan@krishibank.org.bd,1,1,0,50:20.2,DAULAT KHAN,304,BHOLA,Barishal
+84,,,mgrdularhat@krishibank.org.bd,1,1,0,50:20.2,DULARHAT,309,BHOLA,Barishal
+85,,,mgrilishahat@krishibank.org.bd,1,1,0,50:20.2,ILISHA HAT,302,BHOLA,Barishal
+86,,,mgrjanatabazar@krishibank.org.bd,1,1,0,50:20.2,JANATA BAZAR,313,BHOLA,Barishal
+87,,,mgrkeramotgonjbazar@krishibank.org.bd,1,1,0,50:20.2,KERAMATGANJ BAZAR,314,BHOLA,Barishal
+88,,,mgrkunjerhat@krishibank.org.bd,1,1,0,50:20.2,KUNJER HAT,311,BHOLA,Barishal
+89,,,mgrlalmohan@krishibank.org.bd,1,1,0,50:20.2,LALMOHAN,306,BHOLA,Barishal
+90,,,mgrletrabazar@krishibank.org.bd,1,1,0,50:20.2,LETRA BAZAR,310,BHOLA,Barishal
+91,,,mgrmonpura@krishibank.org.bd,1,1,0,50:20.2,MANPURA,307,BHOLA,Barishal
+92,,,mgrmongalsikdar@krishibank.org.bd,1,1,0,50:20.2,MONGAL SIKDER,318,BHOLA,Barishal
+93,,,mgrroychand@krishibank.org.bd,1,1,0,50:20.2,ROYCHAND,312,BHOLA,Barishal
+94,,,mgrtajumuddin@krishibank.org.bd,1,1,0,50:20.2,TAZUMUDDIN,303,BHOLA,Barishal
+95,,,mgrakhaura@krishibank.org.bd,1,1,0,50:20.2,AKHAURA,2421,BRAHMANBARIA,Cumilla
+96,,,mgrashugonj@krishibank.org.bd,1,1,0,50:20.2,ASHUGANJ,2423,BRAHMANBARIA,Cumilla
+97,,,mgraushtagram@krishibank.org.bd,1,1,0,50:20.2,AUSHTAGRAM,2407,BRAHMANBARIA,Cumilla
+98,,,mgrawliabazar@krishibank.org.bd,1,1,0,50:20.2,AWLIA BAZAR,2409,BRAHMANBARIA,Cumilla
+99,,,mgrbaishmouzabazar@krishibank.org.bd,1,1,0,50:20.2,BAISHMOUZA BAZAR,2418,BRAHMANBARIA,Cumilla
+100,,,mgrbancharampur@krishibank.org.bd,1,1,0,50:20.2,BANCHARAMPUR,2428,BRAHMANBARIA,Cumilla
+101,,,mgrbishwaroad@krishibank.org.bd,1,1,0,50:20.2,BISHWA ROAD BAZAR (MAJLISHPUR),2424,BRAHMANBARIA,Cumilla
+102,,,mgrbrahmanbaria@krishibank.org.bd,1,1,0,50:20.2,BRAHMANBARIA,2401,BRAHMANBARIA,Cumilla
+103,,,mgrchandura@krishibank.org.bd,1,1,0,50:20.2,CHANDURA,2402,BRAHMANBARIA,Cumilla
+104,,,mgrchargachbazar@krishibank.org.bd,1,1,0,50:20.2,CHARGACH BAZAR,2433,BRAHMANBARIA,Cumilla
+105,,,mgrchatalpar@krishibank.org.bd,1,1,0,50:20.2,CHATALPAR,2420,BRAHMANBARIA,Cumilla
+106,,,mgrchaiyarkuribazar@krishibank.org.bd,1,1,0,50:20.2,CHAYARKURY BAZAR,2425,BRAHMANBARIA,Cumilla
+107,,,mgrgopinathpurbazar@krishibank.org.bd,1,1,0,50:20.2,GOPINATHPUR BAZAR,2435,BRAHMANBARIA,Cumilla
+108,,,mgrgosaipur@krishibank.org.bd,1,1,0,50:20.2,GOSHAIRPUR,2416,BRAHMANBARIA,Cumilla
+109,,,mgrjibongonjbazar@krishibank.org.bd,1,1,0,50:20.2,JIBANGANJ BAZAR,2430,BRAHMANBARIA,Cumilla
+110,,,mgrkaitala@krishibank.org.bd,1,1,0,50:20.2,KAITALA,2432,BRAHMANBARIA,Cumilla
+111,,,mgrkalikaccha@krishibank.org.bd,1,1,0,50:20.2,KALIKACHCHA,2412,BRAHMANBARIA,Cumilla
+112,,,mgrkasba@krishibank.org.bd,1,1,0,50:20.2,KASHBA,2422,BRAHMANBARIA,Cumilla
+113,,,mgrkutibazar@krishibank.org.bd,1,1,0,50:20.2,KUTI BAZAR,2434,BRAHMANBARIA,Cumilla
+114,,,mgrlalpurbazar@krishibank.org.bd,1,1,0,50:20.2,LALPUR BAZAR,2404,BRAHMANBARIA,Cumilla
+115,,,mgrlaurfatehpur@krishibank.org.bd,1,1,0,50:20.2,LAURFATEPUR,2426,BRAHMANBARIA,Cumilla
+116,,,mgrnabinagar@krishibank.org.bd,1,1,0,50:20.2,NABINAGAR,2415,BRAHMANBARIA,Cumilla
+117,,,mgrnasirnagar@krishibank.org.bd,1,1,0,50:20.2,NASIRNAGAR,2419,BRAHMANBARIA,Cumilla
+118,,,mgrnoorpurbazar@krishibank.org.bd,1,1,0,50:20.2,NOORPUR BAZAR,2405,BRAHMANBARIA,Cumilla
+119,,,mgrsarail@krishibank.org.bd,1,1,0,50:20.2,SARAIL,2410,BRAHMANBARIA,Cumilla
+120,,,mgrsatbargabazar@krishibank.org.bd,1,1,0,50:20.2,SATBARGA BAZAR,2403,BRAHMANBARIA,Cumilla
+121,,,mgrsatmorabazar@krishibank.org.bd,1,1,0,50:20.2,SATMURA BAZAR,2436,BRAHMANBARIA,Cumilla
+122,,,mgrsaifullakandibazar@krishibank.org.bd,1,1,0,50:20.2,SOYFULLAHKANDI BAZAR (MIRPUR BAZAR),2429,BRAHMANBARIA,Cumilla
+123,,,mgraynatali@krishibank.org.bd,1,1,0,50:20.2,AINATALI BAZAR,2521,CHANDPUR,Cumilla
+124,,,mgrbsticshilpanagari@krishibank.org.bd,1,1,0,50:20.2,ASHIKHATI ,2526,CHANDPUR,Cumilla
+125,,,mgrbagrabazar@krishibank.org.bd,1,1,0,50:20.2,BAGRABAZAR,2515,CHANDPUR,Cumilla
+126,,,mgrbakilabazar@krishibank.org.bd,1,1,0,50:20.2,BAKILA BAZAR,2518,CHANDPUR,Cumilla
+127,,,mgrpuranbazar@krishibank.org.bd,1,1,0,50:20.2,CH.PURAN BAZAR,2502,CHANDPUR,Cumilla
+128,,,mgrchandpur@krishibank.org.bd,1,1,0,50:20.2,CHANDPUR,2501,CHANDPUR,Cumilla
+129,,,mgrchandrabazar@krishibank.org.bd,1,1,0,50:20.2,CHANDRA BAZAR,2508,CHANDPUR,Cumilla
+130,,,mgrchangerchar@krishibank.org.bd,1,1,0,50:20.2,CHANGAR CHAR,2510,CHANDPUR,Cumilla
+131,,,mgrcharbhairabibazar@krishibank.org.bd,1,1,0,50:20.2,CHAR BHAIRABI,2517,CHANDPUR,Cumilla
+132,,,mgrchotosundarbazar@krishibank.org.bd,1,1,0,50:20.2,CHOTOSUNDAR BAZAR,2503,CHANDPUR,Cumilla
+133,,,mgrfaridgonj@krishibank.org.bd,1,1,0,50:20.2,FARIDGANJ,2505,CHANDPUR,Cumilla
+134,,,mgrgazrabazar@krishibank.org.bd,1,1,0,50:20.2,GAJRA BAZAR,2525,CHANDPUR,Cumilla
+135,,,mgrgulbahar@krishibank.org.bd,1,1,0,50:20.2,GULBAHAR,2524,CHANDPUR,Cumilla
+136,,,mgrhaimchar@ krishibank.org.bd,1,1,0,50:20.2,HAIMCHAR,2504,CHANDPUR,Cumilla
+137,,,mgrhajigonj@krishibank.org.bd,1,1,0,50:20.2,HAJIGONJ,2511,CHANDPUR,Cumilla
+138,,,mgrkachua@krishibank.org.bd,1,1,0,50:20.2,KACHUA,2512,CHANDPUR,Cumilla
+139,,,mgrkakairtala@krishibank.org.bd,1,1,0,50:20.2,KAKOIRTALA BAZAR,2514,CHANDPUR,Cumilla
+140,,,mgrkalirbazar@krishibank.org.bd,1,1,0,50:20.2,KALIR BAZAR,2507,CHANDPUR,Cumilla
+141,,,mgrmajhigachabazar@krishibank.org.bd,1,1,0,50:20.2,MAJIGACHA BAZAR,2528,CHANDPUR,Cumilla
+142,,,mgrmasterbazar@krishibank.org.bd,1,1,0,50:20.2,MASTER BAZAR,2523,CHANDPUR,Cumilla
+143,,,mgrmatlab@krishibank.org.bd,1,1,0,50:20.2,MATLAB,2509,CHANDPUR,Cumilla
+144,,,mgrmunshirhat@krishibank.org.bd,1,1,0,50:20.2,MUNSHIRHAT,2506,CHANDPUR,Cumilla
+145,,,mgrnauribazar@krishibank.org.bd,1,1,0,50:20.2,NAURI BAZAR,2519,CHANDPUR,Cumilla
+146,,,mgrpirojpurbazar@krishibank.org.bd,1,1,0,50:20.2,PEROJPUR BAZAR,2527,CHANDPUR,Cumilla
+147,,,mgrsacharbazar@krishibank.org.bd,1,1,0,50:20.2,SACHER BAZAR,2522,CHANDPUR,Cumilla
+148,,,mgrsahebbazar@krishibank.org.bd,1,1,0,50:20.2,SAHEB BAZAR,2520,CHANDPUR,Cumilla
+149,,,mgrshaharpar@krishibank.org.bd,1,1,0,50:20.2,SHAHARPAR,2529,CHANDPUR,Cumilla
+150,,,mgrshahrasti@krishibank.org.bd,1,1,0,50:20.2,SHAHRASTI,2513,CHANDPUR,Cumilla
+151,,,mgralamshahpara@krishibank.org.bd,1,1,0,50:20.2,ALAMSHAPARA MADRASHA,3308,CHATTOGRAM (EAST),Chattogram
+152,,,aachyhat@krishibank.org.bd,1,1,0,50:20.2,ASHRAF ALI CHOWDHURY HAT,5501,CHATTOGRAM (EAST),Chattogram
+153,,,mgrazadibazar@krishibank.org.bd,1,1,0,50:20.2,AZADI BAZAR,2908,CHATTOGRAM (EAST),Chattogram
+154,,,mgrfatickchari@krishibank.org.bd,1,1,0,50:20.2,FATIKCHARI,2906,CHATTOGRAM (EAST),Chattogram
+155,,,mgrhathajari@krishibank.org.bd,1,1,0,50:20.2,HATHAZARI,2919,CHATTOGRAM (EAST),Chattogram
+156,,,mgrheako@krishibank.org.bd,1,1,0,50:20.2,HEAKO,2907,CHATTOGRAM (EAST),Chattogram
+157,,,mgrkatirhat@krishibank.org.bd,1,1,0,50:20.2,KATIRHAT,2927,CHATTOGRAM (EAST),Chattogram
+158,,,mgrmadanhat@krishibank.org.bd,1,1,0,50:20.2,MADANHAT,2920,CHATTOGRAM (EAST),Chattogram
+159,,,mgrmaizbhandersharif@krishibank.org.bd,1,1,0,50:20.2,NANUPUR BAZAR (MAIZBHANDER SHARIF),2933,CHATTOGRAM (EAST),Chattogram
+160,,,mgrnarayanhat@krishibank.org.bd,1,1,0,50:20.2,NARAYANHAT,2909,CHATTOGRAM (EAST),Chattogram
+161,,,mgrnazirhat@krishibank.org.bd,1,1,0,50:20.2,NAZIRHAT,2910,CHATTOGRAM (EAST),Chattogram
+162,,,mgrnazumiahat@krishibank.org.bd,1,1,0,50:20.2,NAZUMIA HAT,2921,CHATTOGRAM (EAST),Chattogram
+163,,,mgrpahartalichoumuhani@krishibank.org.bd,1,1,0,50:20.2,PAHARTALI,3307,CHATTOGRAM (EAST),Chattogram
+164,,,mgrpatherhat@krishibank.org.bd,1,1,0,50:20.2,PATHER HAT,2922,CHATTOGRAM (EAST),Chattogram
+165,,,mgrpomra@krishibank.org.bd,1,1,0,50:20.2,POMRA,3306,CHATTOGRAM (EAST),Chattogram
+166,,,mgrrangunia@krishibank.org.bd,1,1,0,50:20.2,RANGUNIA,3305,CHATTOGRAM (EAST),Chattogram
+167,,,mgrranguniacollege@krishibank.org.bd,1,1,0,50:20.2,RANGUNIA COLLEGE,2934,CHATTOGRAM (EAST),Chattogram
+168,,,mgrraujan@krishibank.org.bd,1,1,0,50:20.2,RAUZAN,2923,CHATTOGRAM (EAST),Chattogram
+169,,,mgrabutorabbazar@krishibank.org.bd,1,1,0,50:20.2,ABU TORAB BAZAR,2915,CHATTOGRAM (WEST),Chattogram
+170,,,mgraburhat@krishibank.org.bd,1,1,0,50:20.2,ABUR HAT,2918,CHATTOGRAM (WEST),Chattogram
+171,,,corpagrabad@krishibank.org.bd,1,1,0,50:20.2,AGRABAD,2903,CHATTOGRAM (WEST),Chattogram
+172,,,mgrbsdarogahat@krishibank.org.bd,1,1,0,50:20.2,BAMANSUNDER D.HAT,2917,CHATTOGRAM (WEST),Chattogram
+173,,,mgrbaroiermarket@krishibank.org.bd,1,1,0,50:20.2,BARAIARHAT (LILY MARKET),2916,CHATTOGRAM (WEST),Chattogram
+174,,,mgrbaraiadhala@krishibank.org.bd,1,1,0,50:20.2,BARIYADHALA,2926,CHATTOGRAM (WEST),Chattogram
+175,,,mgrchaittonnerhat@krishibank.org.bd,1,1,0,50:20.2,CHAITTONNERHAT,2935,CHATTOGRAM (WEST),Chattogram
+176,,,mgrchalpatti@krishibank.org.bd,1,1,0,50:20.2,CHAKTAI (CHALPATTI),2902,CHATTOGRAM (WEST),Chattogram
+177,,,mgrchittagong@krishibank.org.bd,1,1,0,50:20.2,CHATTOGRAM,2901,CHATTOGRAM (WEST),Chattogram
+178,,,mgrdhoparhat@krishibank.org.bd,1,1,0,50:20.2,DHOPARHAT,2930,CHATTOGRAM (WEST),Chattogram
+179,,,mgrgachua@krishibank.org.bd,1,1,0,50:20.2,GACHUA,2912,CHATTOGRAM (WEST),Chattogram
+180,,,mgrkamalbazar@krishibank.org.bd,1,1,0,50:20.2,KAMAL BAZAR,2904,CHATTOGRAM (WEST),Chattogram
+181,,,mgrkhatungonj@krishibank.org.bd,1,1,0,50:20.2,KHATUNGONJ (KORBANIGONJ),2929,CHATTOGRAM (WEST),Chattogram
+182,,,mgrkumira@krishibank.org.bd,1,1,0,50:20.2,KUMIRA (BANSHBARIA),2925,CHATTOGRAM (WEST),Chattogram
+183,,,mgrmirsharai@krishibank.org.bd,1,1,0,50:20.2,MIRSHARAI,2913,CHATTOGRAM (WEST),Chattogram
+184,,,mgrsandeep@krishibank.org.bd,1,1,0,50:20.2,SANDWIP,2911,CHATTOGRAM (WEST),Chattogram
+185,,,mgrshiberhat@krishibank.org.bd,1,1,0,50:20.2,SHIBERHAT,2936,CHATTOGRAM (WEST),Chattogram
+186,,,mgrsholoshahar@krishibank.org.bd,1,1,0,50:20.2,SHOLO SHAHAR,2931,CHATTOGRAM (WEST),Chattogram
+187,,,mgrsitakunda@krishibank.org.bd,1,1,0,50:20.2,SITAKUNDA,2924,CHATTOGRAM (WEST),Chattogram
+188,,,mgrteaboard@krishibank.org.bd,1,1,0,50:20.2,TEA BOARD,2905,CHATTOGRAM (WEST),Chattogram
+189,,,mgrwahedpur@krishibank.org.bd,1,1,0,50:20.2,WAHEDPUR,2914,CHATTOGRAM (WEST),Chattogram
+190,,,mgralamdanga@krishibank.org.bd,1,1,0,50:20.2,ALAMDANGA,2003,CHUADANGA,Kushtia
+191,,,mgrbadargonjbazar@krishibank.org.bd,1,1,0,50:20.2,BADARGANJ BAZAR,2002,CHUADANGA,Kushtia
+192,,,mgrchuadanga@krishibank.org.bd,1,1,0,50:20.2,CHUADANGA,2001,CHUADANGA,Kushtia
+193,,,mgrdamurhuda@krishibank.org.bd,1,1,0,50:20.2,DAMURHUDA,2004,CHUADANGA,Kushtia
+194,,,mgrgholdaribazar@krishibank.org.bd,1,1,0,50:20.2,GHOLDARI,2011,CHUADANGA,Kushtia
+195,,,mgrhijalgari@krishibank.org.bd,1,1,0,50:20.2,HIZALGAROI,2007,CHUADANGA,Kushtia
+196,,,mgrjagonnathpurchu@krishibank.org.bd,1,1,0,50:20.2,JAGANNATHPUR,2008,CHUADANGA,Kushtia
+197,,,mgrjamjamibazar@krishibank.org.bd,1,1,0,50:20.2,JAMJAMI BAZAR,2009,CHUADANGA,Kushtia
+198,,,mgrjibonnagar@krishibank.org.bd,1,1,0,50:20.2,JIBANNAGAR,2005,CHUADANGA,Kushtia
+199,,,mgrjiranpurchu@krishibank.org.bd,1,1,0,50:20.2,JURANPUR,2010,CHUADANGA,Kushtia
+200,,,mgruthali@krishibank.org.bd,1,1,0,50:20.2,UTHALI,2006,CHUADANGA,Kushtia
+201,,,mgrbanglabazarcox@krishibank.org.bd,1,1,0,50:20.2,BANGLA BAZAR,3111,COX'S BAZAR,Chattogram
+202,,,mgrbaromoheshkhali@krishibank.org.bd,1,1,0,50:20.2,BARA MAHESHKHALI,3110,COX'S BAZAR,Chattogram
+203,,,mgrchiringa@krishibank.org.bd,1,1,0,50:20.2,CHIRINGA,3103,COX'S BAZAR,Chattogram
+204,,,mgrcoxsbazar@krishibank.org.bd,1,1,0,50:20.2,COX'S BAZAR,3101,COX'S BAZAR,Chattogram
+205,,,mgrdhurangbazar@krishibank.org.bd,1,1,0,50:20.2,DHURONG BAZAR,3123,COX'S BAZAR,Chattogram
+206,,,mgrdulahajra@krishibank.org.bd,1,1,0,50:20.2,DULAHAZRA,3104,COX'S BAZAR,Chattogram
+207,,,mgrgarjaniabazar@krishibank.org.bd,1,1,0,50:20.2,GARZANIA BAZAR,3116,COX'S BAZAR,Chattogram
+208,,,mgrgorakghata@krishibank.org.bd,1,1,0,50:20.2,GORAKGHATA BAZAR,3107,COX'S BAZAR,Chattogram
+209,,,mgrharbang@krishibank.org.bd,1,1,0,50:20.2,HARBUNG,3105,COX'S BAZAR,Chattogram
+210,,,mgrhnila@krishibank.org.bd,1,1,0,50:20.2,HINILA,3113,COX'S BAZAR,Chattogram
+211,,,mgrhuanok@krishibank.org.bd,1,1,0,50:20.2,HOANOK,3126,COX'S BAZAR,Chattogram
+212,,,mgridgaon@krishibank.org.bd,1,1,0,50:20.2,IDGAON,3102,COX'S BAZAR,Chattogram
+213,,,mgrkalarmarchara@krishibank.org.bd,1,1,0,50:20.2,KALARMARCHARA,3109,COX'S BAZAR,Chattogram
+214,,,mgrkutubdia@krishibank.org.bd,1,1,0,50:20.2,KUTUBDIA,3106,COX'S BAZAR,Chattogram
+215,,,mgrmatarbari@krishibank.org.bd,1,1,0,50:20.2,MATAR BARI,3108,COX'S BAZAR,Chattogram
+216,,,mgrpakua@krishibank.org.bd,1,1,0,50:20.2,PEKUA,3125,COX'S BAZAR,Chattogram
+217,,,mgrramu@krishibank.org.bd,1,1,0,50:20.2,RAMU,3115,COX'S BAZAR,Chattogram
+218,,,mgrteknaf@krishibank.org.bd,1,1,0,50:20.2,TEKNAF,3112,COX'S BAZAR,Chattogram
+219,,,mgrukhia@krishibank.org.bd,1,1,0,50:20.2,UKHIA,3114,COX'S BAZAR,Chattogram
+220,,,mgramratali@krishibank.org.bd,1,1,0,50:20.2,AMRATALI,2304,CUMILLA,Cumilla
+221,,,mgrasmaniabazar@krishibank.org.bd,1,1,0,50:20.2,ASMANIA BAZAR,2342,CUMILLA,Cumilla
+222,,,mgrbadarpurbazar@krishibank.org.bd,1,1,0,50:20.2,BADARPUR BR.,2330,CUMILLA,Cumilla
+223,,,mgrbarashalghar@krishibank.org.bd,1,1,0,50:20.2,BARASHALGHAR,2325,CUMILLA,Cumilla
+224,,,mgrbrahmanpara@krishibank.org.bd,1,1,0,50:20.2,BRAHMAN PARA,2328,CUMILLA,Cumilla
+225,,,mgrburichong@krishibank.org.bd,1,1,0,50:20.2,BURICHONG,2306,CUMILLA,Cumilla
+226,,,mgrchaliakandi@krishibank.org.bd,1,1,0,50:20.2,CHALIAKANDI,2338,CUMILLA,Cumilla
+227,,,mgrchandina@krishibank.org.bd,1,1,0,50:20.2,CHANDINA,2320,CUMILLA,Cumilla
+228,,,mgrchandla@krishibank.org.bd,1,1,0,50:20.2,CHANDULA,2335,CUMILLA,Cumilla
+229,,,mgrcomilla@krishibank.org.bd,1,1,0,50:20.2,CUMILLA,2301,CUMILLA,Cumilla
+230,,,mgrdarorabazar@krishibank.org.bd,1,1,0,50:20.2,DARORA BAZAR,2327,CUMILLA,Cumilla
+231,,,mgrdaudkandi@krishibank.org.bd,1,1,0,50:20.2,DAUDKANDI,2322,CUMILLA,Cumilla
+232,,,mgrdebidwar@krishibank.org.bd,1,1,0,50:20.2,DEBIDWAR,2324,CUMILLA,Cumilla
+233,,,mgrdhamtimadrasha@krishibank.org.bd,1,1,0,50:20.2,DHAMOTI MADDRASA,2340,CUMILLA,Cumilla
+234,,,mgrdndbazar@krishibank.org.bd,1,1,0,50:20.2,DULLAII NABABPUR DAKHIN BAZAR,2339,CUMILLA,Cumilla
+235,,,mgrgaiyerbhangabazar@krishibank.org.bd,1,1,0,50:20.2,GAIRBHANGA BAZAR,2313,CUMILLA,Cumilla
+236,,,mgrgaliara@krishibank.org.bd,1,1,0,50:20.2,GALIARA,2347,CUMILLA,Cumilla
+237,,,mgrhomna@krishibank.org.bd,1,1,0,50:20.2,HOMNA,2321,CUMILLA,Cumilla
+238,,,mgrhydrabad@krishibank.org.bd,1,1,0,50:20.2,HYDRABAD,2336,CUMILLA,Cumilla
+239,,,mgrjoagbazar@krishibank.org.bd,1,1,0,50:20.2,JOAG BAZAR,2350,CUMILLA,Cumilla
+240,,,mgrjuranpur@krishibank.org.bd,1,1,0,50:20.2,JURAINPUR,2333,CUMILLA,Cumilla
+241,,,mgrmachimpur@krishibank.org.bd,1,1,0,50:20.2,MACHIMPUR BR.,2331,CUMILLA,Cumilla
+242,,,mgrmeghna@krishibank.org.bd,1,1,0,50:20.2,MEGHNA,2349,CUMILLA,Cumilla
+243,,,mgrmohichail@krishibank.org.bd,1,1,0,50:20.2,MOHICHAIL,2346,CUMILLA,Cumilla
+244,,,mgrmuradnagar@krishibank.org.bd,1,1,0,50:20.2,MURADNAGAR,2326,CUMILLA,Cumilla
+245,,,mgrnaiyarbazar@krishibank.org.bd,1,1,0,50:20.2,NAIYAR BAZAR,2323,CUMILLA,Cumilla
+246,,,mgrnimsharbazar@krishibank.org.bd,1,1,0,50:20.2,NIMSHAR BAZAR (KALAKACHUA ),2348,CUMILLA,Cumilla
+247,,,mgrpoliceline@krishibank.org.bd,1,1,0,50:20.2,POLICE LINE,2302,CUMILLA,Cumilla
+248,,,mgrshidlai@krishibank.org.bd,1,1,0,50:20.2,SHIDLAI,2343,CUMILLA,Cumilla
+249,,,mgrashuliabazar@krishibank.org.bd,1,1,0,50:20.2,ASHULIA BAZAR,4124,DHAKA,Cumilla
+250,,,mgrbadda@krishibank.org.bd,1,1,0,50:20.2,BADDA (SONAKATRA),4106,DHAKA,Cumilla
+251,,,mgrbalia@krishibank.org.bd,1,1,0,50:20.2,BALIA,4120,DHAKA,Cumilla
+252,,,bkbbananicorp@gmail.com,1,1,0,50:20.2,BANANI,4116,DHAKA,Cumilla
+253,,,mgrbandurahat@krishibank.org.bd,1,1,0,50:20.2,BANDURAHAT,4110,DHAKA,Cumilla
+254,,,mgrbelishwar@krishibank.org.bd ,1,1,0,50:20.2,BELESHWAR,4119,DHAKA,Cumilla
+255,,,"mgrchakbazar@krishibank.org.bd, ",1,1,0,50:20.2,CHAWK BAZAR,4117,DHAKA,Cumilla
+256,,,mgrdemrabazar@krishibank.org.bd ,1,1,0,50:20.2,DEMRA BAZAR,4125,DHAKA,Cumilla
+257,,,mgrdhamrai@gmail.com,1,1,0,50:20.2,DHAMRAI,4118,DHAKA,Cumilla
+258,,,mgrdohar@krishibank.org.bd,1,1,0,50:20.2,DOHAR,4113,DHAKA,Cumilla
+259,,,mgrfarashgonj@krishibank.org.bd,1,1,0,50:20.2,FARASHGONJ (MALAKARTOLA),4103,DHAKA,Cumilla
+260,,,mgrhazratpur@gmail.com,1,1,0,50:20.2,HAZRATPUR,4126,DHAKA,Cumilla
+261,,,mgrjurain@krishibank.org.bd,1,1,0,50:20.2,JURAIN,4107,DHAKA,Cumilla
+262,,,mgrkamrangirchar@krishibank.org.bd,1,1,0,50:20.2,KAMRANGIR CHAR,4122,DHAKA,Cumilla
+263,,,corpkawranbazar@krishibank.org.bd,1,1,0,50:20.2,KAWRAN BAZAR (AIRPORT ROAD),4101,DHAKA,Cumilla
+264,,,mgrkeranigonj@krishibank.org.bd,1,1,0,50:20.2,KERANIGANJ,4108,DHAKA,Cumilla
+265,,,mgrkhamarbari@krishibank.org.bd,1,1,0,50:20.2,KHAMAR BARI,4102,DHAKA,Cumilla
+266,,,mgrkomorgonj@krishibank.org.bd,1,1,0,50:20.2,KOMARGANJ HAT,4112,DHAKA,Cumilla
+267,,,mgrmirpur@krishibank.org.bd ,1,1,0,50:20.2,MIRPUR,4114,DHAKA,Cumilla
+268,,,mgrnandiparabazar@krishibank.org.bd,1,1,0,50:20.2,NANDIPARA BAZAR,4127,DHAKA,Cumilla
+269,,,mgrnababgonj@krishibank.org.bd,1,1,0,50:20.2,NOWABGANJ,4109,DHAKA,Cumilla
+270,,,mgrtajmohol@krishibank.org.bd,1,1,0,50:20.2,SAVAR (RAJASON),4115,DHAKA,Cumilla
+271,,,mgrshanirakhra@krishibank.org.bd,1,1,0,50:20.2,SHANIR AKHRA,4123,DHAKA,Cumilla
+272,,,mgrshaymoli@krishibank.org. bd,1,1,0,50:20.2,SHYAMOLI,4104,DHAKA,Cumilla
+273,,,mgrsollabazar@krishibank.org.bd,1,1,0,50:20.2,SOLLA BAZAR,4111,DHAKA,Cumilla
+274,,,mgrti@krishibank.org.bd,1,1,0,50:20.2,STAFF COLLAGE,4121,DHAKA,Cumilla
+275,,,mgrtajmohol@krishibank.org.bd,1,1,0,50:20.2,TAJMAHAL ROAD,4105,DHAKA,Cumilla
+276,,,mgruttara@krishibank.org.bd,1,1,0,50:20.2,UTTARA,4128,DHAKA,Cumilla
+277,,,mgralfadanga@krishibank.org.bd,1,1,0,50:20.2,ALFADANGA,809,FARIDPUR,Faridpur
+278,,,mgrbaburchar@krishibank.org.bd,1,1,0,50:20.2,BABURCHAR,822,FARIDPUR,Faridpur
+279,,,mgrbagat@krishibank.org.bd,1,1,0,50:20.2,BAGAT,823,FARIDPUR,Faridpur
+280,,,mgrbaitulaman@krishibank.org.bd,1,1,0,50:20.2,BAITUL AMAN,804,FARIDPUR,Faridpur
+281,,,mgrbakhundabazar@krishibank.org.bd,1,1,0,50:20.2,BAKHUNDA BAZAR,819,FARIDPUR,Faridpur
+282,,,mgrbhanga@krishibank.org.bd,1,1,0,50:20.2,BHANGA,810,FARIDPUR,Faridpur
+283,,,mgrbilgobindapur@krishibank.org.bd,1,1,0,50:20.2,BILGUBINDAPUR D.F,820,FARIDPUR,Faridpur
+284,,,mgrboalmari@krishibank.org.bd,1,1,0,50:20.2,BOALMARI,807,FARIDPUR,Faridpur
+285,,,mgrchandhat@krishibank.org.bd,1,1,0,50:20.2,CHANDHAT,821,FARIDPUR,Faridpur
+286,,,mgrcharbhadrasan@krishibank.org.bd,1,1,0,50:20.2,CHAR-BADRASON,805,FARIDPUR,Faridpur
+287,,,mgrfaridpur@krishibank.org.bd,1,1,0,50:20.2,FARIDPUR,801,FARIDPUR,Faridpur
+288,,,mgrgopalpurbazarfar@krishibank.org.bd,1,1,0,50:20.2,GOPALPUR BAZAR,826,FARIDPUR,Faridpur
+289,,,mgrhajigonjbazar@krishibank.org.bd,1,1,0,50:20.2,HAJIGONJBAZAR,806,FARIDPUR,Faridpur
+290,,,mgrhatkrishnapur@krishibank.org.bd,1,1,0,50:20.2,HAT KRISHNAPUR,816,FARIDPUR,Faridpur
+291,,,mgrishangopalpur@krishibank.org.bd,1,1,0,50:20.2,ISHANGOPALPUR,803,FARIDPUR,Faridpur
+292,,,mgrkadirdibazar@krishibank.org.bd,1,1,0,50:20.2,KADERDI BAZAR,817,FARIDPUR,Faridpur
+293,,,mgrkaulibera@krishibank.org.bd,1,1,0,50:20.2,KAOLI BERA,811,FARIDPUR,Faridpur
+294,,,mgrkhalilpurbazar@krishibank.org.bd,1,1,0,50:20.2,KHALILPUR BAZAR,802,FARIDPUR,Faridpur
+295,,,mgrlaskardiabazar@krishibank.org.bd,1,1,0,50:20.2,LASHKARDIA BAZAR,827,FARIDPUR,Faridpur
+296,,,mgrmadhukhali@krishibank.org.bd,1,1,0,50:20.2,MODHUKHALI,808,FARIDPUR,Faridpur
+297,,,mgrnagarkanda@krishibank.org.bd,1,1,0,50:20.2,NAGARKANDA,813,FARIDPUR,Faridpur
+298,,,mgrpukhuria@krishibank.org.bd,1,1,0,50:20.2,PUKURIA,812,FARIDPUR,Faridpur
+299,,,mgrpuraparabazar@krishibank.org.bd,1,1,0,50:20.2,PURAPARA BAZAR,829,FARIDPUR,Faridpur
+300,,,mgrsadarpur@krishibank.org.bd,1,1,0,50:20.2,SADARPUR,815,FARIDPUR,Faridpur
+301,,,mgrsaltabazar@krishibank.org.bd,1,1,0,50:20.2,SALTA BAZAR,818,FARIDPUR,Faridpur
+302,,,mgrtalma@krishibank.org.bd,1,1,0,50:20.2,TALMA,814,FARIDPUR,Faridpur
+303,,,mgrtambulkhanabazar@krishibank.org.bd,1,1,0,50:20.2,TAMBULKHANA BAZAR,828,FARIDPUR,Faridpur
+304,,,mgraftabbibirhat@krishibank.org.bd,1,1,0,50:20.2,AFTAB BIBIRHAT,2714,FENI,Chattogram
+305,,,mgramjadhat@krishibank.org.bd,1,1,0,50:20.2,AMJADHAT,2706,FENI,Chattogram
+306,,,mgrbmbazar@krishibank.org.bd,1,1,0,50:20.2,BOX MOHMUD BAZAR,2710,FENI,Chattogram
+307,,,mgrchagalnaiya@krishibank.org.bd,1,1,0,50:20.2,CHAGALNAIYA,2705,FENI,Chattogram
+308,,,mgrdagonbhuiya@krishibank.org.bd,1,1,0,50:20.2,DAGONBHUIYAN,2704,FENI,Chattogram
+309,,,mgretimkhanabazar@krishibank.org.bd,1,1,0,50:20.2,DUDMUKHA BAZAR,2703,FENI,Chattogram
+310,,,mgrfazilpurbazar@krishibank.org.bd,1,1,0,50:20.2,FAJILPUR BAZAR,2717,FENI,Chattogram
+311,,,mgrfeni@krishibank.org.bd,1,1,0,50:20.2,FENI,2701,FENI,Chattogram
+312,,,mgrfulgazi@krishibank.org.bd,1,1,0,50:20.2,FULGAZI,2711,FENI,Chattogram
+313,,,mgrgmhat@krishibank.org.bd,1,1,0,50:20.2,G.M.HAT,2708,FENI,Chattogram
+314,,,mgrjoylaskar@krishibank.org.bd,1,1,0,50:20.2,JOYLASHKAR,2702,FENI,Chattogram
+315,,,mgrkuhumasantir@krishibank.org.bd,1,1,0,50:20.2,KUHUMASANTIR BAZAR,2715,FENI,Chattogram
+316,,,mgrkuraishmunshi@krishibank.org.bd,1,1,0,50:20.2,KURAISH MUNSHIR BAZAR,2716,FENI,Chattogram
+317,,,mgrkutirhat@krishibank.org.bd,1,1,0,50:20.2,KUTIRHAT,2713,FENI,Chattogram
+318,,,mgrmuktobazar@krishibank.org.bd,1,1,0,50:20.2,MUKTA BAZAR,2718,FENI,Chattogram
+319,,,mgrparshuram@krishibank.org.bd,1,1,0,50:20.2,PARSHURAM,2709,FENI,Chattogram
+320,,,mgrshuvapur@krishibank.org.bd,1,1,0,50:20.2,SHUVAPUR,2707,FENI,Chattogram
+321,,,mgrsonagzi@krishibank.org.bd,1,1,0,50:20.2,SONAGAZI,2712,FENI,Chattogram
+322,,,mgramraidbazar@krishibank.org.bd ,1,1,0,50:20.2,AMRAID BAZAR,4204,GAZIPUR ,Dhaka
+323,,,mgrawrakhali@krishibank.org.bd ,1,1,0,50:20.2,AOURAKHALI BAZAR,4214,GAZIPUR ,Dhaka
+324,,,mgrjoydebpur@krishibank.org.bd        ,1,1,0,50:20.2,GAZIPUR (JOYDEBPUR),4201,GAZIPUR ,Dhaka
+325,,,mgrjainabazar@krishibank.org.bd ,1,1,0,50:20.2,JAINA BAZAR,4215,GAZIPUR ,Dhaka
+326,,,mgrkaliakair@krishibank.org.bd ,1,1,0,50:20.2,KALIAKOIR,4209,GAZIPUR ,Dhaka
+327,,,mgrkaligonj@krishibank.org.bd ,1,1,0,50:20.2,KALIGANJ,4206,GAZIPUR ,Dhaka
+328,,,mgrkapasia@krishibank.org.bd ,1,1,0,50:20.2,KAPASIA,4202,GAZIPUR ,Dhaka
+329,,,mgrkheratibazar@krishibank.org.bd ,1,1,0,50:20.2,KHIRATI BAZAR,4217,GAZIPUR ,Dhaka
+330,,,mgrkonabari@krishibank.org.bd ,1,1,0,50:20.2,KONABARI,4213,GAZIPUR ,Dhaka
+331,,,mgrmirzapur@krishibank.org.bd ,1,1,0,50:20.2,MIRZAPUR,4211,GAZIPUR ,Dhaka
+332,,,mgrfulbaria@krishibank.org.bd ,1,1,0,50:20.2,PHULBARIA,4216,GAZIPUR ,Dhaka
+333,,,mgrranigonjbazar@krishibank.org.bd ,1,1,0,50:20.2,RANIGANJ BAZAR,4205,GAZIPUR ,Dhaka
+334,,,mgrsawraidbazar@krishibank.org.bd,1,1,0,50:20.2,SAORAID BAZAR,4212,GAZIPUR ,Dhaka
+335,,,mgrshafipurr@krishibank.org.bd ,1,1,0,50:20.2,SHAFIPUR,4210,GAZIPUR ,Dhaka
+336,,,mgrsreepur@krishibank.org.bd ,1,1,0,50:20.2,SREEPUR,4207,GAZIPUR ,Dhaka
+337,,,mgrtoknayanbazar@krishibank.org.bd ,1,1,0,50:20.2,TOKE NAYAN BAZAR,4203,GAZIPUR ,Dhaka
+338,,,mgrtongi@krishibank.org.bd ,1,1,0,50:20.2,TONGI,4208,GAZIPUR ,Dhaka
+339,,,mgrbashbaria@krishibank.org.bd,1,1,0,50:20.2,BASHBARIA,913,GOPALGANJ,Faridpur
+340,,,mgrbatikamari@krishibank.org.bd,1,1,0,50:20.2,BATIKAMARIBAZAR,908,GOPALGANJ,Faridpur
+341,,,bhangarhat@krishibank.org.bd,1,1,0,50:20.2,BHANGERHAT,923,GOPALGANJ,Faridpur
+342,,,mgrbherarhat@krishibank.org.bd,1,1,0,50:20.2,BHERARHAT,902,GOPALGANJ,Faridpur
+343,,,mgrkarpara@krishibank.org.bd,1,1,0,50:20.2,BOIL TOLI (KARPARA BAZAR),903,GOPALGANJ,Faridpur
+344,,,mgrbanogram@krishibank.org.bd,1,1,0,50:20.2,BONOGRAM,909,GOPALGANJ,Faridpur
+345,,,mgrchowdhryha@krishibank.org.bd,1,1,0,50:20.2,CHOUDHURYHAT,916,GOPALGANJ,Faridpur
+346,,,mgrgoalgrammadrasa@krishibank.org.bd,1,1,0,50:20.2,GOALGRAM MADRASHA,919,GOPALGANJ,Faridpur
+347,,,mgrgohala@krishibank.org.bd,1,1,0,50:20.2,GOHALA,907,GOPALGANJ,Faridpur
+348,,,mgrgopalganj@krishibank.org.bd,1,1,0,50:20.2,GOPALGANJ,901,GOPALGANJ,Faridpur
+349,,,mgrgopinathpur@krishibank.org.bd,1,1,0,50:20.2,GOPINATPUR,917,GOPALGANJ,Faridpur
+350,,,mgrkajulia@krishibank.org.bd,1,1,0,50:20.2,KAJULIA,914,GOPALGANJ,Faridpur
+351,,,mgrkasiani@krishibank.org.bd,1,1,0,50:20.2,KASHIANI,910,GOPALGANJ,Faridpur
+352,,,mgrkathibazar@krishibank.org.bd,1,1,0,50:20.2,KATHI BAZAR,920,GOPALGANJ,Faridpur
+353,,,mgrkotalipara@krishibank.org.bd,1,1,0,50:20.2,KOTALIPARA,904,GOPALGANJ,Faridpur
+354,,,mgrmuksupur@krishibank.org.bd,1,1,0,50:20.2,MUKSHEDPUR,906,GOPALGANJ,Faridpur
+355,,,mgrnilfabazar@krishibank.org.bd,1,1,0,50:20.2,NILFA BAZAR,922,GOPALGANJ,Faridpur
+356,,,mgrradhagonj@krishibank.org.bd,1,1,0,50:20.2,RADHAGANJ BAZAR,905,GOPALGANJ,Faridpur
+357,,,mgrrajpat@krishibank.org.bd,1,1,0,50:20.2,RAJPAT BAZAR,915,GOPALGANJ,Faridpur
+358,,,mgrramdia@krishibank.org.bd,1,1,0,50:20.2,RAMDIA,911,GOPALGANJ,Faridpur
+359,,,mgrratailbazar@krishibank.org.bd,1,1,0,50:20.2,RATAIL BAZAR,918,GOPALGANJ,Faridpur
+360,,,mgrtungipara@krishibank.org.bd,1,1,0,50:20.2,TUNGIPARA,912,GOPALGANJ,Faridpur
+361,,,mgrujanibazar@krishibank.org.bd,1,1,0,50:20.2,UZANI BAZAR,921,GOPALGANJ,Faridpur
+362,,,mgrazmirigonj@krishibank.org.bd,1,1,0,50:20.2,AJMIRIGANJ,3906,HABIGANJ,Sylhet
+363,,,mgramuroadbazar@krishibank.org.bd,1,1,0,50:20.2,AMUROAD BAZAR,3918,HABIGANJ,Sylhet
+364,,,mgrbahubal@krishibank.org.bd,1,1,0,50:20.2,BAHUBAL,3904,HABIGANJ,Sylhet
+365,,,mgrbaniachang@krishibank.org.bd,1,1,0,50:20.2,BANIACHONG,3908,HABIGANJ,Sylhet
+366,,,mgrchowmuhanibazar@krishibank.org.bd,1,1,0,50:20.2,CHOUMOHANI BAZAR,3922,HABIGANJ,Sylhet
+367,,,mgrchunarughat@krishibank.org.bd,1,1,0,50:20.2,CHUNARUGHAT,3911,HABIGANJ,Sylhet
+368,,,mgrdubaihajigonj@krishibank.org.bd,1,1,0,50:20.2,DUBAI HAJIGANJ,3905,HABIGANJ,Sylhet
+369,,,mgrgoplarbazar@krishibank.org.bd,1,1,0,50:20.2,GOPLAR BAZAR,3915,HABIGANJ,Sylhet
+370,,,mgrhabigonj@krishibank.org.bd,1,1,0,50:20.2,HABIGANJ,3901,HABIGANJ,Sylhet
+371,,,mgrimambari@krishibank.org.bd,1,1,0,50:20.2,IMAMBARI,3914,HABIGANJ,Sylhet
+372,,,mgrkakailcheo@krishibank.org.bd,1,1,0,50:20.2,KAKILCHEO,3907,HABIGANJ,Sylhet
+373,,,mgrkalauk@krishibank.org.bd,1,1,0,50:20.2,KALAUK,3916,HABIGANJ,Sylhet
+374,,,mgrkashimnagar@krishibank.org.bd,1,1,0,50:20.2,KASHIMNAGAR,3903,HABIGANJ,Sylhet
+375,,,mgrkazigonjbazar@krishibank.org.bd,1,1,0,50:20.2,KAZIGANJ BAZAR,3913,HABIGANJ,Sylhet
+376,,,mgrlakhai@krishibank.org.bd,1,1,0,50:20.2,LAKHAI,3910,HABIGANJ,Sylhet
+377,,,mgrmadhabpur@krishibank.org.bd,1,1,0,50:20.2,MADHABPUR,3902,HABIGANJ,Sylhet
+378,,,mgrmadna@krishibank.org.bd,1,1,0,50:20.2,MADNA,3924,HABIGANJ,Sylhet
+379,,,mgrmirpur@krishibank.org.bd,1,1,0,50:20.2,MIRPUR,3928,HABIGANJ,Sylhet
+380,,,mgrmurakari@krishibank.org.bd,1,1,0,50:20.2,MURAKURI,3931,HABIGANJ,Sylhet
+381,,,mgrnabigonj@krishibank.org.bd,1,1,0,50:20.2,NABIGANJ,3912,HABIGANJ,Sylhet
+382,,,mgrnagura@krishibank.org.bd,1,1,0,50:20.2,NAGURA,3909,HABIGANJ,Sylhet
+383,,,mgrnalmukhbazar@krishibank.org.bd,1,1,0,50:20.2,NALMUKH BAZAR,3926,HABIGANJ,Sylhet
+384,,,mgrnandanpurbazar@krishibank.org.bd,1,1,0,50:20.2,NANDANPUR BAZAR,3927,HABIGANJ,Sylhet
+385,,,mgrpaharpurbazar@krishibank.org.bd,1,1,0,50:20.2,PAHARPUR BAZAR,3920,HABIGANJ,Sylhet
+386,,,mgrpaniumda@krishibank.org.bd,1,1,0,50:20.2,PANIUMDA,3919,HABIGANJ,Sylhet
+387,,,mgrpail@krishibank.org.bd,1,1,0,50:20.2,POIL,3930,HABIGANJ,Sylhet
+388,,,mgrshakirmahmud@krishibank.org.bd,1,1,0,50:20.2,SAKIRMAMUD,3917,HABIGANJ,Sylhet
+389,,,mgrsujatpurbazar@krishibank.org.bd,1,1,0,50:20.2,SUJATPUR BAZAR,3923,HABIGANJ,Sylhet
+390,,,mgrsundarpurbazar@krishibank.org.bd,1,1,0,50:20.2,SUNDARPUR BAZAR,3929,HABIGANJ,Sylhet
+391,,,mgrteliapara@krishibank.org.bd,1,1,0,50:20.2,TELIAPARA,3921,HABIGANJ,Sylhet
+392,,,mgrbahadurabad@krishibank.org.bd,1,1,0,50:20.2,BAHADURABAD,5212,JAMALPUR,Mymensingh
+393,,,mgrbaruamari@krishibank.org.bd ,1,1,0,50:20.2,BARUAMARI,5217,JAMALPUR,Mymensingh
+394,,,mgrbaushibangali@krishibank.org.bd,1,1,0,50:20.2,BAUSHI BANGALEE,5207,JAMALPUR,Mymensingh
+395,,,mgrbhabkibazar@krishibank.org.bd,1,1,0,50:20.2,BHABKY BAZAR,5219,JAMALPUR,Mymensingh
+396,,,mgrbahatarabazar@krishibank.org.bd,1,1,0,50:20.2,BHATARA BAZAR,5223,JAMALPUR,Mymensingh
+397,,,mgrbokshigonj@krishibank.org.bd,1,1,0,50:20.2,BOKSHIGANJ,5215,JAMALPUR,Mymensingh
+398,,,mgrdewangonj@krishibank.org.bd,1,1,0,50:20.2,DEWANGANJ,5210,JAMALPUR,Mymensingh
+399,,,mgrguthailbazar@krishibank.org.bd,1,1,0,50:20.2,GHUTAIL BAZAR,5213,JAMALPUR,Mymensingh
+400,,,mgrhajirpurbazar@krishibank.org.bd,1,1,0,50:20.2,HAJIPUR BAZAR,5203,JAMALPUR,Mymensingh
+401,,,mgrislampur@krishibank.org.bd,1,1,0,50:20.2,ISLAMPUR,5211,JAMALPUR,Mymensingh
+402,,,mgrjabbargonjbazar@krishibank.org.bd ,1,1,0,50:20.2,JABBERGONJ BAZAR,5228,JAMALPUR,Mymensingh
+403,,,mgrjagannathgonjghat@krishibank.org.bd,1,1,0,50:20.2,JAGANNATHPUR GHAT(BATIKAMARI),5216,JAMALPUR,Mymensingh
+404,,,mgrjamalpur@krishibank.org.bd,1,1,0,50:20.2,JAMALPUR,5201,JAMALPUR,Mymensingh
+405,,,mgrmahmudpurbazar@krishibank.org.bd,1,1,0,50:20.2,MAHMUDPUR BAZAR,5226,JAMALPUR,Mymensingh
+406,,,mgrmelandah@krishibank.org.bd,1,1,0,50:20.2,MELANDAH,5208,JAMALPUR,Mymensingh
+407,,,mgrmilonbazar@krishibank.org.bd,1,1,0,50:20.2,MILON BAZAR,5225,JAMALPUR,Mymensingh
+408,,,mgrmolamgonjbazar@krishibank.org.bd,1,1,0,50:20.2,MOLOMGANJ BAZAR,5221,JAMALPUR,Mymensingh
+409,,,mgrmadergonj@krishibank.org.bd,1,1,0,50:20.2,MOTHERGONJ (BALIJURI),5209,JAMALPUR,Mymensingh
+410,,,mgrnandina@krishibank.org.bd,1,1,0,50:20.2,NANDINA,5202,JAMALPUR,Mymensingh
+411,,,mgrnurundibazar@krishibank.org.bd,1,1,0,50:20.2,NARUNDI BAZAR,5205,JAMALPUR,Mymensingh
+412,,,mgrnatunbazar@krishibank.org.bd,1,1,0,50:20.2,NATUN BAZAR,5218,JAMALPUR,Mymensingh
+413,,,mgrsharifpur@krishibank.org.bd,1,1,0,50:20.2,SHARIFPUR BAZAR,5224,JAMALPUR,Mymensingh
+414,,,mgrsarishabari@krishibank.org.bd,1,1,0,50:20.2,SHARISHABARI,5206,JAMALPUR,Mymensingh
+415,,,mgrshyamgonjkalibari@krishibank.org.bd,1,1,0,50:20.2,SHYAMGONJ KALIBAR,5214,JAMALPUR,Mymensingh
+416,,,mgrchontiabazar@krishibank.org.bd ,1,1,0,50:20.2,CHONTIA BAZAR,5204,JAMALPUR,Mymensingh
+417,,,mgrtarakandi@krishibank.org.bd,1,1,0,50:20.2,TARAKANDI,5230,JAMALPUR,Mymensingh
+418,,,mgrtankeybazar@krishibank.org.bd,1,1,0,50:20.2,TONKI BAZAR,5231,JAMALPUR,Mymensingh
+419,,,mgrtulshipurbazar@krishibank.org.bd,1,1,0,50:20.2,TULSHIPUR BAZAR,5227,JAMALPUR,Mymensingh
+420,,,mgrbharuakhalibazar@krishibank.org.bd,1,1,0,50:20.2,VARUAKHALI BAZAR,5229,JAMALPUR,Mymensingh
+421,,,"mgrbagharpara@krishibank.org.bd,",1,1,0,50:20.2,BAGHARPARA,1615,JASHORE,Khulna
+422,,,"mgrchowgacha@krishibank.org.bd,",1,1,0,50:20.2,CHOWGACHA,1605,JASHORE,Khulna
+423,,,"mgrgopalpurbazar@krishibank.org.bd,",1,1,0,50:20.2,GOPALPUR BAZAR,1610,JASHORE,Khulna
+424,,,"mgrhasanpur@krishibank.org.bd,",1,1,0,50:20.2,HASSANPUR,1618,JASHORE,Khulna
+425,,,"mgrjagadishpur@krishibank.org.bd,",1,1,0,50:20.2,JAGADISHPUR,1606,JASHORE,Khulna
+426,,,"mgrjessore@krishibank.org.bd ,",1,1,0,50:20.2,JASHORE,1601,JASHORE,Khulna
+427,,,"mgrjikargacha@krishibank.org.bd,  ",1,1,0,50:20.2,JHIKARGACHA,1603,JASHORE,Khulna
+428,,,mgrkolagachi@krishibank.org.bd,1,1,0,50:20.2,KALAGACHI,1622,JASHORE,Khulna
+429,,," mgrkayemkolabazar@krishibank.org.bd,  ",1,1,0,50:20.2,KAYEMKHOLA BAZAR,1617,JASHORE,Khulna
+430,,,"mgrkeshobpur@krishibank.org.bd,",1,1,0,50:20.2,KESHABPUR,1612,JASHORE,Khulna
+431,,,"mgrkhedaparabazar@krishibank.org.bd,  ",1,1,0,50:20.2,KHEDAPARA BAZAR,1619,JASHORE,Khulna
+432,,,"mgrkuadabazar@krishibank.org.bd,",1,1,0,50:20.2,KUADA BAZAR,1611,JASHORE,Khulna
+433,,,"mgrlakhanpurbazar@krishibank.org.bd,",1,1,0,50:20.2,LAKHANPUR BAZAR,1608,JASHORE,Khulna
+434,,,"mgrmonirampur@krishibank.org.bd,",1,1,0,50:20.2,MONIRAMPUR,1609,JASHORE,Khulna
+435,,,"mgrmoshiahati@krishibank.org.bd,  ",1,1,0,50:20.2,MOSHIAHATI,1614,JASHORE,Khulna
+436,,,"mgrnarayanpur@krishibank.org.bd, ",1,1,0,50:20.2,NARAYANPUR BAZAR,1616,JASHORE,Khulna
+437,,,"mgrnavaran@krishibank.org.bd, ",1,1,0,50:20.2,NAVARUN,1604,JASHORE,Khulna
+438,,,"mgrnoapara@krishibank.org.bd,",1,1,0,50:20.2,NOAPARA,1613,JASHORE,Khulna
+439,,,"mgrrupdia@krishibank.org.bd,",1,1,0,50:20.2,RUPDIA,1602,JASHORE,Khulna
+440,,,mgrsharsa@krishibank.org.bd,1,1,0,50:20.2,SARSHA,1607,JASHORE,Khulna
+441,,,"mgrshinghajhulibazar@krishibank.org.bd,",1,1,0,50:20.2,SHINGHA JULLY BAZAR,1620,JASHORE,Khulna
+442,,,"mgrtelidhannyapora@krishibank.org.bd,",1,1,0,50:20.2,TELIDHANNYAPORA,1621,JASHORE,Khulna
+443,,,mgramua@krishibank.org.bd,1,1,0,50:20.2,AMUA,408,JHALAKATI,Barishal
+444,,,mgrbadurtolabazar@krishibank.org.bd,1,1,0,50:20.2,BADURTALA BAZAR (MATHBARIA),412,JHALAKATI,Barishal
+445,,,mgrbasanda@krishibank.org.bd,1,1,0,50:20.2,BASANDA,411,JHALAKATI,Barishal
+446,,,mgrbinoykati@krishibank.org.bd,1,1,0,50:20.2,BENOYKATI,402,JHALAKATI,Barishal
+447,,,mgrchitkibazar@krishibank.org.bd,1,1,0,50:20.2,CHITKY BAZAR,414,JHALAKATI,Barishal
+448,,,mgrgaluabazar@krishibank.org.bd,1,1,0,50:20.2,GALUA BAZAR,403,JHALAKATI,Barishal
+449,,,mgrjhalakathi@krishibank.org.bd,1,1,0,50:20.2,JHALAKATI,401,JHALAKATI,Barishal
+450,,,mgrkaikhali@krishibank.org.bd,1,1,0,50:20.2,KAIKHALI,410,JHALAKATI,Barishal
+451,,,mgrkathalia@krishibank.org.bd,1,1,0,50:20.2,KATHALIA BANDAR,407,JHALAKATI,Barishal
+452,,,mgrnabagram@krishibank.org.bd,1,1,0,50:20.2,NABAGRAM,413,JHALAKATI,Barishal
+453,,,mgrnalchity@krishibank.org.bd,1,1,0,50:20.2,NALCHITY,404,JHALAKATI,Barishal
+454,,,mgrnizamiabazar@krishibank.org.bd,1,1,0,50:20.2,NIZAMIA BAZAR,417,JHALAKATI,Barishal
+455,,,mgrrajapur@krishibank.org.bd,1,1,0,50:20.2,RAJAPUR,406,JHALAKATI,Barishal
+456,,,mgrramchandrapur@krishibank.org.bd,1,1,0,50:20.2,RAMCHANDRAPUR,416,JHALAKATI,Barishal
+457,,,mgrtaltalabazar@krishibank.org.bd,1,1,0,50:20.2,TALTALA BAZAR,405,JHALAKATI,Barishal
+458,,,mgrbaliadanga@krishibank.org.bd,1,1,0,50:20.2,BALIADANGA BAZAR,1708,JHENAIDAH,Kushtia
+459,,,mgrbhairababazar@krishibank.org.bd,1,1,0,50:20.2,BHAIRABA BAZAR,1712,JHENAIDAH,Kushtia
+460,,,mgrbhalkibazar@krishibank.org.bd,1,1,0,50:20.2,BHALKI BAZAR,1704,JHENAIDAH,Kushtia
+461,,,mgrbhatoibazar@krishibank.org.bd,1,1,0,50:20.2,BHATI BAZAR,1706,JHENAIDAH,Kushtia
+462,,,mgrholidhani@krishibank.org.bd,1,1,0,50:20.2,HALIDHANI,1702,JHENAIDAH,Kushtia
+463,,,mgrharinakunda@krishibank.org.bd,1,1,0,50:20.2,HARINAKUNDA,1703,JHENAIDAH,Kushtia
+464,,,mgrjhenaidah@krishibank.org.bd,1,1,0,50:20.2,JHENAIDAH,1701,JHENAIDAH,Kushtia
+465,,,mgrkachuabazar@krishibank.org.bd,1,1,0,50:20.2,KACHUA BAZAR,1715,JHENAIDAH,Kushtia
+466,,,mgrkaligonjjhi@krishibank.org.bd,1,1,0,50:20.2,KALIGANJ,1707,JHENAIDAH,Kushtia
+467,,,mgrkastosagorabazar@krishibank.org.bd,1,1,0,50:20.2,KASTOSAGRA BAZAR,1713,JHENAIDAH,Kushtia
+468,,,mgrkhulumbaria@krishibank.org.bd,1,1,0,50:20.2,KHULUM BARIA,1714,JHENAIDAH,Kushtia
+469,,,mgrcourtchandpur@krishibank.org.bd,1,1,0,50:20.2,KOTCHANDPUR,1711,JHENAIDAH,Kushtia
+470,,,mgrmoheshpur@krishibank.org.bd,1,1,0,50:20.2,MOHESHPUR,1710,JHENAIDAH,Kushtia
+471,,,mgrshailkupa@krishibank.org.bd,1,1,0,50:20.2,SAILKUPA,1705,JHENAIDAH,Kushtia
+472,,,mgrsingibazar@krishibank.org.bd,1,1,0,50:20.2,SINGI BAZAR,1709,JHENAIDAH,Kushtia
+473,,,mgrdighinala@krishibank.org.bd,1,1,0,50:20.2,DIGHINALA,3404,KHAGRACHARI,Chattogram
+474,,,mgrkhagrachari@krishibank.org.bd,1,1,0,50:20.2,KHAGRACHARI,3401,KHAGRACHARI,Chattogram
+475,,,mgrlaxmichari@krishibank.org.bd,1,1,0,50:20.2,LAXMICHARI,3409,KHAGRACHARI,Chattogram
+476,,,mgrmanikchhari@krishibank.org.bd,1,1,0,50:20.2,MANIKCHARI,3408,KHAGRACHARI,Chattogram
+477,,,mgrmatiranga@krishibank.org.bd,1,1,0,50:20.2,MATIRANGA,3406,KHAGRACHARI,Chattogram
+478,,,mgrmohalchari@krishibank.org.bd,1,1,0,50:20.2,MOHALCHARI,3402,KHAGRACHARI,Chattogram
+479,,,mgrpanchhari@krishibank.org.bd,1,1,0,50:20.2,PANCHARI,3403,KHAGRACHARI,Chattogram
+480,,,mgrramgarh@krishibank.org.bd,1,1,0,50:20.2,RAMGARH,3405,KHAGRACHARI,Chattogram
+481,,,mgrbarakpurbazar@krishibank.org.bd,1,1,0,50:20.2,BARAKPUR BAZAR,1305,KHULNA,Khulna
+482,,,mgrbatiaghata@krishibank.org.bd,1,1,0,50:20.2,BATIAGHATA,1312,KHULNA,Khulna
+483,,,mgrbiratbazar@krishibank.org.bd,1,1,0,50:20.2,BIRAT BAZAR,1313,KHULNA,Khulna
+484,,,mgrchandkhali@krishibank.org.bd,1,1,0,50:20.2,CHANDKHALI,1321,KHULNA,Khulna
+485,,,mgrdacop@krishibank.org.bd,1,1,0,50:20.2,DACOPE,1311,KHULNA,Khulna
+486,,,mgrdaulatpur.khulna@krishibank.org.bd,1,1,0,50:20.2,DAULATPUR,1304,KHULNA,Khulna
+487,,,mgrdumuria@krishibank.org.bd,1,1,0,50:20.2,DUMURIA,1308,KHULNA,Khulna
+488,,,mgrjaigirmahal@krishibank.org.bd,1,1,0,50:20.2,JAIGIRMOHAL,1316,KHULNA,Khulna
+489,,,mgrjamirabazar@krishibank.org.bd,1,1,0,50:20.2,JAMIRA BAZAR,1307,KHULNA,Khulna
+490,,,mgrkajdia@krishibank.org.bd,1,1,0,50:20.2,KAZDIA,1318,KHULNA,Khulna
+491,,,mgrkdabusterminal@krishibank.org.bd,1,1,0,50:20.2,KDA BUS TERMINAL,1319,KHULNA,Khulna
+492,,,corpkhulna@krishibank.org.bd,1,1,0,50:20.2,KHULNA corp.,1301,KHULNA,Khulna
+493,,,mgrkaira@krishibank.org.bd,1,1,0,50:20.2,KOIRA,1317,KHULNA,Khulna
+494,,,mgrlabonchara@krishibank.org.bd,1,1,0,50:20.2,LABONCHARA,1302,KHULNA,Khulna
+495,,,mgrnalianbazar@krishibank.org.bd,1,1,0,50:20.2,NALIYAN BAZAR,1322,KHULNA,Khulna
+496,,,mgrnewmarket@krishibank.org.bd,1,1,0,50:20.2,NEW MARKET,1320,KHULNA,Khulna
+497,,,mgrpaikgacha@krishibank.org.bd,1,1,0,50:20.2,PAIKGACHA,1315,KHULNA,Khulna
+498,,,mgrfultala@krishibank.org.bd,1,1,0,50:20.2,PHULTALA,1306,KHULNA,Khulna
+499,,,mgrrupsaghat@krishibank.org.bd,1,1,0,50:20.2,RUPSHAGHAT,1303,KHULNA,Khulna
+500,,,mgrsahapur@krishibank.org.bd,1,1,0,50:20.2,SHAHPUR,1309,KHULNA,Khulna
+501,,,mgrterokhada@krishibank.org.bd,1,1,0,50:20.2,TEROKHADA,1310,KHULNA,Khulna
+502,,,mgradampur@krishibank.org.bd,1,1,0,50:20.2,ADAMPUR,4818,KISHOREGANJ,Mymensingh
+503,,,mgrashtagram@krishibank.org.bd,1,1,0,50:20.2,AUSTAGRAM,4817,KISHOREGANJ,Mymensingh
+504,,,mgrbajitpurk@krishibank.org.bd,1,1,0,50:20.2,BAJITPUR,4805,KISHOREGANJ,Mymensingh
+505,,,mgrbhairabbazar@krishibank.org.bd,1,1,0,50:20.2,BHAIRAB BAZAR,4808,KISHOREGANJ,Mymensingh
+506,,,mgrchouddasataboardbazar@krishibank.org.bd,1,1,0,50:20.2,CHOUDDASHOTO BOARD BAZAR,4823,KISHOREGANJ,Mymensingh
+507,,,mgrchawgangabazar@krishibank.org.bd,1,1,0,50:20.2,CHOUGANGA BAZAR,4826,KISHOREGANJ,Mymensingh
+508,,,mgrgachihatabazar@krishibank.org.bd,1,1,0,50:20.2,GOCHIHATA BAZAR,4825,KISHOREGANJ,Mymensingh
+509,,,mgrgosairbazar@krishibank.org.bd,1,1,0,50:20.2,GOSHAIR BAZAR,4802,KISHOREGANJ,Mymensingh
+510,,,mgrhilochia@krishibank.org.bd,1,1,0,50:20.2,HILOCHIA,4807,KISHOREGANJ,Mymensingh
+511,,,mgrhossainpur@krishibank.org.bd,1,1,0,50:20.2,HOSSAINPUR,4816,KISHOREGANJ,Mymensingh
+512,,,mgritna@krishibank.org.bd,1,1,0,50:20.2,ITNA,4811,KISHOREGANJ,Mymensingh
+513,,,mgrjoysiddi@krishibank.org.bd,1,1,0,50:20.2,JOYSIDDI,4812,KISHOREGANJ,Mymensingh
+514,,,mgrkarimgonj@krishibank.org.bd,1,1,0,50:20.2,KARIMGANJ,4809,KISHOREGANJ,Mymensingh
+515,,,mgrkatiadi@krishibank.org.bd,1,1,0,50:20.2,KATIADI,4813,KISHOREGANJ,Mymensingh
+516,,,mgrkishoreganj@krishibank.org.bd,1,1,0,50:20.2,KISHOREGANJ,4801,KISHOREGANJ,Mymensingh
+517,,,mgrkuliarchar@krishibank.org.bd,1,1,0,50:20.2,KULIARCHAR,4815,KISHOREGANJ,Mymensingh
+518,,,mgrlatifabad@krishibank.org.bd,1,1,0,50:20.2,LATIFABAD,4803,KISHOREGANJ,Mymensingh
+519,,,mgrmitamaine@krishibank.org.bd,1,1,0,50:20.2,MITAMOIN,4819,KISHOREGANJ,Mymensingh
+520,,,mgrmorichkhalibazar@krishibank.org.bd,1,1,0,50:20.2,MORICHKHALI BAZAR,4822,KISHOREGANJ,Mymensingh
+521,,,mgrmasuabazar@krishibank.org.bd,1,1,0,50:20.2,MOSUA BAZAR,4824,KISHOREGANJ,Mymensingh
+522,,,mgrniamatpur@krishibank.org.bd,1,1,0,50:20.2,NIAMATPUR,4810,KISHOREGANJ,Mymensingh
+523,,,mgrnikli@krishibank.org.bd,1,1,0,50:20.2,NIKLI,4820,KISHOREGANJ,Mymensingh
+524,,,mgrpakundia@krishibank.org.bd,1,1,0,50:20.2,PAKUNDIA,4804,KISHOREGANJ,Mymensingh
+525,,,mgrsararchar@krishibank.org.bd,1,1,0,50:20.2,SARARCHAR,4806,KISHOREGANJ,Mymensingh
+526,,,mgrshimulkandibazar@krishibank.org.bd,1,1,0,50:20.2,SIMULKANDI BAZAR,4821,KISHOREGANJ,Mymensingh
+527,,,mgrtarail@krishibank.org.bd,1,1,0,50:20.2,TARAIL,4814,KISHOREGANJ,Mymensingh
+528,,,mgrailchara@krishibank.org.bd,1,1,0,50:20.2,AILCHARA,1902,KUSHTIA,Kushtia
+529,,,mgramla@krishibank.org.bd,1,1,0,50:20.2,AMLA,1906,KUSHTIA,Kushtia
+530,,,mgrbahalbaria@krishibank.org.bd,1,1,0,50:20.2,BAHALBARIA,1907,KUSHTIA,Kushtia
+531,,,mgrbarabazar@krishibank.org.bd,1,1,0,50:20.2,BARA BAZAR,1917,KUSHTIA,Kushtia
+532,,,mgrbarokhada@krishibank.org.bd,1,1,0,50:20.2,BARAKHADA,1904,KUSHTIA,Kushtia
+533,,,mgrbheramara@krishibank.org.bd,1,1,0,50:20.2,BHERAMARA,1908,KUSHTIA,Kushtia
+534,,,mgrdangmorka@krishibank.org.bd,1,1,0,50:20.2,DANGMARKA BAZAR,1912,KUSHTIA,Kushtia
+535,,,mgrdaulatpur@krishibank.org.bd,1,1,0,50:20.2,DAULATPUR,1911,KUSHTIA,Kushtia
+536,,,mgrhaludbaria@krishibank.org.bd,1,1,0,50:20.2,HALUDBARIA,1918,KUSHTIA,Kushtia
+537,,,mgrjhaudia@krishibank.org.bd,1,1,0,50:20.2,JHAWDIA,1903,KUSHTIA,Kushtia
+538,,,mgrjuniadah@krishibank.org.bd,1,1,0,50:20.2,JUNIADAH,1909,KUSHTIA,Kushtia
+539,,,mgrkhoksa@krishibank.org.bd,1,1,0,50:20.2,KHOKSHA,1915,KUSHTIA,Kushtia
+540,,,mgrkuchiamora@krishibank.org.bd,1,1,0,50:20.2,KUCHIAMURA BAZAR,1910,KUSHTIA,Kushtia
+541,,,mgrkumarkhali@krishibank.org.bd ,1,1,0,50:20.2,KUMARKHALI,1913,KUSHTIA,Kushtia
+542,,,mgrkushtia@krishibank.org.bd,1,1,0,50:20.2,KUSHTIA,1901,KUSHTIA,Kushtia
+543,,,mgrmirpurkus@krishibank.org.bd,1,1,0,50:20.2,MIRPUR,1905,KUSHTIA,Kushtia
+544,,,mgrmadhupurkushtia@krishibank.org.bd,1,1,0,50:20.2,MODHUPUR BAZAR,1914,KUSHTIA,Kushtia
+545,,,dgmlpo@krishibank.org.bd,1,1,0,50:20.2,L.P.O,4001,L.P.O,Dhaka
+546,,,mgraddabazar@krishibank.org.bd,1,1,0,50:20.2,ADDA BAZAR,5305,LAKSHAM,Cumilla
+547,,,mgralishor@krishibank.org.bd,1,1,0,50:20.2,ALISHWAR BAZAR,5304,LAKSHAM,Cumilla
+548,,,mgrbauchibazar@krishibank.org.bd,1,1,0,50:20.2,BABURCHI BAZAR,2332,LAKSHAM,Cumilla
+549,,,mgrbagmara@krishibank.org.bd,1,1,0,50:20.2,BAGHMARA BAZAR,5303,LAKSHAM,Cumilla
+550,,,mgrbangoddabazar@krishibank.org.bd,1,1,0,50:20.2,BANGADDA BAZAR,2316,LAKSHAM,Cumilla
+551,,,mgrbarura@krishibank.org.bd,1,1,0,50:20.2,BARURA,2318,LAKSHAM,Cumilla
+552,,,mgrbatesabazar@krishibank.org.bd,1,1,0,50:20.2,BATISHA,2310,LAKSHAM,Cumilla
+553,,,mgrbauksharbazar@krishibank.org.bd,1,1,0,50:20.2,BAUKSHAR BAZAR,2319,LAKSHAM,Cumilla
+554,,,mgrbijrabazar@krishibank.org.bd,1,1,0,50:20.2,BIZRA BAZAR,2314,LAKSHAM,Cumilla
+555,,,mgrchouddagram@krishibank.org.bd,1,1,0,50:20.2,CHOUDDAGRAM,2307,LAKSHAM,Cumilla
+556,,,mgrchowdhurybazar@krishibank.org.bd,1,1,0,50:20.2,CHOUDHURY BAZAR,2311,LAKSHAM,Cumilla
+557,,,mgrdhalua@krishibank.org.bd,1,1,0,50:20.2,DHALUA,2309,LAKSHAM,Cumilla
+558,,,mgrhasnabad@krishibank.org.bd,1,1,0,50:20.2,HASNABAD,5306,LAKSHAM,Cumilla
+559,,,mgrkadir@krishibank.org.bd,1,1,0,50:20.2,KADAIR BAZAR,5307,LAKSHAM,Cumilla
+560,,,mgrkankapaithbazar@krishibank.org.bd,1,1,0,50:20.2,KANKAPAITH,2312,LAKSHAM,Cumilla
+561,,,mgrkashinagar@krishibank.org.bd,1,1,0,50:20.2,KASHINAGAR,2308,LAKSHAM,Cumilla
+562,,,mgrkhoshbash@krishibank.org.bd,1,1,0,50:20.2,KHOSHBASH,5302,LAKSHAM,Cumilla
+563,,,mgrlakhanpurbazar@krishibank.org.bd,1,1,0,50:20.2,LAKHYANPUR,2341,LAKSHAM,Cumilla
+564,,,mgrlaksam@krishibank.org.bd,1,1,0,50:20.2,LAKSAM,2315,LAKSHAM,Cumilla
+565,,,mgrmsbazar@krishibank.org.bd,1,1,0,50:20.2,MAOLANA SAHEBER BAZAR,2344,LAKSHAM,Cumilla
+566,,,mgrmiahbazar@krishibank.org.bd,1,1,0,50:20.2,MEAR BAZAR (UZIRPUR),2345,LAKSHAM,Cumilla
+567,,,mgrmonogargonj@krishibank.org.bd,1,1,0,50:20.2,MONOHORGONJ (POMGAON),2317,LAKSHAM,Cumilla
+568,,,mgrnangolkot@krishibank.org.bd,1,1,0,50:20.2,NANGALKOT,2329,LAKSHAM,Cumilla
+569,,,mgrnatherpetua@krishibank.org.bd,1,1,0,50:20.2,NATHER PETUA,5301,LAKSHAM,Cumilla
+570,,,mgrsonaimuribazar@krishibank.org.bd,1,1,0,50:20.2,SUNAIMURI,2337,LAKSHAM,Cumilla
+571,,,mgrcharalexandar@krishibank.org.bd,1,1,0,50:20.2,CHAR ALEXANDER,2807,LAKSHMIPUR,Chattogram
+572,,,mgrcharfalkon@krishibank.org.bd,1,1,0,50:20.2,CHAR FALKON,2809,LAKSHMIPUR,Chattogram
+573,,,mgrchargazi@krishibank.org.bd,1,1,0,50:20.2,CHAR GAZI,2808,LAKSHMIPUR,Chattogram
+574,,,mgrchowdhurybazar@krishibank.org.bd,1,1,0,50:20.2,CHOUDHURY BAZAR,2814,LAKSHMIPUR,Chattogram
+575,,,mgrdighalibazar@krishibank.org.bd,1,1,0,50:20.2,DIGHALI BAZAR,2818,LAKSHMIPUR,Chattogram
+576,,,mgrhajirpara@krishibank.org.bd,1,1,0,50:20.2,HAJIRPARA,2802,LAKSHMIPUR,Chattogram
+577,,,mgrjaksinbazar@krishibank.org.bd,1,1,0,50:20.2,JAKSIN,2813,LAKSHMIPUR,Chattogram
+578,,,mgrkaderpanditerhat@krishibank.org.bd,1,1,0,50:20.2,KADERPANDITER HAT,2812,LAKSHMIPUR,Chattogram
+579,,,mgrkorunanagarbazar@krishibank.org.bd,1,1,0,50:20.2,KARUNA NAGAR BAZAR,2815,LAKSHMIPUR,Chattogram
+580,,,mgrlaxmipur@krishibank.org.bd,1,1,0,50:20.2,LAKSHMIPUR,2801,LAKSHMIPUR,Chattogram
+581,,,mgrmajhirgaonbazar@krishibank.org.bd,1,1,0,50:20.2,MAZHIRGAON BAZAR,2806,LAKSHMIPUR,Chattogram
+582,,,mgrmitalibazar@krishibank.org.bd,1,1,0,50:20.2,MITALI BAZAR,2816,LAKSHMIPUR,Chattogram
+583,,,mgrpanparabazar@krishibank.org.bd,1,1,0,50:20.2,PANPARA BAZAR,2811,LAKSHMIPUR,Chattogram
+584,,,mgrpoddarbazar@krishibank.org.bd,1,1,0,50:20.2,PODDAR BAZAR,2817,LAKSHMIPUR,Chattogram
+585,,,mgrraipur@krishibank.org.bd,1,1,0,50:20.2,RAIPUR,2803,LAKSHMIPUR,Chattogram
+586,,,mgrrakhaliabazar@krishibank.org.bd,1,1,0,50:20.2,RAKHALIA BAZAR,2804,LAKSHMIPUR,Chattogram
+587,,,mgrramgonj@krishibank.org.bd,1,1,0,50:20.2,RAMGANJ,2805,LAKSHMIPUR,Chattogram
+588,,,mgrtorabgonjbazar@krishibank.org.bd,1,1,0,50:20.2,TORABGONJ,2810,LAKSHMIPUR,Chattogram
+589,,,mgrbajitpur@krishibank.org.bd,1,1,0,50:20.2,BAJITPUR,1013,MADARIPUR,Faridpur
+590,,,mgrchanderchar@krishibank.org.bd,1,1,0,50:20.2,CHANDERCHAR,1012,MADARIPUR,Faridpur
+591,,,mgrgatakcharbazar@krishibank.org.bd,1,1,0,50:20.2,GHOTAKCHAR BAZAR,1014,MADARIPUR,Faridpur
+592,,,mgrgopalpurbazar@krishibank.org.bd,1,1,0,50:20.2,GOPALPUR HAT,1011,MADARIPUR,Faridpur
+593,,,mgrkalirbazar@krishibank.org.bd,1,1,0,50:20.2,KALIR BAZAR,1010,MADARIPUR,Faridpur
+594,,,mgrkalkini@krishibank.org.bd,1,1,0,50:20.2,KALKINI,1004,MADARIPUR,Faridpur
+595,,,mgrkhaserhat@krishibank.org.bd,1,1,0,50:20.2,KHASHER HAT,1015,MADARIPUR,Faridpur
+596,,,mgrmadaripur@krishibank.org.bd,1,1,0,50:20.2,MADARIPUR,1001,MADARIPUR,Faridpur
+597,,,mgrmatherbazar@krishibank.org.bd,1,1,0,50:20.2,MATAR BAZAR,1002,MADARIPUR,Faridpur
+598,,,mgrpachcharbazar@krishibank.org.bd,1,1,0,50:20.2,PANCHACHAR BAZAR,1009,MADARIPUR,Faridpur
+599,,,mgrrajair@krishibank.org.bd,1,1,0,50:20.2,RAJOIR,1003,MADARIPUR,Faridpur
+600,,,mgrsahebrampur@krishibank.org.bd,1,1,0,50:20.2,SHAHEBRAMPUR,1005,MADARIPUR,Faridpur
+601,,,mgrshibchar@krishibank.org.bd,1,1,0,50:20.2,SHIBCHAR,1006,MADARIPUR,Faridpur
+602,,,mgrtatikanda@krishibank.org.bd,1,1,0,50:20.2,TATIRKANDA,1016,MADARIPUR,Faridpur
+603,,,mgrutrailhat@krishibank.org.bd,1,1,0,50:20.2,UTRAIL,1007,MADARIPUR,Faridpur
+604,,,mgruttarramjanpurhat@krishibank.org.bd,1,1,0,50:20.2,UTTARRAMJANPUR HAT,1017,MADARIPUR,Faridpur
+605,,,mgralamkhalibazar@krishibank.org.bd,1,1,0,50:20.2,ALAMKHALI BAZAR,1814,MAGURA,Faridpur
+606,,,mgralokdia@krishibank.org.bd,1,1,0,50:20.2,ALOKDIA,1802,MAGURA,Faridpur
+607,,,mgramuriabazar@krishibank.org.bd,1,1,0,50:20.2,AMURIA BAZAR,1811,MAGURA,Faridpur
+608,,,mgrarpara@krishibank.org.bd,1,1,0,50:20.2,ARPARA,1806,MAGURA,Faridpur
+609,,,mgrbinodpur@krishibank.org.bd,1,1,0,50:20.2,BENODPUR,1808,MAGURA,Faridpur
+610,,,mgrbhabanhatibazar@krishibank.org.bd,1,1,0,50:20.2,BHABANHATI BAZAR,1810,MAGURA,Faridpur
+611,,,mgrdakkhinmirzapur@krishibank.org.bd,1,1,0,50:20.2,DAHKIN MIJAPUR,1817,MAGURA,Faridpur
+612,,,mgrjagadal@krishibank.org.bd,1,1,0,50:20.2,JAGDAL BAZAR,1809,MAGURA,Faridpur
+613,,,mgrlangolbadh@krishibank.org.bd,1,1,0,50:20.2,LANGALBAD,1804,MAGURA,Faridpur
+614,,,mgrmagura@krishibank.org.bd,1,1,0,50:20.2,MAGURA,1801,MAGURA,Faridpur
+615,,,mgrmohammadpur@krishibank.org.bd,1,1,0,50:20.2,MOHAMMADPUR,1807,MAGURA,Faridpur
+616,,,mgrnagrabazar@krishibank.org.bd,1,1,0,50:20.2,NAGRA BAZAR,1813,MAGURA,Faridpur
+617,,,mgrradhanagarbazar@krishibank.org.bd,1,1,0,50:20.2,RADHANAGAR,1812,MAGURA,Faridpur
+618,,,mgrsachilapurbazar@krishibank.org.bd,1,1,0,50:20.2,SACHILAPUR,1805,MAGURA,Faridpur
+619,,,mgrsatrujitpur@krishibank.org.bd,1,1,0,50:20.2,SATRUJITPUR,1815,MAGURA,Faridpur
+620,,,mgrsreepurmagura@krishibank.org.bd,1,1,0,50:20.2,SREEPUR,1803,MAGURA,Faridpur
+621,,,mgrbaniajuri@krishibank.org.bd,1,1,0,50:20.2,BANIAJURI,4308,MANIKGANJ,Dhaka
+622,,,mgrcharigram@krishibank.org.bd,1,1,0,50:20.2,CHARIGRAM,4305,MANIKGANJ,Dhaka
+623,,,mgrdaulatpur.manikgonj@krishibank.org.bd,1,1,0,50:20.2,DAULATPUR,4309,MANIKGANJ,Dhaka
+624,,,mgrgheor@krishibank.org.bd,1,1,0,50:20.2,GHIOR,4307,MANIKGANJ,Dhaka
+625,,,mgrhargaj@krishibank.org.bd,1,1,0,50:20.2,HARGONJ,4316,MANIKGANJ,Dhaka
+626,,,mgrharirampur@krishibank.org.bd,1,1,0,50:20.2,HARIRAMPUR (ANDHARMANIK),4303,MANIKGANJ,Dhaka
+627,,,mgrjagir@krishibank.org.bd,1,1,0,50:20.2,JAGIR,4315,MANIKGANJ,Dhaka
+628,,,mgrjhitka@krishibank.org.bd,1,1,0,50:20.2,JHITKA,4302,MANIKGANJ,Dhaka
+629,,,mgrjoymondop@krishibank.org.bd,1,1,0,50:20.2,JOYMONTOP,4317,MANIKGANJ,Dhaka
+630,,,mgrmanikgonj@krishibank.org.bd,1,1,0,50:20.2,MANIKGANJ,4301,MANIKGANJ,Dhaka
+631,,,mgrmohadebpur@krishibank.org.bd,1,1,0,50:20.2,MOHADEBPUR,4310,MANIKGANJ,Dhaka
+632,,,mgrsaturia@krishibank.org.bd,1,1,0,50:20.2,SHATURIA,4306,MANIKGANJ,Dhaka
+633,,,mgrsibalaya@krishibank.org.bd,1,1,0,50:20.2,SHIBALOY,4311,MANIKGANJ,Dhaka
+634,,,mgrsingair@krishibank.org.bd,1,1,0,50:20.2,SINGAIR,4304,MANIKGANJ,Dhaka
+635,,,mgrbamundi@krishibank.org.bd,1,1,0,50:20.2,BAMUNDI,2108,MEHERPUR,Kushtia
+636,,,mgrbaradi@krishibank.org.bd,1,1,0,50:20.2,BARADIA,2102,MEHERPUR,Kushtia
+637,,,mgrdariapur@krishibank.org.bd,1,1,0,50:20.2,DARIAPUR,2103,MEHERPUR,Kushtia
+638,,,mgrgangni@krishibank.org.bd,1,1,0,50:20.2,GANGNI,2104,MEHERPUR,Kushtia
+639,,,mgrkathuli@krishibank.org.bd,1,1,0,50:20.2,KATHULI,2106,MEHERPUR,Kushtia
+640,,,mgrmeherpur@krishibank.org.bd,1,1,0,50:20.2,MEHERPUR,2101,MEHERPUR,Kushtia
+641,,,mgrmujibnagar@krishibank.org.bd,1,1,0,50:20.2,MUJIBNAGAR,2107,MEHERPUR,Kushtia
+642,,,mgrujalpur@krishibank.org.bd,1,1,0,50:20.2,UZALPUR,2105,MEHERPUR,Kushtia
+643,,,mgrbaramchal@krishibank.org.bd,1,1,0,50:20.2,BARAMCHAL,3807,MOULVI BAZAR,Sylhet
+644,,,mgrbaralekha@krishibank.org.bd,1,1,0,50:20.2,BARLEKHA,3808,MOULVI BAZAR,Sylhet
+645,,,mgrbhatera@krishibank.org.bd,1,1,0,50:20.2,BHATERA,3814,MOULVI BAZAR,Sylhet
+646,,,mgrdighirparbazar@krishibank.org.bd,1,1,0,50:20.2,DIGIRPAR BAZAR,3802,MOULVI BAZAR,Sylhet
+647,,,mgrjuri@krishibank.org.bd,1,1,0,50:20.2,JURI (KAMINIGONJ BAZAR),3809,MOULVI BAZAR,Sylhet
+648,,,mgrkagabala@krishibank.org.bd,1,1,0,50:20.2,KAGABALA,3803,MOULVI BAZAR,Sylhet
+649,,,mgrkamolgonj@krishibank.org.bd,1,1,0,50:20.2,KAMALGANJ,3810,MOULVI BAZAR,Sylhet
+650,,,mgrkulaura@krishibank.org.bd,1,1,0,50:20.2,KULAURA,3806,MOULVI BAZAR,Sylhet
+651,,,mgrmokambazar@krishibank.org.bd,1,1,0,50:20.2,MOKAM BAZAR,3815,MOULVI BAZAR,Sylhet
+652,,,mgrmonu@krishibank.org.bd,1,1,0,50:20.2,MONU,3811,MOULVI BAZAR,Sylhet
+653,,,mgrmoulvibazar@krishibank.org.bd,1,1,0,50:20.2,MOULVI BAZAR,3801,MOULVI BAZAR,Sylhet
+654,,,mgrrajnagar@krishibank.org.bd,1,1,0,50:20.2,RAJNAGAR,3804,MOULVI BAZAR,Sylhet
+655,,,mgrshahidnagarbazar@krishibank.org.bd,1,1,0,50:20.2,SAHIDNAGAR BAZAR,3813,MOULVI BAZAR,Sylhet
+656,,,mgrsherpurbazar@krishibank.org.bd,1,1,0,50:20.2,SHERPUR BAZAR,3812,MOULVI BAZAR,Sylhet
+657,,,mgrsreemongal@krishibank.org.bd,1,1,0,50:20.2,SREEMONGAL,3805,MOULVI BAZAR,Sylhet
+658,,,mgraldibazar@krishibank.org.bd,1,1,0,50:20.2,ALDI BAZAR,4416,MUNSHIGANJ,Dhaka
+659,,,mgrbaraykhali@krishibank.org.bd,1,1,0,50:20.2,BARAIKHALI BAZAR,4417,MUNSHIGANJ,Dhaka
+660,,,mgrbetka@krishibank.org.bd,1,1,0,50:20.2,BETKA,4413,MUNSHIGANJ,Dhaka
+661,,,mgrbhaberchar@krishibank.org.bd,1,1,0,50:20.2,BHABER CHAR(GAZA),4402,MUNSHIGANJ,Dhaka
+662,,,mgrcharkaeor@krishibank.org.bd,1,1,0,50:20.2,CHARKEWAR,4415,MUNSHIGANJ,Dhaka
+663,,,mgrgazaria@krishibank.org.bd,1,1,0,50:20.2,GAZARIA,4403,MUNSHIGANJ,Dhaka
+664,,,mgrgholtalibazar@krishibank.org.bd,1,1,0,50:20.2,GOLTALI BAZAR (GAODIA BAZAR),4407,MUNSHIGANJ,Dhaka
+665,,,mgrhashara@krishibank.org.bd,1,1,0,50:20.2,HASHARA,4410,MUNSHIGANJ,Dhaka
+666,,,mgrichapura@krishibank.org.bd,1,1,0,50:20.2,ICHAPURA,4405,MUNSHIGANJ,Dhaka
+667,,,mgrlohajang@krishibank.org.bd,1,1,0,50:20.2,LOHAJONG,4406,MUNSHIGANJ,Dhaka
+668,,,mgrmedinimondal@krishibank.org.bd,1,1,0,50:20.2,MEDINIMONDAL,4408,MUNSHIGANJ,Dhaka
+669,,,mgrmunshigonj@krishibank.org.bd,1,1,0,50:20.2,MUNSHIGANJ,4401,MUNSHIGANJ,Dhaka
+670,,,mgrrarikhal@krishibank.org.bd,1,1,0,50:20.2,RARIKHAL,4411,MUNSHIGANJ,Dhaka
+671,,,mgrsirajdikhan@krishibank.org.bd,1,1,0,50:20.2,SERAJDIKHAN,4404,MUNSHIGANJ,Dhaka
+672,,,mgrshologhor@krishibank.org.bd,1,1,0,50:20.2,SHOLAGHAR,4412,MUNSHIGANJ,Dhaka
+673,,,mgrsreenagar@krishibank.org.bd,1,1,0,50:20.2,SREENAGAR,4409,MUNSHIGANJ,Dhaka
+674,,,mgrtongibari@krishibank.org.bd,1,1,0,50:20.2,TONGIBARI,4414,MUNSHIGANJ,Dhaka
+675,,,mgrdhobaura@krishibank.org.bd,1,1,0,50:20.2,DHOBAURA,4740,MYMENSING (NORTH),Mymensing
+676,,,mgrdhurail@krishibank.org.bd,1,1,0,50:20.2,DHURAIL BAZAR,5401,MYMENSING (NORTH),Mymensing
+677,,,mgrdowhakhala@krishibank.org.bd,1,1,0,50:20.2,DOHAKHOLA BAZAR,4729,MYMENSING (NORTH),Mymensing
+678,,,mgrgouripur@krishibank.org.bd,1,1,0,50:20.2,GOURIPUR,4728,MYMENSING (NORTH),Mymensing
+679,,,mgrhaluaghat@krishibank.org.bd,1,1,0,50:20.2,HALUAGHAT,4723,MYMENSING (NORTH),Mymensing
+680,,,mgrishwargon@krishibank.org.bd,1,1,0,50:20.2,ISHWARGANJ,4730,MYMENSING (NORTH),Mymensing
+681,,,mgrkashigonjbazar@krishibank.org.bd,1,1,0,50:20.2,KASHIGANJ BAZAR,4726,MYMENSING (NORTH),Mymensing
+682,,,mgrmaijbag@krishibank.org.bd,1,1,0,50:20.2,MAEJBAG BAZAR,4741,MYMENSING (NORTH),Mymensing
+683,,,mgrmajhialy@krishibank.org.bd,1,1,0,50:20.2,MAZIALI,4739,MYMENSING (NORTH),Mymensing
+684,,,mgrmuazzempur@krishibank.org.bd,1,1,0,50:20.2,MOAZZEMPUR,4738,MYMENSING (NORTH),Mymensing
+685,,,mgrmadhupur@krishibank.org.bd,1,1,0,50:20.2,MODHUPUR BAZAR,4731,MYMENSING (NORTH),Mymensing
+686,,,mgrnagla@krishibank.org.bd,1,1,0,50:20.2,NAGLA BAZAR,4724,MYMENSING (NORTH),Mymensing
+687,,,mgrnandail@krishibank.org.bd,1,1,0,50:20.2,NANDAIL,4733,MYMENSING (NORTH),Mymensing
+688,,,mgrfulpur@krishibank.org.bd,1,1,0,50:20.2,PHULPUR,4725,MYMENSING (NORTH),Mymensing
+689,,,mgrsohagi@krishibank.org.bd,1,1,0,50:20.2,SHOHAGI BAZAR,4732,MYMENSING (NORTH),Mymensing
+690,,,mgtarakandar@krishibank.org.bd,1,1,0,50:20.2,TARAKANDA,4727,MYMENSING (NORTH),Mymensing
+691,,,mgragriuniversity@krishibank.org.bd,1,1,0,50:20.2,AGRI.VERSITY,4704,MYMENSING (SOUTH),Mymensing
+692,,,mgrambikagonjbazar@krishibank.org.bd,1,1,0,50:20.2,AMBIKAGANJ BAZAR,4705,MYMENSING (SOUTH),Mymensing
+693,,,"mgrastadharbazar@krishibank.org.bd,",1,1,0,50:20.2,AUSHTADHAR BAZAR,4703,MYMENSING (SOUTH),Mymensing
+694,,,"mgrbaktabazar@krishibank.org.bd,",1,1,0,50:20.2,BAKDA BAZAR,4735,MYMENSING (SOUTH),Mymensing
+695,,,mgrbatajore@krishibank.org.bd,1,1,0,50:20.2,BATAJORE,4744,MYMENSING (SOUTH),Mymensing
+696,,,mgrbhaluka@krishibank.org.bd,1,1,0,50:20.2,BHALUKA,4707,MYMENSING (SOUTH),Mymensing
+697,,,mgrbiruniabazar@krishibank.org.bd,1,1,0,50:20.2,BIRUNIA BAZAR,4709,MYMENSING (SOUTH),Mymensing
+698,,,"mgrchairbariabazar@krishibank.org.bd,",1,1,0,50:20.2,CHARBARIA BAZAR,4737,MYMENSING (SOUTH),Mymensing
+699,,,mgrchechuabazar@krishibank.org.bd,1,1,0,50:20.2,CHECHUA BAZAR,4719,MYMENSING (SOUTH),Mymensing
+700,,,mgrdakatiachowrasta@krishibank.org.bd,1,1,0,50:20.2,DAKATIA CHOWRASTA BAZAR,4743,MYMENSING (SOUTH),Mymensing
+701,,,mgrdewkhola@krishibank.org.bd,1,1,0,50:20.2,DAWHAKHOLA BAZAR,4712,MYMENSING (SOUTH),Mymensing
+702,,,mgrdhalia@krishibank.org.bd,1,1,0,50:20.2,DHALIA,4708,MYMENSING (SOUTH),Mymensing
+703,,,mgrdhanikhola@krishibank.org.bd,1,1,0,50:20.2,DHANIKHOLA,4716,MYMENSING (SOUTH),Mymensing
+704,,,mgrgafargaon@krishibank.org.bd,1,1,0,50:20.2,GAFFARGAON,4720,MYMENSING (SOUTH),Mymensing
+705,,,mgrgoyeshpurbazar@krishibank.org.bd,1,1,0,50:20.2,GAYESHPUR BAZAR,4722,MYMENSING (SOUTH),Mymensing
+706,,,mgrjailroad@krishibank.org.bd,1,1,0,50:20.2,JAIL ROAD MYM.,4706,MYMENSING (SOUTH),Mymensing
+707,,,mgrkandipara@krishibank.org.bd,1,1,0,50:20.2,KANDIPARA,4721,MYMENSING (SOUTH),Mymensing
+708,,,mgrkashigonjbazartrishal@krishibank.org.bd,1,1,0,50:20.2,KASHIGANJ(TRISAL),4714,MYMENSING (SOUTH),Mymensing
+709,,,mgrmuktagacha@krishibank.org.bd,1,1,0,50:20.2,MUKTAGACHA (BARA HISYA),4718,MYMENSING (SOUTH),Mymensing
+710,,,mgrmymensingh@krishibank.org.bd,1,1,0,50:20.2,MYMENSING,4701,MYMENSING (SOUTH),Mymensing
+711,,,mgrfulbaria@krishibank.org.bd,1,1,0,50:20.2,PHULBARIA,4711,MYMENSING (SOUTH),Mymensing
+712,,,"mgrseedstorebazar@krishibank.org.bd,",1,1,0,50:20.2,SEEDSTORE BAZAR,4710,MYMENSING (SOUTH),Mymensing
+713,,,mgrshushutibazar@krishibank.org.bd,1,1,0,50:20.2,SHUSHUTI BAZAR,4742,MYMENSING (SOUTH),Mymensing
+714,,,mgrtrishal@krishibank.org.bd,1,1,0,50:20.2,TRISHAL (DARIRAMPUR),4715,MYMENSING (SOUTH),Mymensing
+715,,,mgrhabakhali@krishibank.org.bd,1,1,0,50:20.2,HABOKHALI,2207,NARAIL,Khulna
+716,,,"mgrkalia@krishibank.org.bd,",1,1,0,50:20.2,KALIA,2205,NARAIL,Khulna
+717,,,mgrlahuria@krishibank.org.bd,1,1,0,50:20.2,LAHORIA BAZAR,2204,NARAIL,Khulna
+718,,,"mgrlohagaranarail@krishibank.org.bd,",1,1,0,50:20.2,LOHAGARA,2203,NARAIL,Khulna
+719,,,mgrnaragati@krishibank.org.bd,1,1,0,50:20.2,NARAGATI BAZAR,2208,NARAIL,Khulna
+720,,,mgrnarail@krishibank.org.bd,1,1,0,50:20.2,NARAIL,2201,NARAIL,Khulna
+721,,,mgrseikhhatibazar@krishibank.org.bd,1,1,0,50:20.2,SHEKHATI BAZAR,2202,NARAIL,Khulna
+722,,,mgraraihajar@krishibank.org.bd,1,1,0,50:20.2,ARAIHAZAR,4608,NARAYANGONJ ,Dhaka
+723,,,mgrbandar@krishibank.org.bd,1,1,0,50:20.2,BANDAR,4603,NARAYANGONJ ,Dhaka
+724,,,mgrfatullah@krishibank.org.bd,1,1,0,50:20.2,FATULLA,4602,NARAYANGONJ ,Dhaka
+725,,,mgrgolakandail@krishibank.org.bd,1,1,0,50:20.2,GOLAKANDAIL,4612,NARAYANGONJ ,Dhaka
+726,,,mgrhossainpur@krishibank.org.bd,1,1,0,50:20.2,HUSSAINPUR,4611,NARAYANGONJ ,Dhaka
+727,,,mgrjangaliabazar@krishibank.org.bd,1,1,0,50:20.2,JANGALIA BAZAR,4614,NARAYANGONJ ,Dhaka
+728,,,mgrmadanpur@krishibank.org.bd,1,1,0,50:20.2,MADANPUR (MUSAPUR),4604,NARAYANGONJ ,Dhaka
+729,,,mgrmahjampur@krishibank.org.bd,1,1,0,50:20.2,MOHAZAMPUR BAZAR,4606,NARAYANGONJ ,Dhaka
+730,,,corpnarayangonj@krishibank.org.bd,1,1,0,50:20.2,NARAYANGONJ CORP.,4601,NARAYANGONJ ,Dhaka
+731,,,mgrpouramarket@krishibank.org.bd,1,1,0,50:20.2,POURO MARKET,4615,NARAYANGONJ ,Dhaka
+732,,,mgrichapurabazar@krishibank.org.bd,1,1,0,50:20.2,"PURBACHAL
+(Ichapura Bazar)",4613,NARAYANGONJ ,Dhaka
+733,,,mgrrupganj@krishibank.org.bd,1,1,0,50:20.2,RUPGANJ,4607,NARAYANGONJ ,Dhaka
+734,,,mgrsatgaon@krishibank.org.bd,1,1,0,50:20.2,SATGAON,4609,NARAYANGONJ ,Dhaka
+735,,,mgrsiddhirgonj@krishibank.org.bd,1,1,0,50:20.2,SIDDIRGANJ,4610,NARAYANGONJ ,Dhaka
+736,,,mgrsonargaon@krishibank.org.bd,1,1,0,50:20.2,SONARGAON(B.BAZAR,4605,NARAYANGONJ ,Dhaka
+737,,,mgralgiibazar@krishibank.org.bd,1,1,0,50:20.2,ALGI BAZAR,4523,NARSINGDI,Dhaka
+738,,,mgrbaburhat@krishibank.org.bd,1,1,0,50:20.2,BABURHAT (SHILMONDI),4502,NARSINGDI,Dhaka
+739,,,mgrbannarbazar@krishibank.org.bd,1,1,0,50:20.2,BANNAR BAZAR,4518,NARSINGDI,Dhaka
+740,,,mgrbaraichabazar@krishibank.org.bd,1,1,0,50:20.2,BAROICHA BAZAR,4520,NARSINGDI,Dhaka
+741,,,mgrbelabo@krishibank.org.bd,1,1,0,50:20.2,BELABOO,4503,NARSINGDI,Dhaka
+742,,,mgrcharsubuddibazar@krishibank.org.bd,1,1,0,50:20.2,CHAR SUBBDI BAZAR,4519,NARSINGDI,Dhaka
+743,,,mgrchanagardibazar@krishibank.org.bd,1,1,0,50:20.2,CHARNAGDI BAZAR,4522,NARSINGDI,Dhaka
+744,,,mgrghorasal@krishibank.org.bd,1,1,0,50:20.2,GHORASHAL (PAIKSHA),4511,NARSINGDI,Dhaka
+745,,,mgrhatirdia@krishibank.org.bd,1,1,0,50:20.2,HATIRDIA,4507,NARSINGDI,Dhaka
+746,,,mgrlakhpurbazar@krishibank.org.bd,1,1,0,50:20.2,LAKPUR BAZAR,4509,NARSINGDI,Dhaka
+747,,,mgrmorjalbazar@krishibank.org.bd,1,1,0,50:20.2,MARZAL BAZAR,4516,NARSINGDI,Dhaka
+748,,,mgrmonohardi@krishibank.org.bd,1,1,0,50:20.2,MONOHARDI,4505,NARSINGDI,Dhaka
+749,,,mgrmusheferchar@krishibank.org.bd,1,1,0,50:20.2,MUNSEFER CHAR,4521,NARSINGDI,Dhaka
+750,,,mgrnorshingdi@krishibank.org.bd,1,1,0,50:20.2,NARSINGDI,4501,NARSINGDI,Dhaka
+751,,,mgrpaikanbazar@krishibank.org.bd,1,1,0,50:20.2,PAIKAN BAZAR,4525,NARSINGDI,Dhaka
+752,,,mgrpalash@krishibank.org.bd,1,1,0,50:20.2,PALASH,4510,NARSINGDI,Dhaka
+753,,,mgrporadiabazar@krishibank.org.bd,1,1,0,50:20.2,PORADIA BAZAR,4506,NARSINGDI,Dhaka
+754,,,mgrraipura@krishibank.org.bd,1,1,0,50:20.2,RAIPURA,4504,NARSINGDI,Dhaka
+755,,,mgrshaheprotap@krishibank.org.bd,1,1,0,50:20.2,SHAHEPRATAP,4524,NARSINGDI,Dhaka
+756,,,mgrsekherbazar@krishibank.org.bd,1,1,0,50:20.2,SHEKHER BAZAR,4517,NARSINGDI,Dhaka
+757,,,mgrshibpur@krishibank.org.bd,1,1,0,50:20.2,SHIBPUR,4508,NARSINGDI,Dhaka
+758,,,mgratpara@krishibank.org.bd,1,1,0,50:20.2,ATPARA,4909,NETRAKONA,Mymensing
+759,,,mgrbarhatta@krishibank.org.bd,1,1,0,50:20.2,BARHATTA,4908,NETRAKONA,Mymensing
+760,,,mgrchallishabazar@krishibank.org.bd,1,1,0,50:20.2,CHALLISHA BAZAR,4902,NETRAKONA,Mymensing
+761,,,mgrchesrakhali@krishibank.org.bd,1,1,0,50:20.2,CHESRAKHALI,4924,NETRAKONA,Mymensing
+762,,,mgrduoz@krishibank.org.bd,1,1,0,50:20.2,DUOZ,4920,NETRAKONA,Mymensing
+763,,,mgrdurgapur@krishibank.org.bd,1,1,0,50:20.2,DURGAPUR,4903,NETRAKONA,Mymensing
+764,,,mgrhironpurbazar@krishibank.org.bd,1,1,0,50:20.2,HIRONPUR BAZAR,4906,NETRAKONA,Mymensing
+765,,,mgrjatrabaribazar@krishibank.org.bd,1,1,0,50:20.2,JATTRABARI,4922,NETRAKONA,Mymensing
+766,,,mgrkadamsree@krishibank.org.bd,1,1,0,50:20.2,KADAMSREE,4921,NETRAKONA,Mymensing
+767,,,mgrkalmakanda@krishibank.org.bd,1,1,0,50:20.2,KALMAKANDA,4910,NETRAKONA,Mymensing
+768,,,mgrkendua@krishibank.org.bd,1,1,0,50:20.2,KENDUA,4907,NETRAKONA,Mymensing
+769,,,mgrkhaliajuri@krishibank.org.bd,1,1,0,50:20.2,KHALIAJURI,4912,NETRAKONA,Mymensing
+770,,,mgrkhalishaur@krishibank.org.bd,1,1,0,50:20.2,KHALISAUR,4917,NETRAKONA,Mymensing
+771,,,mgrkurpar@krishibank.org.bd,1,1,0,50:20.2,KURPAR (KAILATI),4918,NETRAKONA,Mymensing
+772,,,mgrmadan@krishibank.org.bd,1,1,0,50:20.2,MADAN,4913,NETRAKONA,Mymensing
+773,,,mgrmohangonj@krishibank.org.bd,1,1,0,50:20.2,MOHANGANJ,4911,NETRAKONA,Mymensing
+774,,,mgrnazirpur@krishibank.org.bd,1,1,0,50:20.2,NAZIRPUR,4915,NETRAKONA,Mymensing
+775,,,mgrnetrokona@krishibank.org.bd,1,1,0,50:20.2,NETRAKONA,4901,NETRAKONA,Mymensing
+776,,,mgrpurbadhala@krishibank.org.bd,1,1,0,50:20.2,PURBADHALA,4904,NETRAKONA,Mymensing
+777,,,mgrshahitpurbazar@krishibank.org.bd,1,1,0,50:20.2,SHAHITPUR BAZAR,4923,NETRAKONA,Mymensing
+778,,,mgrshyamgonj@krishibank.org.bd,1,1,0,50:20.2,SHYAMGANJ,4905,NETRAKONA,Mymensing
+779,,,mgrtatirkona@krishibank.org.bd,1,1,0,50:20.2,TATIRKONA,4919,NETRAKONA,Mymensing
+780,,,mgrabirpara@krishibank.org.bd,1,1,0,50:20.2,ABIRPARA,2621,NOAKHALI,Chattogram
+781,,,mgrbashurhat@krishibank.org.bd,1,1,0,50:20.2,BASHUR HAT,2607,NOAKHALI,Chattogram
+782,,,mgrbottoly@krishibank.org.bd,1,1,0,50:20.2,BOT TOLY BAZAR,2614,NOAKHALI,Chattogram
+783,,,mgrcharfakira@krishibank.org.bd,1,1,0,50:20.2,CHAR FAKIRA,2620,NOAKHALI,Chattogram
+784,,,mgrcharishwar@krishibank.org.bd,1,1,0,50:20.2,CHAR ISHWAR,2616,NOAKHALI,Chattogram
+785,,,mgrchatkill@krishibank.org.bd,1,1,0,50:20.2,CHATKHIL,2609,NOAKHALI,Chattogram
+786,,,mgrchowmuhani@krishibank.org.bd,1,1,0,50:20.2,CHOWMOHANI,2604,NOAKHALI,Chattogram
+787,,,mgrdeoti@krishibank.org.bd,1,1,0,50:20.2,DEOTI BAZAR,2605,NOAKHALI,Chattogram
+788,,,mgrhazarihat@krishibank.org.bd,1,1,0,50:20.2,HAJARI HAT,2619,NOAKHALI,Chattogram
+789,,,mgrjahajmara@krishibank.org.bd,1,1,0,50:20.2,JAHAJMARA,2611,NOAKHALI,Chattogram
+790,,,mgrkabirhat@krishibank.org.bd,1,1,0,50:20.2,KABIRHAT,2623,NOAKHALI,Chattogram
+791,,,mgrkadirpur@krishibank.org.bd,1,1,0,50:20.2,KADIRPUR,2606,NOAKHALI,Chattogram
+792,,,mgrkoromullah@krishibank.org.bd,1,1,0,50:20.2,KARMULLAH BAZAR,2622,NOAKHALI,Chattogram
+793,,,mgrkhasherhat@krishibank.org.bd,1,1,0,50:20.2,KHASERHAT (SAMIRHAT),2602,NOAKHALI,Chattogram
+794,,,mgrkutuberhat@krishibank.org.bd,1,1,0,50:20.2,KUTUBER HAT,2613,NOAKHALI,Chattogram
+795,,,mgrmearhat@krishibank.org.bd,1,1,0,50:20.2,MEARHAT,2617,NOAKHALI,Chattogram
+796,,,mgrneazpur@krishibank.org.bd,1,1,0,50:20.2,NEAZPUR,2603,NOAKHALI,Chattogram
+797,,,mgrnoakhali@krishibank.org.bd,1,1,0,50:20.2,NOAKHALI M.COURT,2601,NOAKHALI,Chattogram
+798,,,mgrramnarayanpur@krishibank.org.bd,1,1,0,50:20.2,RAMNARAYANPUR,2618,NOAKHALI,Chattogram
+799,,,mgrsenbegh@krishibank.org.bd,1,1,0,50:20.2,SENBAGH,2608,NOAKHALI,Chattogram
+800,,,mgrsahabanir@krishibank.org.bd,1,1,0,50:20.2,SHAHEBALIR BAZAR,2612,NOAKHALI,Chattogram
+801,,,mgrsonapur@krishibank.org.bd,1,1,0,50:20.2,SONAPUR,2615,NOAKHALI,Chattogram
+802,,,mgreasinhazirhat@krishibank.org.bd,1,1,0,50:20.2,YEASIN HAZIRHAT,2624,NOAKHALI,Chattogram
+803,,,mgranowara@krishibank.org.bd,1,1,0,50:20.2,ANOWARA,3008,PATIYA,Chattogram
+804,,,mgrbadamtali@krishibank.org.bd,1,1,0,50:20.2,BADAMTOLI,2928,PATIYA,Chattogram
+805,,,mgrbanshkhali@krishibank.org.bd,1,1,0,50:20.2,BANSHKHALI,3208,PATIYA,Chattogram
+806,,,mgrboalkhali@krishibank.org.bd,1,1,0,50:20.2,BOALKHALI,3007,PATIYA,Chattogram
+807,,,mgrbomanghat@krishibank.org.bd,1,1,0,50:20.2,BOMANGAHAT,3206,PATIYA,Chattogram
+808,,,mgrbudhpurahat@krishibank.org.bd,1,1,0,50:20.2,BUDHPURAHAT,3009,PATIYA,Chattogram
+809,,,mgrchandanaish@krishibank.org.bd,1,1,0,50:20.2,CHANDANAISH,3005,PATIYA,Chattogram
+810,,,mgrchatari@krishibank.org.bd,1,1,0,50:20.2,CHATORI,3010,PATIYA,Chattogram
+811,,,mgrcollegebazar@krishibank.org.bd,1,1,0,50:20.2,COLLEGE BAZAR (KAIYAGRAM),3003,PATIYA,Chattogram
+812,,,mgrdohazari@krishibank.org.bd,1,1,0,50:20.2,DOHAZARI,3002,PATIYA,Chattogram
+813,,,mgrfazilkharhat@krishibank.org.bd,1,1,0,50:20.2,FAJILKHAR HAT,3011,PATIYA,Chattogram
+814,,,mgrkalipur@krishibank.org.bd,1,1,0,50:20.2,KALIPUR (DAROGA BAZAR),3210,PATIYA,Chattogram
+815,,,mgrkeranihat@krishibank.org.bd,1,1,0,50:20.2,KERANIHAT,3207,PATIYA,Chattogram
+816,,,mgrkhodarhat@krishibank.org.bd,1,1,0,50:20.2,KHODARHAT,3006,PATIYA,Chattogram
+817,,,mgrlohagara@krishibank.org.bd,1,1,0,50:20.2,LOHAGORA,3211,PATIYA,Chattogram
+818,,,mgrnaporabazar@krishibank.org.bd,1,1,0,50:20.2,NAPURA BAZAR,3209,PATIYA,Chattogram
+819,,,mgrpanchuriadighirpar@krishibank.org.bd,1,1,0,50:20.2,PANCHURIA DIGIPAR,3004,PATIYA,Chattogram
+820,,,mgrpatia@krishibank.org.bd,1,1,0,50:20.2,PATIYA,3001,PATIYA,Chattogram
+821,,,mgrsatkania@krishibank.org.bd,1,1,0,50:20.2,SATKANIA,3205,PATIYA,Chattogram
+822,,,mgramkhola@krishibank.org.bd,1,1,0,50:20.2,AMKHOLA,724,PATUAKHALI,Barishal
+823,,,mgrawliapur@krishibank.org.bd,1,1,0,50:20.2,AWLIAPUR,710,PATUAKHALI,Barishal
+824,,,mgrbahercharbandar@krishibank.org.bd,1,1,0,50:20.2,BAHERCHAR BANDAR,708,PATUAKHALI,Barishal
+825,,,mgrbauphal@krishibank.org.bd,1,1,0,50:20.2,BAUPHAL,705,PATUAKHALI,Barishal
+826,,,mgrchandpurabandar@krishibank.org.bd,1,1,0,50:20.2,CHANDPURA BANDAR,720,PATUAKHALI,Barishal
+827,,,mgrcharkajal@krishibank.org.bd,1,1,0,50:20.2,CHAR KAZAL,704,PATUAKHALI,Barishal
+828,,,mgrchiknikandi@krishibank.org.bd,1,1,0,50:20.2,CHIKNIKANDI BAZAR,716,PATUAKHALI,Barishal
+829,,,mgrchotobighai@krishibank.org.bd,1,1,0,50:20.2,CHOTABIGHAI BAZAR,718,PATUAKHALI,Barishal
+830,,,mgrdashmina@krishibank.org.bd,1,1,0,50:20.2,DASHMINA,709,PATUAKHALI,Barishal
+831,,,mgrdumki@krishibank.org.bd,1,1,0,50:20.2,DUMKI,715,PATUAKHALI,Barishal
+832,,,mgrgabuabazar@krishibank.org.bd,1,1,0,50:20.2,GABUA BAZAR,719,PATUAKHALI,Barishal
+833,,,mgrgalachipa@krishibank.org.bd,1,1,0,50:20.2,GALACHIPA,707,PATUAKHALI,Barishal
+834,,,mgrkalaiabandar@krishibank.org.bd,1,1,0,50:20.2,KALAIA BANDAR,726,PATUAKHALI,Barishal
+835,,,mgrkalapara@krishibank.org.bd,1,1,0,50:20.2,KALAPARA,712,PATUAKHALI,Barishal
+836,,,mgrkarkhana@krishibank.org.bd,1,1,0,50:20.2,KARKHANA,721,PATUAKHALI,Barishal
+837,,,mgrkashipur@krishibank.org.bd,1,1,0,50:20.2,KASHIPUR BAZAR,727,PATUAKHALI,Barishal
+838,,,mgrkeshobpur@krishibank.org.bd,1,1,0,50:20.2,KESHOBPUR,714,PATUAKHALI,Barishal
+839,,,mgrkuakata@krishibank.org.bd,1,1,0,50:20.2,KUAKATA,723,PATUAKHALI,Barishal
+840,,,mgrlamnaborobazar @krishibank.org.bd,1,1,0,50:20.2,LAMNA BARO BAZAR,725,PATUAKHALI,Barishal
+841,,,mgrmahipur @krishibank.org.bd,1,1,0,50:20.2,MOHIPUR,713,PATUAKHALI,Barishal
+842,,,mgrmuradia@krishibank.org.bd,1,1,0,50:20.2,MURADIA,702,PATUAKHALI,Barishal
+843,,,mgrnagarerhat@krishibank.org.bd,1,1,0,50:20.2,NAGARER HAT,706,PATUAKHALI,Barishal
+844,,,mgrpanpatti@krishibank.org.bd,1,1,0,50:20.2,PANPATTY,717,PATUAKHALI,Barishal
+845,,,mgrpatuakhali@krishibank.org.bd,1,1,0,50:20.2,PATUAKHALI,701,PATUAKHALI,Barishal
+846,,,mgrpukurjanabazar@krishibank.org.bd,1,1,0,50:20.2,PUKURJANA BAZAR,722,PATUAKHALI,Barishal
+847,,,mgrsubidkhali@krishibank.org.bd,1,1,0,50:20.2,SUBIDKHALI,711,PATUAKHALI,Barishal
+848,,,mgrbaitakata@krishibank.org.bd,1,1,0,50:20.2,BAITAKATA,506,PEROJPUR,Barishal
+849,,,mgrbaldia@krishibank.org.bd,1,1,0,50:20.2,BALDIA,510,PEROJPUR,Barishal
+850,,,mgrbaramasua@krishibank.org.bd,1,1,0,50:20.2,BARO MASUA,526,PEROJPUR,Barishal
+851,,,mgrbhandaria@krishibank.org.bd,1,1,0,50:20.2,BHANDARIA,511,PEROJPUR,Barishal
+852,,,mgrchandipur@krishibank.org.bd,1,1,0,50:20.2,CHANDIPUR,508,PEROJPUR,Barishal
+853,,,mgrchiltalabazar@krishibank.org.bd,1,1,0,50:20.2,CHILTALA BAZAR,521,PEROJPUR,Barishal
+854,,,mgrdhanishafa@krishibank.org.bd,1,1,0,50:20.2,DHANISHAFA,514,PEROJPUR,Barishal
+855,,,mgrdurgapur@krishibank.org.bd,1,1,0,50:20.2,DURGAPUR,522,PEROJPUR,Barishal
+856,,,mgrikribazar@krishibank.org.bd,1,1,0,50:20.2,EKRI BAZAR,520,PEROJPUR,Barishal
+857,,,mgrgulishakhali@krishibank.org.bd,1,1,0,50:20.2,GULISHAKHALI,515,PEROJPUR,Barishal
+858,,,mgrkalakhali@krishibank.org.bd,1,1,0,50:20.2,KALAKHALI,524,PEROJPUR,Barishal
+859,,,mgrkaukhali@krishibank.org.bd,1,1,0,50:20.2,KAUKHALI,504,PEROJPUR,Barishal
+860,,,mgrkourikhara@krishibank.org.bd,1,1,0,50:20.2,KAWRIKHARA,509,PEROJPUR,Barishal
+861,,,mgrkuriana@krishibank.org.bd,1,1,0,50:20.2,KURIANA,523,PEROJPUR,Barishal
+862,,,mgrmathbaria@krishibank.org.bd,1,1,0,50:20.2,MATHBARIA,513,PEROJPUR,Barishal
+863,,,mgrmatibhanga@krishibank.org.bd,1,1,0,50:20.2,MATIBHANGA,519,PEROJPUR,Barishal
+864,,,mgrmulgramhat@krishibank.org.bd,1,1,0,50:20.2,MULGRAMHAT,502,PEROJPUR,Barishal
+865,,,mgrnazirpurbazar@krishibank.org.bd,1,1,0,50:20.2,NAZIRPUR,505,PEROJPUR,Barishal
+866,,,mgrperojpur@krishibank.org.bd,1,1,0,50:20.2,PEROJPUR,501,PEROJPUR,Barishal
+867,,,mgrshankarpasha@krishibank.org.bd,1,1,0,50:20.2,SHANKARPASHA,525,PEROJPUR,Barishal
+868,,,mgrshaplejabazar@krishibank.org.bd,1,1,0,50:20.2,SHAPLEZA BAZAR,517,PEROJPUR,Barishal
+869,,,mgrswarupkati@krishibank.org.bd,1,1,0,50:20.2,SWARUPKATI,518,PEROJPUR,Barishal
+870,,,mgrtelikhali@krishibank.org.bd,1,1,0,50:20.2,TELIKHALI,512,PEROJPUR,Barishal
+871,,,mgrzianagar@krishibank.org.bd,1,1,0,50:20.2,ZIA NAGOR (INDURKANI),507,PEROJPUR,Barishal
+872,,,mgrbagdulihat@krishibank.org.bd,1,1,0,50:20.2,BAGDULIHAT,1106,RAJBARI,Faridpur
+873,,,mgrbahadurpurbazar@krishibank.org.bd,1,1,0,50:20.2,BAHADURPUR BAZAR,1111,RAJBARI,Faridpur
+874,,,mgrbaliakandi@krishibank.org.bd,1,1,0,50:20.2,BALIA KANDI,1109,RAJBARI,Faridpur
+875,,,mgrgoalunda@krishibank.org.bd,1,1,0,50:20.2,GOALUNDO,1108,RAJBARI,Faridpur
+876,,,mgrhabashpurbazar@krishibank.org.bd,1,1,0,50:20.2,HABASHPUR BAZAR,1107,RAJBARI,Faridpur
+877,,,mgrmrigibazar@krishibank.org.bd,1,1,0,50:20.2,MRIGI BAZAR,1105,RAJBARI,Faridpur
+878,,,mgrmulghor@krishibank.org.bd,1,1,0,50:20.2,MULGHAR,1113,RAJBARI,Faridpur
+879,,,mgrpanchuriabazar@krishibank.org.bd,1,1,0,50:20.2,PANCHURIA BAZAR,1102,RAJBARI,Faridpur
+880,,,"mgrpangsha@krishibank.org.bd,",1,1,0,50:20.2,PANGSHA,1103,RAJBARI,Faridpur
+881,,,"mgrrajbari@krishibank.org.bd,",1,1,0,50:20.2,RAJBARI,1101,RAJBARI,Faridpur
+882,,,mgrratandia@krishibank.org.bd,1,1,0,50:20.2,RATANDIA,1104,RAJBARI,Faridpur
+883,,,mgrsonapurbazar@krishibank.org.bd,1,1,0,50:20.2,SONAPUR BAZAR,1110,RAJBARI,Faridpur
+884,,,mgrsreepurrajbari@krishibank.org.bd,1,1,0,50:20.2,SREEPUR,1112,RAJBARI,Faridpur
+885,,,mgrbaghaichari@krishibank.org.bd,1,1,0,50:20.2,BAGHAICHARI,3507,RANGAMATI,Chattogram
+886,,,mgrbarkal@krishibank.org.bd,1,1,0,50:20.2,BARKAL,3503,RANGAMATI,Chattogram
+887,,,mgrkaptai@krishibank.org.bd,1,1,0,50:20.2,BELAICHARI,3303,RANGAMATI,Chattogram
+888,,,mgrjurachari@krishibank.org.bd,1,1,0,50:20.2,JURACHARI,3506,RANGAMATI,Chattogram
+889,,,mgrrangamati@krishibank.org.bd,1,1,0,50:20.2,KAPTAI,3301,RANGAMATI,Chattogram
+890,,,mgrkawkhali@krishibank.org.bd,1,1,0,50:20.2,KAWKHALI,3505,RANGAMATI,Chattogram
+891,,,mgrlongadui@krishibank.org.bd,1,1,0,50:20.2,LONGADO,3504,RANGAMATI,Chattogram
+892,,,mgrnaniarchar@krishibank.org.bd,1,1,0,50:20.2,NANIARCHAR,3502,RANGAMATI,Chattogram
+893,,,mgrraikhalibazar@krishibank.org.bd,1,1,0,50:20.2,RAIKHALI BAZAR,3302,RANGAMATI,Chattogram
+894,,,mgrrajosthali@krishibank.org.bd,1,1,0,50:20.2,RAJOSTHALI,3304,RANGAMATI,Chattogram
+895,,,mgrrangamati@krishibank.org.bd,1,1,0,50:20.2,RANGAMATI,3501,RANGAMATI,Chattogram
+896,,,mgrashashuni@krishibank.org.bd,1,1,0,50:20.2,ASHASHUNI,1509,SATKHIRA,Khulna
+897,,,mgrbaliadangabazar@krishibank.org.bd,1,1,0,50:20.2,BALIADANGA BAZAR,1506,SATKHIRA,Khulna
+898,,,mgrbsbandar@krishibank.org.bd,1,1,0,50:20.2,BHOMRA STHAL BANDOR,1518,SATKHIRA,Khulna
+899,,,mgrdebhata@krishibank.org.bd,1,1,0,50:20.2,DEBHATA,1511,SATKHIRA,Khulna
+900,,,mgrdhuliharbazar@krishibank.org.bd,1,1,0,50:20.2,DULIHAR BAZAR,1503,SATKHIRA,Khulna
+901,,,mgrghona@krishibank.org.bd,1,1,0,50:20.2,GHONA,1502,SATKHIRA,Khulna
+902,,,mgrgunakarkati@krishibank.org.bd,1,1,0,50:20.2,GUNAKARKATI,1510,SATKHIRA,Khulna
+903,,,mgrkalaroa@krishibank.org.bd,1,1,0,50:20.2,KALAROA,1505,SATKHIRA,Khulna
+904,,,mgrkaligonjsat@krishibank.org.bd,1,1,0,50:20.2,KALIGANJ,1513,SATKHIRA,Khulna
+905,,,mgrkhordabazar@krishibank.org.bd,1,1,0,50:20.2,KHORDA BAZAR,1507,SATKHIRA,Khulna
+906,,,mgrkrishnanagar@krishibank.org.bd,1,1,0,50:20.2,KIRSHNANAGAR,1514,SATKHIRA,Khulna
+907,,,mgrreoibazar@krishibank.org.bd,1,1,0,50:20.2,REWI BAZAR,1516,SATKHIRA,Khulna
+908,,,mgrsakhipursat@krishibank.org.bd,1,1,0,50:20.2,SAKHIPUR,1512,SATKHIRA,Khulna
+909,,,mgrsatkhira@krishibank.org.bd,1,1,0,50:20.2,SATKHIRA,1501,SATKHIRA,Khulna
+910,,,mgrshyamnagar@krishibank.org.bd,1,1,0,50:20.2,SHYAMNAGAR,1515,SATKHIRA,Khulna
+911,,,mgrsonabariabazar@krishibank.org.bd,1,1,0,50:20.2,SONABARIA BAZAR,1508,SATKHIRA,Khulna
+912,,,mgrtala@krishibank.org.bd,1,1,0,50:20.2,TALA,1504,SATKHIRA,Khulna
+913,,,mgrbhedorgonj@krishibank.org.bd,1,1,0,50:20.2,BHEDARGANJ,1209,SHARIATPUR,Faridpur
+914,,,mgrburirhatbazar@krishibank.org.bd,1,1,0,50:20.2,BURIRHAT BAZAR,1218,SHARIATPUR,Faridpur
+915,,,mgrchiknadi@krishibank.org.bd,1,1,0,50:20.2,CHIKUNDI,1212,SHARIATPUR,Faridpur
+916,,,mgrdmkhali@krishibank.org.bd,1,1,0,50:20.2,D M KHALI BAZAR,1217,SHARIATPUR,Faridpur
+917,,,mgrdamudda@krishibank.org.bd,1,1,0,50:20.2,DAMODYA,1210,SHARIATPUR,Faridpur
+918,,,mgrdogribazar@krishibank.org.bd,1,1,0,50:20.2,DOGREE BAZAR,1216,SHARIATPUR,Faridpur
+919,,,mgrgharisar@krishibank.org.bd,1,1,0,50:20.2,GHARISHAR BAZAR,1203,SHARIATPUR,Faridpur
+920,,,mgrgolarbazar@krishibank.org.bd,1,1,0,50:20.2,GOLARBAZAR,1219,SHARIATPUR,Faridpur
+921,,,mgrgoshairhat@krishibank.org.bd,1,1,0,50:20.2,GOSHAIRHAT,1206,SHARIATPUR,Faridpur
+922,,,mgrhaturiabazar@krishibank.org.bd,1,1,0,50:20.2,HATURIA BAZAR,1214,SHARIATPUR,Faridpur
+923,,,mgrkaneshwarbazar@krishibank.org.bd,1,1,0,50:20.2,KANESHWAR BAZAR,1211,SHARIATPUR,Faridpur
+924,,,mgrkartikpurbazar@krishibank.org.bd,1,1,0,50:20.2,KARTIKPUR BAZAR,1215,SHARIATPUR,Faridpur
+925,,,mgrkodalpurbazar@krishibank.org.bd,1,1,0,50:20.2,KODALPUR BAZAR,1207,SHARIATPUR,Faridpur
+926,,,mgrlawkhola@krishibank.org.bd,1,1,0,50:20.2,LAWKHOLA,1205,SHARIATPUR,Faridpur
+927,,,mgrnagerparabazar@krishibank.org.bd,1,1,0,50:20.2,NAGERPARA BAZAR,1208,SHARIATPUR,Faridpur
+928,,,mgrnaria@krishibank.org.bd,1,1,0,50:20.2,NARIA,1202,SHARIATPUR,Faridpur
+929,,,mgrsakhipurbazar@krishibank.org.bd,1,1,0,50:20.2,SAKHIPUR BAZAR,1213,SHARIATPUR,Faridpur
+930,,,mgrshariatpur@krishibank.org.bd,1,1,0,50:20.2,SHARIATPUR,1201,SHARIATPUR,Faridpur
+931,,,mgrzajira@krishibank.org.bd,1,1,0,50:20.2,ZANJIRA,1204,SHARIATPUR,Faridpur
+932,,,mgrbajitkhilabazar@krishibank.org.bd,1,1,0,50:20.2,BAJIT KHALI,5102,SHERPUR,Mymensing
+933,,,mgrbhayadanga@krishibank.org.bd,1,1,0,50:20.2,BHAYA DANGA,5109,SHERPUR,Mymensing
+934,,,mgrgazirkhamar@krishibank.org.bd,1,1,0,50:20.2,GAZIRKHAMAR,5111,SHERPUR,Mymensing
+935,,,mgrjhenaigati@krishibank.org.bd,1,1,0,50:20.2,JHINAIGATI,5105,SHERPUR,Mymensing
+936,,,mgrkakorkandi@krishibank.org.bd,1,1,0,50:20.2,KAKORKANDI BAZAR,5115,SHERPUR,Mymensing
+937,,,mgrkuruabazar@krishibank.org.bd,1,1,0,50:20.2,KURUA BAZAR,5108,SHERPUR,Mymensing
+938,,,mgrkusumhati@krishibank.org.bd,1,1,0,50:20.2,KUSHUMKATHI,5110,SHERPUR,Mymensing
+939,,,mgrnakla@krishibank.org.bd,1,1,0,50:20.2,NAKLA,5106,SHERPUR,Mymensing
+940,,,mgrnalitabari@krishibank.org.bd,1,1,0,50:20.2,NALITABARI,5103,SHERPUR,Mymensing
+941,,,mgrnaljorabazar@krishibank.org.bd,1,1,0,50:20.2,NALJORA,5114,SHERPUR,Mymensing
+942,,,mgrnayabilbazar@krishibank.org.bd,1,1,0,50:20.2,NAYABIL BAZAR,5112,SHERPUR,Mymensing
+943,,,mgrpatakatabazar@krishibank.org.bd,1,1,0,50:20.2,PATHA KATA,5113,SHERPUR,Mymensing
+944,,,mgrsherpur@krishibank.org.bd,1,1,0,50:20.2,SHERPUR,5101,SHERPUR,Mymensing
+945,,,mgrsreebordi@krishibank.org.bd,1,1,0,50:20.2,SREEBORDI,5104,SHERPUR,Mymensing
+946,,,mgrbadaghat@krishibank.org.bd,1,1,0,50:20.2,BADAGHAT,3720,SUNAMGANJ,Sylhet
+947,,,mgrbanglabazarsunamgonj@krishibank.org.bd,1,1,0,50:20.2,BANGLA BAZAR,3724,SUNAMGANJ,Sylhet
+948,,,mgrbishwambarpur@krishibank.org.bd,1,1,0,50:20.2,BISHWAMBARPUR,3707,SUNAMGANJ,Sylhet
+949,,,mgrboaliabazar@krishibank.org.bd,1,1,0,50:20.2,BOWALIA BAZAR,3727,SUNAMGANJ,Sylhet
+950,,,mgrchatak@krishibank.org.bd,1,1,0,50:20.2,CHATAK,3702,SUNAMGANJ,Sylhet
+951,,,mgrdawraibazar@krishibank.org.bd,1,1,0,50:20.2,DAWRAI BAZAR,3729,SUNAMGANJ,Sylhet
+952,,,mgrderai@krishibank.org.bd,1,1,0,50:20.2,DERAI,3711,SUNAMGANJ,Sylhet
+953,,,mgrdharampasha@krishibank.org.bd,1,1,0,50:20.2,DHARMA PASHA,3709,SUNAMGANJ,Sylhet
+954,,,mgrdoarabazar@krishibank.org.bd,1,1,0,50:20.2,DOARA BAZAR,3706,SUNAMGANJ,Sylhet
+955,,,mgrdungria@krishibank.org.bd,1,1,0,50:20.2,DUNGRIA,3723,SUNAMGANJ,Sylhet
+956,,,mgrgobindagonj@krishibank.org.bd,1,1,0,50:20.2,GOBINADAGANJ,3703,SUNAMGANJ,Sylhet
+957,,,mgrgolakpurbazar@krishibank.org.bd,1,1,0,50:20.2,GOLAKPUR BAZAR,3719,SUNAMGANJ,Sylhet
+958,,,mgrjagannathpursun@krishibank.org.bd,1,1,0,50:20.2,JAGANNATHPUR,3714,SUNAMGANJ,Sylhet
+959,,,mgrsachnabazar@krishibank.org.bd,1,1,0,50:20.2,JAMOLGANJ /SACHNA BAZAR,3713,SUNAMGANJ,Sylhet
+960,,,mgrjawabazar@krishibank.org.bd,1,1,0,50:20.2,JAWAR BAZAR,3704,SUNAMGANJ,Sylhet
+961,,,mgrjoynagarbazar@krishibank.org.bd,1,1,0,50:20.2,JOYNAGAR BAZAR,3725,SUNAMGANJ,Sylhet
+962,,,mgrkalkalia@krishibank.org.bd,1,1,0,50:20.2,KALKALIA,3716,SUNAMGANJ,Sylhet
+963,,,mgrminabazar@krishibank.org.bd,1,1,0,50:20.2,MINA BAZAR,3722,SUNAMGANJ,Sylhet
+964,,,mgrmadhyanagar@krishibank.org.bd,1,1,0,50:20.2,MODHYANAGAR,3710,SUNAMGANJ,Sylhet
+965,,,mgrmoinpurbazar@krishibank.org.bd,1,1,0,50:20.2,MOINPUR BAZAR,3705,SUNAMGANJ,Sylhet
+966,,,mgrmangalkatabazar@krishibank.org.bd,1,1,0,50:20.2,MONGALKATA BAZAR,3726,SUNAMGANJ,Sylhet
+967,,,mgrnoakhalibazar@krishibank.org.bd,1,1,0,50:20.2,NOAKHALI BAZAR,3730,SUNAMGANJ,Sylhet
+968,,,mgrpathariabazar@krishibank.org.bd,1,1,0,50:20.2,PATHARIA BAZAR,3721,SUNAMGANJ,Sylhet
+969,,,mgrrafinagar@krishibank.org.bd,1,1,0,50:20.2,RAFINAGAR,3728,SUNAMGANJ,Sylhet
+970,,,mgrrajanigonjbazar@krishibank.org.bd,1,1,0,50:20.2,RAJANIGANJ BAZAR,3718,SUNAMGANJ,Sylhet
+971,,,mgrranigonjbazar@krishibank.org.bd,1,1,0,50:20.2,RANIGANJ BAZAR,3715,SUNAMGANJ,Sylhet
+972,,,mgrshymarchar@krishibank.org.bd,1,1,0,50:20.2,SHYAMARCHAR,3712,SUNAMGANJ,Sylhet
+973,,,mgrshalla@krishibank.org.bd,1,1,0,50:20.2,SULLA,3717,SUNAMGANJ,Sylhet
+974,,,mgrsunamgonj@krishibank.org.bd,1,1,0,50:20.2,SUNAMGANJ,3701,SUNAMGANJ,Sylhet
+975,,,mgrtahirpur@krishibank.org.bd,1,1,0,50:20.2,TAHIRPUR,3708,SUNAMGANJ,Sylhet
+976,,,"mgrambarkhana@krishibank.org.bd,",1,1,0,50:20.2,AMBARKHANA,3619,SYLHET,Sylhet
+977,,,mgrbalagonj@krishibank.org.bd,1,1,0,50:20.2,BALAGANJ,3617,SYLHET,Sylhet
+978,,,"mgrbandarbazar@krishibank.org.bd,",1,1,0,50:20.2,BANDAR BAZAR,3603,SYLHET,Sylhet
+979,,,"mgrbeanibazar@krishibank.org.bd,",1,1,0,50:20.2,BEANI BAZAR,3616,SYLHET,Sylhet
+980,,,mgrbhabanigonjbazar@krishibank.org.bd,1,1,0,50:20.2,BHABANIGANJ BAZAR,3623,SYLHET,Sylhet
+981,,,mgrbiswanath@krishibank.org.bd,1,1,0,50:20.2,BISWANATH N.BAZAR,3612,SYLHET,Sylhet
+982,,,mgrchatul@krishibank.org.bd,1,1,0,50:20.2,CHOTUL BAZAR,3609,SYLHET,Sylhet
+983,,,"mgrcharkhai@krishibank.org.bd,",1,1,0,50:20.2,CHURKHA,3615,SYLHET,Sylhet
+984,,,mgrcompanigonj@krishibank.org.bd,1,1,0,50:20.2,COMPANIGANJ,3607,SYLHET,Sylhet
+985,,,mgrdarpanagar@krishibank.org.bd,1,1,0,50:20.2,DARPANAGOR,3624,SYLHET,Sylhet
+986,,,mgrdewanbazar@krishibank.org.bd,1,1,0,50:20.2,DEWAN BAZAR,3618,SYLHET,Sylhet
+987,,,mgrdayarbazar@krishibank.org.bd,1,1,0,50:20.2,DOYAR BAZAR,3625,SYLHET,Sylhet
+988,,,"mgrdubagbazar@krishibank.org.bd,",1,1,0,50:20.2,DUBAG BAZAR,3621,SYLHET,Sylhet
+989,,,mgrfenchugonj@krishibank.org.bd,1,1,0,50:20.2,FENCHUGANJ,3611,SYLHET,Sylhet
+990,,,"mgrgolapgonj@krishibank.org.bd,",1,1,0,50:20.2,GOLAPGANJ,3610,SYLHET,Sylhet
+991,,,mgrgoainghat@krishibank.org.bd,1,1,0,50:20.2,GOWAINGHAT,3604,SYLHET,Sylhet
+992,,,mgrhadarparbazar@krishibank.org.bd,1,1,0,50:20.2,HADARPAR BAZAR,3626,SYLHET,Sylhet
+993,,,mgrjaintapur@krishibank.org.bd,1,1,0,50:20.2,JAINTIAPUR,3606,SYLHET,Sylhet
+994,,,mgrkanaighat@krishibank.org.bd,1,1,0,50:20.2,KANAIGHAT,3608,SYLHET,Sylhet
+995,,,mgrkhajanchigaon@krishibank.org.bd,1,1,0,50:20.2,KHAJANCHIGAON,3613,SYLHET,Sylhet
+996,,,"mgrmoglabazar@krishibank.org.bd,",1,1,0,50:20.2,MOGLA BAZAR,3602,SYLHET,Sylhet
+997,,,mgrratangonjbazar@krishibank.org.bd,1,1,0,50:20.2,RATANGANJ BAZAR,3620,SYLHET,Sylhet
+998,,,"mgrshalutikar@krishibank.org.bd,",1,1,0,50:20.2,SALUTIKAR,3605,SYLHET,Sylhet
+999,,,"mgrshiberbazar@krishibank.org.bd,",1,1,0,50:20.2,SHIBER BAZAR,3622,SYLHET,Sylhet
+1000,,,corpsylhet@krishibank.org.bd,1,1,0,50:20.2,SYLHET CORP.,3601,SYLHET,Sylhet
+1001,,,mgrtajpurbazar@krishibank.org.bd,1,1,0,50:20.2,TAJPUR BAZAR,3627,SYLHET,Sylhet
+1002,,,"mgrzakigonj@krishibank.org.bd,",1,1,0,50:20.2,ZAKIGANJ,3614,SYLHET,Sylhet
+1003,,,mgralokdiatangail@krishibank.org.bd,1,1,0,50:20.2,ALOKDIA,5029,TANGAIL (NORTH),Dhaka
+1004,,,mgrawliabad@krishibank.org.bd,1,1,0,50:20.2,AWLIABAD,5024,TANGAIL (NORTH),Dhaka
+1005,,,mgrballabazar@krishibank.org.bd,1,1,0,50:20.2,BALLA BAZAR,5026,TANGAIL (NORTH),Dhaka
+1006,,,mgrbangra@krishibank.org.bd,1,1,0,50:20.2,BANGRA,5023,TANGAIL (NORTH),Dhaka
+1007,,,mgrbhuapur@krishibank.org.bd,1,1,0,50:20.2,BHUAPUR,5015,TANGAIL (NORTH),Dhaka
+1008,,,mgrdhonbari@krishibank.org.bd,1,1,0,50:20.2,DHAN BARI,5033,TANGAIL (NORTH),Dhaka
+1009,,,mgrelenga@krishibank.org.bd,1,1,0,50:20.2,ELENGA,5025,TANGAIL (NORTH),Dhaka
+1010,,,mgrghatail@krishibank.org.bd,1,1,0,50:20.2,GHATAIL,5020,TANGAIL (NORTH),Dhaka
+1011,,,mgrgopalpur@krishibank.org.bd,1,1,0,50:20.2,GOPALPUR,5016,TANGAIL (NORTH),Dhaka
+1012,,,mgrjhawail@krishibank.org.bd,1,1,0,50:20.2,JHAWAIL,5019,TANGAIL (NORTH),Dhaka
+1013,,,mgrkakraid@krishibank.org.bd,1,1,0,50:20.2,KAKRAID,5028,TANGAIL (NORTH),Dhaka
+1014,,,mgrkalihati@krishibank.org.bd ,1,1,0,50:20.2,KALIHATI,5022,TANGAIL (NORTH),Dhaka
+1015,,,mgrmodhopur@krishibank.org.bd,1,1,0,50:20.2,MADHUPUR,5027,TANGAIL (NORTH),Dhaka
+1016,,,mgrmograbazar@krishibank.org.bd,1,1,0,50:20.2,MOGRA BAZAR,5034,TANGAIL (NORTH),Dhaka
+1017,,,mgrsajapur@krishibank.org.bd,1,1,0,50:20.2,SAJONPUR,5017,TANGAIL (NORTH),Dhaka
+1018,,,mgrsholakuribazar@krishibank.org.bd,1,1,0,50:20.2,SHOLAKURI BAZAR,5035,TANGAIL (NORTH),Dhaka
+1019,,,mgrshimlabazar@krishibank.org.bd,1,1,0,50:20.2,SIMLA BAZAR,5018,TANGAIL (NORTH),Dhaka
+1020,,,mgrsinguriabazar@krishibank.org.bd,1,1,0,50:20.2,SINGURIA BAZAR (ATHAIL SIMUL),5021,TANGAIL (NORTH),Dhaka
+1021,,,mgrbashail@krishibank.org.bd,1,1,0,50:20.2,BASHAIL,5014,TANGAIL (SOUTH),Dhaka
+1022,,,mgrbatholishadi@krishibank.org.bd,1,1,0,50:20.2,BATHULISADI BAZAR,5601,TANGAIL (SOUTH),Dhaka
+1023,,,mgrbkbazar@krishibank.org.bd,1,1,0,50:20.2,BHABKHANDA BAZAR,5032,TANGAIL (SOUTH),Dhaka
+1024,,,mgrbhadrabazar@krishibank.org.bd,1,1,0,50:20.2,BHADRA BAZAR,5007,TANGAIL (SOUTH),Dhaka
+1025,,,mgrcharparabazar@krishibank.org.bd,1,1,0,50:20.2,CHARPARA BAZAR,5031,TANGAIL (SOUTH),Dhaka
+1026,,,mgrdelduar@krishibank.org.bd,1,1,0,50:20.2,DELDUAR,5013,TANGAIL (SOUTH),Dhaka
+1027,,,mgrgoyhattabazar@krishibank.org.bd,1,1,0,50:20.2,GOYHATTA BAZAR,5006,TANGAIL (SOUTH),Dhaka
+1028,,,mgrhatubhanga@krishibank.org.bd,1,1,0,50:20.2,HATUBHANGA,5010,TANGAIL (SOUTH),Dhaka
+1029,,,mgrkachuabazar@krishibank.org.bd,1,1,0,50:20.2,KACHUA BAZAR,5012,TANGAIL (SOUTH),Dhaka
+1030,,,mgrkarotia@krishibank.org.bd,1,1,0,50:20.2,KARATIA,5002,TANGAIL (SOUTH),Dhaka
+1031,,,mgrmirzapurtan@krishibank.org.bd,1,1,0,50:20.2,MIRZAPUR,5009,TANGAIL (SOUTH),Dhaka
+1032,,,mgrnagarpur@krishibank.org.bd,1,1,0,50:20.2,NAGARPUR,5004,TANGAIL (SOUTH),Dhaka
+1033,,,mgrnaluabazar@krishibank.org.bd,1,1,0,50:20.2,NALUA BAZAR,5030,TANGAIL (SOUTH),Dhaka
+1034,,,mgrporabari@krishibank.org.bd,1,1,0,50:20.2,PORABARI,5003,TANGAIL (SOUTH),Dhaka
+1035,,,mgrsahabatpurbazar@krishibank.org.bd,1,1,0,50:20.2,SAHABATPUR BAZAR,5005,TANGAIL (SOUTH),Dhaka
+1036,,,mgrsakhipurtan@krishibank.org.bd,1,1,0,50:20.2,SAKHIPUR,5011,TANGAIL (SOUTH),Dhaka
+1037,,,mgrtakterchala@krishibank.org.bd,1,1,0,50:20.2,TAKTERCHALA BAZAR,5602,TANGAIL (SOUTH),Dhaka
+1038,,,mgrtangail@krishibank.org.bd,1,1,0,50:20.2,TANGAIL,5001,TANGAIL (SOUTH),Dhaka

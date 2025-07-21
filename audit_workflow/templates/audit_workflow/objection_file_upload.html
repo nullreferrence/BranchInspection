@@ -1,0 +1,39 @@
+<form method="post" id="objection-form" action="{% url 'audit_workflow:audit_summary' audit.id %}?item_id={{ item.id }}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p|safe }}
+
+    <div id="upload-fields">
+        <p>
+            <label for="id_file_description_0">Document Description:</label>
+            <input type="text" name="file_description" id="id_file_description_0">
+        </p>
+        <p>
+            <label for="id_document_0">Document Attachment:</label>
+            <input type="file" name="document" id="id_document_0">
+        </p>
+    </div>
+
+    <button type="button" id="add-upload-field">Add Another File</button>
+
+    <button type="submit" class="btn btn-primary">Submit Objection</button>
+</form>
+
+<script>
+    let uploadFieldIndex = 1;
+
+    document.getElementById('add-upload-field').addEventListener('click', function() {
+        var uploadFields = document.getElementById('upload-fields');
+        var newUploadField = `
+            <p>
+                <label for="id_file_description_${uploadFieldIndex}">Document Description:</label>
+                <input type="text" name="file_description" id="id_file_description_${uploadFieldIndex}">
+            </p>
+            <p>
+                <label for="id_document_${uploadFieldIndex}">Document Attachment:</label>
+                <input type="file" name="document" id="id_document_${uploadFieldIndex}">
+            </p>
+        `;
+        uploadFields.insertAdjacentHTML('beforeend', newUploadField);
+        uploadFieldIndex++;
+    });
+</script>

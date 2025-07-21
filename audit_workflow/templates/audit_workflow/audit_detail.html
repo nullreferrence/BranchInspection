@@ -1,0 +1,207 @@
+{% extends "audit_workflow/base.html" %}
+{% load static %}
+{% block content %}
+
+<title>Audit Details</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    .table-responsive { overflow-x: auto; }
+    .table-bordered th, .table-bordered td { border: 1px solid #dee2e6; padding: 0.75rem; text-align: left; vertical-align: top; white-space: nowrap; }
+    .table-striped tbody tr:nth-of-type(even) { background-color: #f2f2f2; }
+    .table-striped tbody tr:nth-of-type(odd) { background-color: #ffffff; }
+    .header { margin-bottom: 20px; }
+    .header h1 { color: #343a40; }
+    .content { margin-bottom: 20px; }
+    .footer { text-align: center; color: #6c757d; }
+    .page-container { display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 20px; background-color: #f8f9fa; }
+    .page { width: 90%; max-width: 1200px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 30px; }
+    .table-bordered th, .table-bordered td { background-color: #e3f2fd; }
+    .table-striped tbody tr:nth-of-type(even) { background-color: #d0e3fa; }
+    .table-striped tbody tr:nth-of-type(odd) { background-color: #e3f2fd; }
+    .header { background-color: #f0f5f9; padding: 20px; border-radius: 8px 8px 0 0; }
+    .content { background-color: #ffffff; padding: 20px; }
+    .footer { background-color: #f0f5f9; padding: 10px; border-radius: 0 0 8px 8px; }
+    .page { background-color: #f0f5f9; }
+
+
+</style>
+
+
+<div class="page-container">
+    <div class="page">
+        <div class="header">
+            <h1>
+                নিরীক্ষণ বিবরণী:
+                <a href="{% url 'audit_workflow:audit_report_page' audit.id %}" class="btn btn-sm btn-info">View Report</a>
+            </h1>
+            <div class="row bg-info bg-opacity-25 text-dark p-3 rounded">
+                <div class="col-md-6">
+                    <p><strong>নিরীক্ষণ আইডি:</strong> {{ audit.id }}</p>
+                    <p><strong>শাখা:</strong> {{ audit.branch.name }}</p>
+                    <p><strong>নিরীক্ষক:</strong> {{ audit.auditor }}</p>
+                    <p><strong>অডিটের সময়কাল:</strong> {{ audit.year_range }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>শুরুর তারিখ:</strong> {{ audit.start_date|date:"SHORT_DATE_FORMAT" }}</p>
+                    <p><strong>শেষের তারিখ:</strong> {{ audit.end_date|date:"SHORT_DATE_FORMAT" }}</p>
+                    <p><strong>জমার তারিখ:</strong>
+                        {% if audit.submission_date %}
+                            {{ audit.submission_date|date:"SHORT_DATE_FORMAT" }}
+                        {% else %}
+                            জমা হয়নি
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            {% if page_obj.object_list %}
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-sm text-center align-middle" style="font-size: 0.9rem;">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>অনুচ্ছেদ নাম</th>
+                                <th>বিস্তারিত</th>
+                                <th>টাকার পরিমান</th>
+                                <th>অভিযোগের ধরণ</th>
+                                {% if user == audit.auditor %}
+                                    <th>Edit</th>
+                                {% endif %}
+                                <th>জবাব</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for objection in page_obj %}
+                                <tr>
+                                    <td>{{ objection.items.itemName }}</td>
+                                    <td class="text-start">
+                                        <div id="desc-{{ objection.id }}">
+                                            {{ objection.description|truncatewords:2|safe }}
+                                        </div>
+                                        {% if objection.description|length > 150 %}
+                                            <button class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#modal-{{ objection.id }}">
+                                                বিস্তারিত দেখুন
+                                            </button>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ objection.amount }}</td>
+                                    <td>{{ objection.category }}</td>
+
+                                    {% if user == audit.auditor %}
+                                    <td>
+                                        <a href="{% url 'audit_workflow:edit_objection' objection.id %}" class="btn btn-sm btn-primary">Edit</a>
+                                    </td>
+                                    {% endif %}
+
+                                    <td>
+                                        {% if objection.items.id %}
+                                            <a href="{% url 'audit_workflow:comment_detail' audit.id objection.items.id %}" class="btn btn-sm btn-success">+</a>
+                                        {% endif %}
+                                    </td>
+
+                                    <td>
+                                        {% if objection.decision %}
+                                            {% if objection.decision.decision == "close" %}
+                                                <span class="badge bg-success">Settled</span>
+                                            {% else %}
+                                                <span class="badge bg-danger">Unsettled</span>
+                                            {% endif %}
+                                        {% else %}
+                                            <span class="badge bg-danger">Unsettled</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination block -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled"><span class="page-link">Next</span></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+
+            {% else %}
+                <p>এই নিরীক্ষণের জন্য কোন আপত্তি পাওয়া যায়নি।</p>
+            {% endif %}
+        </div>
+
+        <a href="{% url 'audit_workflow:jaripotro_report' audit.id %}" class="btn btn-primary mt-4">
+            জারিপত্র রিপোর্ট দেখুন
+        </a>
+
+        <div class="footer mt-3">
+            <p class="text-muted">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+{% for objection in page_obj %}
+    {% if objection.description|length > 150 %}
+    <div class="modal fade" id="modal-{{ objection.id }}" tabindex="-1" aria-labelledby="modalLabel{{ objection.id }}" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel{{ objection.id }}">বিস্তারিত</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="white-space: pre-wrap;">
+                    {{ objection.description|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script>
+        function toggleDescription(id) {
+        const desc = document.getElementById(`desc-${id}`);
+        const toggle = document.getElementById(`toggle-${id}`);
+        desc.classList.toggle("expanded");
+        if (desc.classList.contains("expanded")) {
+            toggle.textContent = "Read Less";
+        } else {
+            toggle.textContent = "Read More";
+        }
+    }
+</script>
+
+
+{% endblock %}

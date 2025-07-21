@@ -1,0 +1,54 @@
+{% extends 'audit_workflow/base.html' %}
+
+{% block content %}
+
+<h2>জারিপত্র রিপোর্ট - {{ submission.branch.name }} ({{ submission.audit_type }})</h2>
+
+<!-- ✅ Authorization Status and Button -->
+<div class="mb-3">
+    {% if request.user.role == 'authorizer' and not submission.is_authorized %}
+        <form method="post" action="{% url 'audit_workflow:authorize_submission' submission.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">✔ অনুমোদন করুন (Authorize)</button>
+        </form>
+    {% elif submission.is_authorized %}
+        <div class="alert alert-info mt-2">
+            ✅ অনুমোদিত: {{ submission.authorized_by.email }}
+        </div>
+    {% else %}
+        <div class="alert alert-warning mt-2">
+            ⚠ এই রিপোর্টটি এখনও অনুমোদিত নয় (Not yet authorized).
+        </div>
+    {% endif %}
+</div>
+
+<!-- ✅ Report Table -->
+<table border="1" cellpadding="8" cellspacing="0" class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>আইটেম নম্বর (Item No)</th>
+            <th>ব্যবস্থাপক মন্তব্য (Manager Comment)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in report_data %}
+        <tr>
+            <td>{{ row.item_nos }}</td>
+            <td>{{ row.comment_text }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- ✅ Download Button -->
+{% if submission.is_authorized or request.user.role == 'authorizer' %}
+<a href="{% url 'audit_workflow:download_jaripotro_docx' submission.id %}" class="btn btn-primary">
+    📥 জারিপত্র ডাউনলোড করুন
+</a>
+{% else %}
+<div class="text-danger mt-3">
+    🔒 অনুমোদন ব্যতীত রিপোর্ট ডাউনলোড করা যাবে না।
+</div>
+{% endif %}
+
+{% endblock %}

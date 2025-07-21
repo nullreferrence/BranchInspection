@@ -1,0 +1,26 @@
+{% block content %}
+<form method="post" id="objection-form" action="{% url 'audit_workflow:submit_objection' audit.id item.id %}">
+    {% csrf_token %}
+    {{ form.as_p|safe }}
+    <button type="submit" class="btn btn-primary">Submit Objection</button>
+</form>
+
+{% if objection %}  {# Check if an objection was created #}
+    <a href="{% url 'audit_workflow:objection_file_upload' objection.id %}" class="btn btn-secondary">Upload Files (Optional)</a>
+{% endif %}
+
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        if ($('#id_description').length) {
+            ClassicEditor
+                .create(document.querySelector('#id_description'))
+                .then(editor => {
+                    $(".ck-label").remove();
+                })
+                .catch(error => { console.error(error); });
+        }
+    });
+</script>
+{% endblock %}

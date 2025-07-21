@@ -1,0 +1,31 @@
+{% extends "audit_workflow/base.html" %}
+
+{% block content %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% load static %}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card p-4 shadow" style="max-width: 400px; width: 100%;">
+    <h3 class="text-center mb-3">Login</h3>
+    <form method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+
+
+      <div class="mt-4 text-center">
+    <a href="{% static 'audit_workflow/manuals/User_Manual_Bangla.pdf' %}" class="btn btn-info btn-sm" download>
+      📄 ইউজার ম্যানুয়াল (বাংলা)
+    </a>
+  </div>
+  </div>
+</div>
+
+
+{% block show_nav %} {% endblock %}
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Branch Inspection Dashboard - {{ submission.branch.name }} ({{ submission.month|date:"F Y" }})</h2>
+
+  <div class="my-3">
+    <strong>Status:</strong> {{ submission_status|title }} <br>
+    <strong>Finalized:</strong> {{ is_finalized|yesno:"Yes,No" }} <br>
+    <strong>Total Items:</strong> {{ total_items }} |
+    <strong>Items Completed:</strong> {{ commented_items }} |
+    <strong>Monitoring Replied:</strong> {{ replied|yesno:"Yes,No" }}
+  </div>
+
+  <hr>
+
+  <!-- Progress per category -->
+  <h4>Progress by Category</h4>
+  <div class="row">
+    {% for cat_key, cat_data in categorized_items.items %}
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ cat_data.display_name }}</h5>
+            <p>{{ cat_data.items|length }} items</p>
+
+            {% comment %}
+              We don't have progress counts here in dashboard view context,
+              so let's calculate commented counts per category from comment_map in views,
+              or just show total count for now.
+            {% endcomment %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <hr>
+
+  <!-- Show monitoring reply if any -->
+  {% if submission.monitoring_reply %}
+    <div class="alert alert-info">
+      <strong>DGM Monitoring Reply:</strong><br>
+      {{ submission.monitoring_reply|linebreaks }}
+      <br>
+      <small>Replied by: {{ submission.replied_by.get_full_name }} on {{ submission.replied_at|date:"M d, Y H:i" }}</small>
+    </div>
+  {% endif %}
+
+  <!-- Branch User Actions -->
+  {% if is_branch_user %}
+    {% if not is_finalized %}
+      <a href="{% url 'BranchInspection:offsite_commenting' %}" class="btn btn-primary">Continue Commenting</a>
+      <form method="post" action="{% url 'BranchInspection:finalize_submission' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success" onclick="return confirm('Finalize your submission? You cannot edit after finalizing.')">Finalize Submission</button>
+      </form>
+    {% else %}
+      <div class="alert alert-success">Your submission has been finalized.</div>
+    {% endif %}
+  {% endif %}
+
+  <!-- CRM User Actions -->
+  {% if is_crm_user %}
+    {% if not submission.finalized %}
+      <div class="alert alert-warning">Branch has not finalized submission yet.</div>
+    {% else %}
+      {% if submission.is_returned %}
+        <div class="alert alert-danger">Submission was returned to the branch.</div>
+        <form method="post" action="{% url 'BranchInspection:regional_manager_submission_list' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary">Wait for branch to resubmit</button>
+        </form>
+      {% elif not submission.is_forwarded %}
+        <form method="post" action="{% url 'BranchInspection:forward_to_monitoring' submission.id %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-success">Forward to Monitoring</button>
+        </form>
+        <form method="post" action="{% url 'BranchInspection:return_to_branch' submission.id %}" class="mt-2">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Return to Branch</button>
+        </form>
+      {% else %}
+        <div class="alert alert-info">Submission forwarded to Monitoring on {{ submission.forwarded_at|date:"M d, Y" }}</div>
+      {% endif %}
+    {% endif %}
+
+    <!-- Extension form -->
+    {% if not submission.finalized and not submission.is_forwarded %}
+      <h5>Grant Submission Extension</h5>
+      <form method="post" action="{% url 'BranchInspection:set_extension' submission.id %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="extra_days">Extra days (1-7):</label>
+          <input type="number" name="extra_days" id="extra_days" min="1" max="7" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-secondary mt-2">Set Extension</button>
+      </form>
+      {% if submission.extended_until %}
+        <p>Current extension valid until: {{ submission.extended_until }}</p>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  <!-- Monitoring User Actions -->
+  {% if is_monitoring_user %}
+    {% if submission.is_forwarded and not submission.monitoring_reply %}
+      <h5>Provide Monitoring Reply</h5>
+      <form method="post" action="{% url 'BranchInspection:monitoring_reply' submission.id %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <textarea name="monitoring_reply" rows="5" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit Reply</button>
+      </form>
+    {% elif submission.monitoring_reply %}
+      <div class="alert alert-info">
+        Monitoring has replied:<br>
+        {{ submission.monitoring_reply|linebreaks }}
+      </div>
+    {% else %}
+      <div class="alert alert-warning">Waiting for CRM to forward submission.</div>
+    {% endif %}
+  {% endif %}
+
+</div>
+{% endblock %}
