@@ -56,6 +56,7 @@ class BranchInspectionSubmission(models.Model):
     )
     replied_at = models.DateTimeField(null=True, blank=True)
     is_reply_finalized = models.BooleanField(default=False)
+    _items_cache = None
 
     def __str__(self):
         return f"Submission for {self.branch} - {self.month.strftime('%B %Y')}"
@@ -75,9 +76,16 @@ class BranchInspectionSubmission(models.Model):
         if self.monitoring_reply:
             return "Replied"
         return "Submitted"
+
     def get_items(self):
-        from .models import OffSiteItem  # avoid circular import
-        return OffSiteItem.objects.all()
+        if self._items_cache is None:
+            from .models import OffSiteItem
+
+            if self.branch.type == 'branch':
+                self._items_cache = OffSiteItem.objects.exclude(item_type='foreign_trade')
+            else:
+                self._items_cache = OffSiteItem.objects.all()
+        return self._items_cache
 
 
 class BranchInspectionComment(models.Model):

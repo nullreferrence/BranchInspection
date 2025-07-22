@@ -428,11 +428,15 @@ def submission_overview(request):
         role = 'crm'
         selected_region = user.region
         selected_division = user.division
-        branches = Branch.objects.filter(region=selected_region, division=selected_division)
-
+        #branches = Branch.objects.filter(region=selected_region, division=selected_division)
+        branches = Branch.objects.filter(
+            region=selected_region,
+            division=selected_division,
+            type__in=['branch', 'corporate']
+        )
     elif is_monitoring_user(user):
         role = 'dgmmonitoring'
-        branches = Branch.objects.all()
+        branches = Branch.objects.filter(type__in=['branch', 'corporate'])
         if selected_division:
             branches = branches.filter(division=selected_division)
         if selected_region:
@@ -505,7 +509,12 @@ def submission_overview(request):
 
     if role == 'dgmmonitoring':
         context['all_regions'] = Branch.objects.filter(division=selected_division).values_list('region', flat=True).distinct().order_by('region') if selected_division else []
-        context['all_branches'] = Branch.objects.filter(division=selected_division, region=selected_region).order_by('name') if selected_region else []
+        #context['all_branches'] = Branch.objects.filter(division=selected_division, region=selected_region).order_by('name') if selected_region else []
+        context['all_branches'] = Branch.objects.filter(
+            division=selected_division,
+            region=selected_region,
+            type__in=['branch', 'corporate']
+        ).order_by('name') if selected_region else []
 
     return render(request, 'BranchInspection/submission_overview.html', context)
 # def submission_overview(request):
@@ -729,7 +738,7 @@ def finalize_dgm_region(request):
     current_month = timezone.now().date().replace(day=1)
 
     # Filter branches by region and division
-    branches = Branch.objects.filter(region=region, division=division, type='branch')
+    branches = Branch.objects.filter(region=region, division=division, type__in=['branch', 'corporate'])
     submissions = BranchInspectionSubmission.objects.filter(branch__in=branches, month=current_month)
 
     if not submissions.exists():
